@@ -563,6 +563,7 @@ DEPENDENCIES
   redis-rails
   redis-store!
   sass-rails (>= 6)
+  sassc-rails
   selenium-webdriver
   sitemap_generator
   spring
