@@ -1,0 +1,19 @@
+<div class="continue-sns row">
+  <h3 class="col-12">SNS 간편로그인으로 입력없이 Anti-KB 이용하기</h3>
+  <%- if devise_mapping.omniauthable? %>
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <div class="col-12 col-xl-4">
+        <%= link_to "#{provider.to_s.titleize}로 계속하기", omniauth_authorize_path(resource_name, provider), {:class => 'sns-link sns-' + provider.to_s,:title=>provider.to_s+'을(를)이용하여 Anti-KB를 사용합니다.'} %>
+      </div>
+    <% end -%>
+  <% end -%>
+</div>
+<div class="row">
+  <h3 class="col-12">SNS 간편로그인 사용 안하고 정보입력 후  Anti-KB 이용하기</h3>
+  <div class="col-12">
+    <%= link_to "SNS 간편로그인 사용 안함", new_user_path, { :title => 'SNS를 사용하지 않고 불편하지만 정보를 입력합니다.', :class => 'no-sns-user-link' } %>
+  </div>
+</div>
+<div style="position:absolute;bottom:10px;right:10px">아이콘 제작자
+  <a href="https://www.freepik.com" title="Freepik">Freepik</a> from
+  <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a></div>

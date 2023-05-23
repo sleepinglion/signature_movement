@@ -1,0 +1,39 @@
+<% breadcrumb :compliment, @compliment %>
+<div id="compliment_show" class="sub_main row">
+  <div class="slboard_content col-12" itemscope itemprop="article" itemtype="http://schema.org/Article">
+    <div class="sl_content_header">
+      <h3 itemprop="name"><%= @compliment.title %></h3>
+      <p>
+        <%= t(:user_id, scope: [:activerecord, :attributes, :compliment]) %> :
+        <span itemprop="author"><%= link_to @compliment.user.name, user_path(@compliment.user) %></span>
+        <%= t(:label_created_at) %> : <span><%= get_dt_format(@compliment.created_at.to_date) %></span>
+        <span class="none" itemprop="dateCreated"><%= @compliment.created_at %></span>
+        <span class="none" itemprop="dateModified"><%= @compliment.updated_at %></span>
+      </p>
+    </div>
+    <div class="sl_content_main">
+      <div class="sl_content_text" itemprop="text"><%= simple_format(@compliment.compliment_content.content) %></div>
+      <div class="vote">
+        <% if user_signed_in? %>
+          <%= link_to like_compliment_path(@compliment), method: :put do %>
+            <span class="material-icons
+              <% if current_user.voted_for? @compliment %> already-vote
+              <% end %>">thumb_up</span> <span class="text"><%= @compliment.cached_votes_up %></span>
+          <% end %>
+        <% else %>
+          <%= link_to like_compliment_path(@compliment), { method: :put, :class => "confirm_login" } do %>
+            <span class="material-icons">thumb_up</span> <span class="text"><%= @compliment.cached_votes_up %></span>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div id="sl_content_bottom_menu">
+    <%= link_to t(:link_new), new_compliment_path %> &nbsp; | &nbsp;
+    <%= link_to t(:link_list), compliments_path %>
+    <% if can? :update, @compliment and @compliment.user_id == current_user.id %>
+      &nbsp; | &nbsp;
+      <%= link_to t(:link_edit), edit_compliment_path(@compliment) %>
+    <% end %>
+  </div>
+</div>

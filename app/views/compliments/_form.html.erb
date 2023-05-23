@@ -1,0 +1,34 @@
+<%= form_for @compliment, :html => { :class => 'col-12' } do |f| %>
+  <% if @compliment.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      <h2><%= pluralize(@compliment.errors.count, "error") %> prohibited this compliment from being saved:</h2>
+      <ul>
+        <% @compliment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :bank_id, :class => 'control-label' %>
+    <%= f.select :bank_id, options_from_collection_for_select(Bank.where(:enable => true).all, 'id', 'title', @compliment.bank_id), {}, { :class => "form-control input-lg" } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :compliment_category_id, :class => 'control-label' %>
+    <%= f.select :compliment_category_id, options_from_collection_for_select(ComplimentCategory.where(:enable => true).all, 'id', 'title', @compliment.compliment_category_id), {}, { :class => "form-control input-lg" } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <%= f.text_field :title, :class => 'form-control input-lg', :required => 'required' %>
+  </div>
+  <%= f.fields_for :compliment_content do |c| %>
+    <div class="form-group">
+      <%= c.label :content, :class => 'control-label' %>
+      <%= c.text_area :content, :class => 'form-control input-lg', :rows => 7, :required => 'required' %>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.submit :class => 'btn btn-lg btn-block btn-primary' %>
+  </div>
+<% end %>

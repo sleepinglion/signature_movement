@@ -1,0 +1,46 @@
+<section id="sl_user_show" itemscope itemtype="http://schema.org/Person">
+  <h2 itemprop="name"><%= @user.name %></h2>
+  <p><%= @user.description %></p>
+  <% if user_signed_in? %>
+    <%= link_to like_user_path(@user), method: :put do %>
+      <span class="material-icons
+        <% if current_user.voted_for? @user %> already-vote
+        <% end %>">thumb_up</span><span class="text"> <%= @user.cached_votes_up %></span>
+    <% end %>
+  <% else %>
+    <%= link_to like_user_path(@user), { method: :put, :class => "confirm_login" } do %>
+      <span class="material-icons">thumb_up</span><span class="text"> <%= @user.cached_votes_up %></span>
+    <% end %>
+  <% end %>
+
+  <% if @user.photo? %>
+    <%= link_to image_tag(@user.photo.medium_thumb.url, :alt => @user.name), @user.photo.large_thumb.url, :class => 'simple_image media-object', :title => @user.name, :itemprop => "image" %>
+  <% end %>
+  <div class="comment_list">
+    <% @comments.each do |comment| %>
+      <div class="users media">
+        <div class="media-left mr-3">
+          <% if comment.user.photo? %>
+            <%= link_to image_tag(comment.user.photo.small_thumb, :alt => comment.user.name), comment.user.photo.large_thumb.url, :class => 'simple_image media-object', :title => comment.user.name, :itemprop => "image" %>
+          <% else %>
+            <%= image_tag 'anon.png', :alt => comment.username, :itemprop => "image", :class => "media-object" %>
+          <% end %>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading"><%= link_to comment.username, user_path(comment.user_id) %></h4>
+          <p><%= simple_format comment.comment %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="comment_form">
+    <%= render :partial => 'users/comment_form', :locals => { :user_id => @user.id } %>
+  </div>
+  <div id="sl_content_bottom_menu">
+    <%= link_to t(:link_list), users_path %>
+    <% if can? :update, @user and @user.id == current_user.id %>
+      &nbsp; | &nbsp;
+      <%= link_to t(:link_edit), edit_user_path(@user) %>
+    <% end %>
+  </div>
+</section>

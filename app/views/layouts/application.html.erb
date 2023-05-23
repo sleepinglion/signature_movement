@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+<head>
+<meta charset="utf-8">
+<%= display_meta_tags :site => t(:application_name),
+                        :title => @title,
+                        :description => @meta_description,
+                        :keywords => @meta_keywords,
+                        :separator => t(:title_separator),
+                        :viewport => 'width=device-width, initial-scale=1, shrink-to-fit=no',
+                        :reverse => true %>
+<%= display_meta_tags og: {
+    title: @title,
+    description: @meta_description,
+    url: t(:site_full_url),
+    image: @meta_image
+  } %>
+<meta name="author" content="Sleeping-Lion">
+<link rel="canonical" href="<%= t(:site_full_url) %>">
+<link rel="alternate" type="application/rss+xml" title="Anti-KB RSS Feed" href="<%= t(:site_full_url) %>/feed?format=rss">
+<%= stylesheet_link_tag "front/application", :media => "all", "data-turbolinks-track" => true %>
+<%= favicon_link_tag 'favicon.ico' %>
+<%= csrf_meta_tags %>
+<%= csp_meta_tag -%>
+<!--[if IE]>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<![endif]-->
+</head>
+<body itemscope itemtype="<%= @page_itemtype %>">
+<%= render :partial => 'layouts/header' %>
+<div id="mom">
+  <div id="main" class="container">
+    <% unless current_page?(root_path) %>
+      <%= render :partial => 'layouts/page_header' %>
+    <% end %>
+    <%= render :partial => 'layouts/notice', :locals => { :notice => notice, :alert => alert } %>
+    <%= yield %>
+  </div>
+</div>
+<%= render :partial => 'layouts/footer' %>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog"></div>
+<%= render :partial => 'layouts/aside_mobile' %>
+<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</body>
+</html>

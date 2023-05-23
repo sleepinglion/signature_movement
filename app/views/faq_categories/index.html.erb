@@ -1,0 +1,25 @@
+<section id="faq_category_main">
+	<table>
+  		<tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+	<% @faq_categories.each do |faq_category| %>
+  <tr>
+    <td><%= faq_category.title %></td>
+    <td><%= link_to '수정', edit_faq_category_path(faq_category) %></td>
+    <td><%= link_to '삭제', faq_category, method: :delete, data: { confirm: '정말로 삭제합니까?' } %></td>
+  </tr>
+	<% end %>
+	</table>
+
+	<div id="sl_bottom_menu">
+		<% if user_signed_in? %>
+		<% if current_user.admin? %>
+		<%= link_to 'FAQ 분류 생성',new_faq_category_path %> &nbsp; | &nbsp; <%= link_to 'FAQ',faqs_path %>
+		<% end %>
+		<% end %>
+	<div class="flickr_pagination"><%= paginate @faq_categories %></div>
+	</div>
+</section>

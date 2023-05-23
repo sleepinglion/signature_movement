@@ -1,0 +1,29 @@
+<%= form_for @improve, :html => { :class => 'col-12' } do |f| %>
+  <% if @improve.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      <h2><%= pluralize(@improve.errors.count, "error") %> prohibited this improve from being saved:</h2>
+      <ul>
+        <% @improve.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <%= f.text_field :title, :class => 'form-control input-lg', :required => 'required' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, :class => 'control-label' %>
+    <%= f.text_area :content, :class => 'form-control input-lg', :rows => 7, :required => 'required' %>
+  </div>
+  <% if Rails.env.production? %>
+    <div class="form-group">
+      <%= recaptcha_tags :display => { :theme => "clean" } %>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.submit :class => 'btn btn-lg btn-block btn-primary' %>
+  </div>
+<% end %>

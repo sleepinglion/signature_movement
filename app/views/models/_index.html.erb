@@ -1,0 +1,52 @@
+<article id="main_model" class="col-12 carousel slide" data-ride="carousel">
+  <h3>KB에게 추천하는 새 KB모델</h3>
+  <% unless @models.empty? %>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <% @models.each_with_index do |m_model, index| %>
+          <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>"
+          <% if index.zero? %>class="active"
+          <% end %>></li>
+        <% end %>
+      </ol>
+      <div class="carousel-inner">
+        <% @models.each_with_index do |m_model, index| %>
+          <div class="carousel-item
+            <% if index.zero? %> active
+            <% end %>">
+            <div class="media" itemscope itemtype="http://schema.org/Person">
+              <%= link_to model_path(m_model) do %>
+                <figure itemprop="image">
+                  <%= image_tag m_model.photo.small_thumb.url, :class => "mr-3" %>
+                </figure>
+              <% end %>
+              <div class="media-body">
+                <h4 class="media-heading" itemprop="name"><%= link_to m_model.title, model_path(m_model) %></h4>
+                <div itemprop="description">
+                  <%= link_to model_path(m_model) do %>
+                    <%= simple_format(m_model.recommend_description) %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  <% else %>
+    <div>
+      <p>
+        <%= t(:no_data) %>
+      </p>
+    </div>
+  <% end %>
+  <%= link_to t(:link_more), models_path, :class => 'more' %>
+</article>

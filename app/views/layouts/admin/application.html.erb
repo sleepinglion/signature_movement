@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="<%=I18n.locale %>">
+<head>
+  <meta charset="utf-8" />
+  <title><%=t(:application_name)%></title>
+  <meta name="description" content="<%=t(:application_name)%> Admin System" />
+  <meta name="author" content="Sleeping-Lion" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <%= stylesheet_link_tag 'admin/application', :media=>'all', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+<!--[if IE]>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<![endif]-->
+</head>
+<body>
+	<%= render :partial => 'layouts/admin/header' %>
+	<div id="mom" class="container-fluid">
+		<div id="main" class="row">
+			<div id="content" class="col-12">
+				<% unless controller.controller_name=='admin' %>
+					<% if(!params[:no_layout] and !current_page?(admin_path)) %>
+						<ol class="breadcrumb">
+							<li><%= link_to t(:home),root_path %></li>
+							<% if(@category.present?) %>
+							<li><a href="#"><%= @category %></a><% if(@controller_name) %><% end %></li>
+							<% end %>
+							<li><a href="#"><%= @controller_name %></a></li>
+							<li><a href="#"><%=actionNameChange controller.action_name %></a></li>
+						</ol>
+						<hr class="hidden-xs" />
+					<% end %>
+					<% end %>
+					<% if notice %>
+					<%= render 'layouts/admin/notice',:locals=>{:notice=>notice} %>
+					<% end %>
+					<% if alert %>
+					<%= render 'layouts/admin/alert',:locals=>{:alert=>alert} %>
+					<% end %>
+						<%= yield %>
+					</div>
+				</div><!--/#content.span10-->
+			</div>
+	<%= render 'layouts/admin/footer' %>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"></div>
+	<%= javascript_include_tag 'admin/application', 'data-turbolinks-track' => true %>
+</body>
+</html>
