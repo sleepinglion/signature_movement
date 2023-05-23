@@ -899,6 +899,63 @@ footer a:hover {
   text-decoration: underline
 }
 
+
+#share ul {margin:20px 0;padding:0;list-style: none}
+#share li {display:inline-block;margin:0 10px;padding:0}
+.login-box {margin:3rem auto}
+#sl_login_form {margin-top:10px }
+
+
+.kakao-b-icon,.naver-b-icon,.google-b-icon,.apple-b-icon,.facebook-b-icon,.twitter-b-icon {width:60px;height:60px;border-radius:35px;display:inline-block;line-height:60px;text-align:center}
+.kakao-b-icon {
+  text-indent:-9999px;
+  background-image:image-url('btn_kakao.png');
+  background-position:center center;
+  background-repeat: no-repeat;
+  background-color:#fee500;
+}
+.naver-b-icon {
+  margin-left:15px;
+  text-indent:-9999px;
+  background-image:image-url('btn_naver.png');
+  background-position:center center;
+}
+.apple-b-icon {
+  text-indent:-9999px;
+  margin-left:15px;
+  background-image:image-url('btn_apple.png');
+  background-position:center center;
+  background-color:#000;
+  background-repeat: no-repeat;
+}
+.google-b-icon {
+  border:1px solid #ccc;
+  text-indent:-9999px;
+  margin-left:15px;
+  background-color:#fff;
+  background-image:image-url('btn_google.png');
+  background-position:center center;
+  background-repeat:no-repeat;
+}
+.facebook-b-icon {
+  border:1px solid #ccc;
+  text-indent:-9999px;
+  margin-left:15px;
+  background-color:#fff;
+  background-image:image-url('btn_facebook.png');
+  background-position:center center;
+  background-repeat:no-repeat;
+}
+.twitter-b-icon {
+  border:1px solid #ccc;
+  text-indent:-9999px;
+  margin-left:15px;
+  background-color:#fff;
+  background-image:image-url('btn_twitter.png');
+  background-position:center center;
+  background-repeat:no-repeat;
+}
+
 /* default */
 table td.sl_registered_date {
   color: #999

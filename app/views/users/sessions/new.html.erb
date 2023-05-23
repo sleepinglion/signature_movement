@@ -1,48 +1,65 @@
-<div class="continue-sns row">
-  <h3 class="col-12">SNS 간편로그인으로 진행</h3>
-  <%- if devise_mapping.omniauthable? %>
-    <%- resource_class.omniauth_providers.each do |provider| %>
-      <div class="col-12 col-xl-4">
-        <%= link_to "#{provider.to_s.titleize}로 계속하기", omniauth_authorize_path(resource_name, provider), {:class => 'sns-link sns-' + provider.to_s,:title=>provider.to_s+'을(를)이용하여 Anti-KB를 사용합니다.'} %>
+<div class="container">
+  <div class="row">
+    <section class="col-12 col-lg-8 login-box">
+      <% if flash.count > 0 %>
+        <div id="sl_message" class="alert alert-danger col-xs-10 col-xs-offset-1" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+          <% flash.each do |name, msg| %>
+            <%= content_tag :p, msg, id: "flash_#{name}" %>
+          <% end %>
+        </div>
+      <% end %>
+      <%=render 'users/sns',resource_name:resource_name %>
+
+      <div class="text-center" style="margin-top:30px;padding-top:30px;border-top:1px solid #ccc">
+        <button id="no-sns-id" class="btn btn-primary">SNS계정 없음</button>
       </div>
-    <% end -%>
-  <% end -%>
-</div>
-<div class="row">
-  <div class="col-12 col-lg-8 col-xl-6 col-xxl-5 login-box">
-    <h3 class="col-12">Anti-KB 아이디로 로그인</h3>
-    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :id => 'new_session_form', :class => 'col-12' }) do |f| %>
-      <%= render :partial => 'layouts/notice', :locals=>{:notice=>notice,:alert=>alert} %>
-      <div class="card">
-        <div class="card-body">
-          <div class="form-group row">
-            <label for="sl_email" class="col-sm-2 col-form-label text-right"><%= t(:email) %></label>
-            <div class="col-sm-10">
-              <%= f.text_field :email, :autofocus => true, :class => "form-control form-control-lg", :required => "required", :placeholder => t(:login_p_email) %>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="sl_password" class="col-sm-2 col-form-label text-right"><%= t(:password) %></label>
-            <div class="col-sm-10">
-              <%= f.password_field :password, :class => "form-control form-control-lg", :required => "required", :placeholder => t(:login_p_password) %>
-            </div>
-          </div>
-          <div class="form-group row">
-            <div class="col-sm-offset-2 col-sm-10">
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="remember_email">
-                <label class="form-check-label" for="remember_email"><%= t(:remember_me) %></label>
+      <div id="no-sns-login" style="margin-top:30px;display:none">
+        <h2><%= t(:service_name) %> <%= t(:login_title) %></h2>
+
+
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "form-horizontal", :id => "sl_login_form", :role => "form" }) do |f| %>
+          <div class="card">
+            <div class="card-body">
+
+              <div class="form-group row">
+                <label for="sl_email" class="col-sm-2 col-form-label text-right"><%= t(:email) %></label>
+                <div class="col-sm-10">
+                  <%= f.email_field :email, :autofocus => true, :class => "form-control form-control-lg", :required => "required", :placeholder => t(:login_p_email) %>
+                </div>
               </div>
+              <div class="form-group row">
+                <label for="sl_password" class="col-sm-2 col-form-label text-right"><%= t(:password) %></label>
+                <div class="col-sm-10">
+                  <%= f.password_field :password, :class => "form-control form-control-lg", :required => "required", :placeholder => t(:login_p_password) %>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="remember_email">
+                    <label class="form-check-label" for="remember_email"><%= t(:remember_me) %></label>
+                  </div>
+                </div>
+              </div>
+
             </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary btn-block btn-lg"><%= t(:login) %></button>
+            </div>
+          </div>
+        <% end %>
+        <div class="row" style="margin-bottom:3rem">
+          <div class="col-12 col-xl-6">
+            <%= link_to t(:new_user), new_user_registration_path %>
           </div>
         </div>
       </div>
-      <div class="form-group row">
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary btn-block btn-lg"><%= t(:login) %></button>
-        </div>
-      </div>
-      <%= render :partial => "users/shared/links" %>
-    <% end %>
+
+    </section>
   </div>
 </div>
