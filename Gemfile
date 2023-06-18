@@ -96,7 +96,7 @@ group :production do
   gem 'fog-azure-rm', github: 'sleepinglion/fog-azure-rm'
   gem 'mysql2'
   gem 'redis'
-  gem 'redis-store', github: 'redis-store/redis-store'
+  gem 'redis-store', '1.9.1'
   gem 'dotenv-rails'
   gem 'recaptcha', :require => 'recaptcha/rails'
   gem 'rails-letsencrypt'

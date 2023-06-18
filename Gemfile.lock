@@ -1,11 +1,4 @@
 GIT
-  remote: https://github.com/redis-store/redis-store.git
-  revision: d13720ff81d1fa933c62523ef58aa36f7a0d34a7
-  specs:
-    redis-store (1.9.2)
-      redis (>= 4, < 6)
-
-GIT
   remote: https://github.com/sleepinglion/fog-azure-rm.git
   revision: d20da616d0724011db72573d922b26a06bbdf31d
   specs:
@@ -183,7 +176,6 @@ GEM
       mini_mime (>= 0.1.3)
       ssrf_filter (~> 1.0)
     concurrent-ruby (1.2.2)
-    connection_pool (2.4.1)
     crass (1.0.6)
     date (3.3.3)
     devise (4.9.2)
@@ -396,8 +388,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     recaptcha (5.14.0)
-    redis (5.0.6)
-      redis-client (>= 0.9.0)
+    redis (4.8.1)
     redis-actionpack (5.3.0)
       actionpack (>= 5, < 8)
       redis-rack (>= 2.1.0, < 3)
@@ -405,8 +396,6 @@ GEM
     redis-activesupport (5.3.0)
       activesupport (>= 3, < 8)
       redis-store (>= 1.3, < 2)
-    redis-client (0.14.1)
-      connection_pool
     redis-rack (2.1.4)
       rack (>= 2.0.8, < 3)
       redis-store (>= 1.2, < 2)
@@ -417,6 +406,8 @@ GEM
       redis-actionpack (>= 5.0, < 6)
       redis-activesupport (>= 5.0, < 6)
       redis-store (>= 1.2, < 2)
+    redis-store (1.9.1)
+      redis (>= 4, < 5)
     regexp_parser (2.8.0)
     responders (3.1.0)
       actionpack (>= 5.2)
@@ -559,7 +550,7 @@ DEPENDENCIES
   redis
   redis-rack-cache
   redis-rails
-  redis-store!
+  redis-store (= 1.9.1)
   sass-rails (>= 6)
   sassc-rails
   selenium-webdriver
