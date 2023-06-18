@@ -107,7 +107,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @title=@user.name
-    @comments = @user.comments.select('comments.*,r_users.name as username').all.joins("inner join users AS r_users ON comments.user_id=r_users.id")
+    #  @comments = @user.comments.select('comments.*,r_users.name as username').all.joins("inner join users AS r_users ON comments.user_id=r_users.id")
 
     respond_to do |format|
       format.html # show.html.erb

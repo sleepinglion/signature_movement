@@ -49,7 +49,6 @@ gem 'trix'
 
 gem 'acts_as_votable'
 gem 'acts-as-taggable-on'
-gem 'commontator'
 
 gem 'omniauth'
 gem 'oauth2', '1.4.11'

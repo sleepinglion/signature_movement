@@ -16,23 +16,7 @@
   <% if @user.photo? %>
     <%= link_to image_tag(@user.photo.medium_thumb.url, :alt => @user.name), @user.photo.large_thumb.url, :class => 'simple_image media-object', :title => @user.name, :itemprop => "image" %>
   <% end %>
-  <div class="comment_list">
-    <% @comments.each do |comment| %>
-      <div class="users media">
-        <div class="media-left mr-3">
-          <% if comment.user.photo? %>
-            <%= link_to image_tag(comment.user.photo.small_thumb, :alt => comment.user.name), comment.user.photo.large_thumb.url, :class => 'simple_image media-object', :title => comment.user.name, :itemprop => "image" %>
-          <% else %>
-            <%= image_tag 'anon.png', :alt => comment.username, :itemprop => "image", :class => "media-object" %>
-          <% end %>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading"><%= link_to comment.username, user_path(comment.user_id) %></h4>
-          <p><%= simple_format comment.comment %></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
+
   <div class="comment_form">
     <%= render :partial => 'users/comment_form', :locals => { :user_id => @user.id } %>
   </div>

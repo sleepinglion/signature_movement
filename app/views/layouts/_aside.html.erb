@@ -17,7 +17,9 @@
           <p>서명후 로그인가능합니다</p>
           <h2><%= link_to t(:login), new_user_session_path, :class => "btn btn-block btn-primary" %></h2>
           <p>
-            <%= link_to "서명하기", user_presign_path %>
+            <%= link_to new_user_registration_path do %>
+              <b><%= t(:sign) %></b>
+            <% end %>
             <%= link_to "비밀번호 찾기", new_user_password_path %>
           </p>
         </article>

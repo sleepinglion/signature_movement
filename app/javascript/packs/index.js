@@ -17,6 +17,12 @@ $(document).ready(function() {
         $(this).next('.custom-file-label').addClass("selected").html(fileName);
     });
 
+    $('#no-sns-id').click(function(){
+        $("#no-sns-login").show();
+        $("#sns-login,#no-sns-id").hide();
+        $("#no-sns-id").parent().hide();
+    });
+
     function vote_click(){
         if($(this).find('span.already-vote').length) {
             alert('이미 투표하셨습니다.');
@@ -24,7 +30,7 @@ $(document).ready(function() {
         }
 
         var vote_link=$(this);
-        alert(vote_link.attr('href')+'.json')
+       // alert(vote_link.attr('href')+'.json')
 
         $.post(vote_link.attr('href')+'.json',{'_method':'put','authenticity_token':csrf_token},function(data){
             if(data.vote_up) {

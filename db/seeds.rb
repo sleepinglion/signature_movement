@@ -4,7 +4,7 @@ AuthenticationProvider.create!(name: 'google')
 AuthenticationProvider.create!(name: 'naver')
 AuthenticationProvider.create!(name: 'kakao')
 
-User.create!(:name=>'잠자는-사자',:email => 'toughjjh@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'살인자 은행 망해라!!',:admin=>true)
+User.create!(:name=>'잠자는-사자',:email => 'admin@sleepinglion.pe.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'살인자 은행 망해라!!',:admin=>true)
 #,:created_at=>'2016-11-01 11:22:32'
 User.create!(:name=>'폭탄테러',:email => 'toughjjh1@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'폭파하고 싶다!!')
 #,:created_at=>'2016-11-01 05:22:32'

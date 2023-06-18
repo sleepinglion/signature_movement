@@ -6,8 +6,8 @@ AntiKb::Application.routes.draw do
   end
 
   devise_for :users, :controllers => { :sessions => "users/sessions", :registrations => "users/registrations", :passwords => "users/passwords" }, :path_names => { :sign_up => 'new', :sign_in => 'login', :sign_out => 'logout' } do
-    get 'login', :to => 'users::Sessions#new'
-    get 'logout', :to=> 'users::Sessions#destroy'
+    get 'login', to: 'users::Sessions#new'
+    get 'logout', to:  'users::Sessions#destroy'
   end
 
   resources :users do
@@ -16,8 +16,6 @@ AntiKb::Application.routes.draw do
       put 'dislike', to: 'users#downvote'
     end
   end
-
-  get '/users/presign', to: 'users/sessions#presign', as: :user_presign
 
   resources :reports do
     member do
