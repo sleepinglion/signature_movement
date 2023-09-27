@@ -758,8 +758,10 @@ footer address {
   position: relative
 }
 
-#main_model .carousel-inner a {
-  display: block
+#main_model .media a figure,#model_main .media a img {float:left;margin-right:2rem}
+
+#main_model .media-body,#model_main .media-body  {
+  float:left;
 }
 
 #main_model .carousel-inner a.nm {
