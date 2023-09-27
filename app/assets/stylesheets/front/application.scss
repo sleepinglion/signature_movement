@@ -47,7 +47,7 @@
 }
 
 
-$default-bg : #eee;
+$default-bg : #ddd;
 $default-color: $body-color;
 $secondary-bg :#fff;
 
@@ -1149,7 +1149,7 @@ table td.sl_registered_date {
   #login-page h1 {
     margin-bottom: 8px
   }
-  #login-page #sl_ad {
+  #login-page #sl-ad {
     margin-bottom: 10px
   }
   .page-header {
@@ -1359,6 +1359,7 @@ table td.sl_registered_date {
 
 @media all and (min-width: 992px) and (max-width: 1200px) {
   .jumbotron {margin-bottom:2rem}
+  #sl-ad {display:none}
   header nav ul {float:right}
   aside article {
     min-height:8rem
@@ -1420,6 +1421,24 @@ table td.sl_registered_date {
     background-color: var(--bs-body-bg);
   }
 
+
   .page-header h2, .page-header h1 {color: var(--bs-body-color)}
-  header,footer,.jumbotron,.media,aside article,#faqList dt a.title,.modal-body, .modal-footer {background-color:var(--bs-secondary-bg)}
+  header,footer,.jumbotron,.media,aside article,#faqList dt a.title,.modal-body, .modal-footer,.sl_content_header,.thead-default th {background-color:var(--bs-secondary-bg)}
+}
+
+@include color-mode(light) {
+  a {
+    color: #666
+  }
+  a:hover {
+    color: #333
+  }
+  a:visited {
+    color: #999
+  }
+  a:active {
+    color: #000
+  }
+
+  aside a,aside a:visited {color:#fff}
 }
