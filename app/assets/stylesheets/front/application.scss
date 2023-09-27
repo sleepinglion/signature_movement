@@ -347,6 +347,8 @@ header nav .dropdown-menu li {
   text-indent: -9999px
 }
 
+
+
 aside article h3 {
   margin: 0 0 10px;
   padding: 0;
@@ -1235,6 +1237,10 @@ table td.sl_registered_date {
     margin: -91px 0 -51px;
     min-height: 100%;
   }
+
+
+  .jumbotron {margin:2rem 0}
+
   #main {
     padding-top: 91px;
     padding-bottom: 51px
@@ -1352,7 +1358,11 @@ table td.sl_registered_date {
 }
 
 @media all and (min-width: 992px) and (max-width: 1200px) {
-
+  .jumbotron {margin-bottom:2rem}
+  header nav ul {float:right}
+  aside article {
+    min-height:8rem
+  }
 }
 
 @media all and (min-width: 1200px) {
