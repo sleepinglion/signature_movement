@@ -19,7 +19,7 @@
       <% unless user_signed_in? %>
         <div class="row">
           <div class="col-12">
-            <div class="jumbotron hero-unit">
+            <div class="jumbotron rounded-3 p-5">
               <h2><%= raw t(:home_main_title) %></h2>
               <p class="lead"><%= raw t(:home_main_description) %></p>
               <%= link_to new_user_registration_path do %>

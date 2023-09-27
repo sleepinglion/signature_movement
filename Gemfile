@@ -28,7 +28,7 @@ gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'bootstrap', '~> 4.5.3'
+gem 'bootstrap', '~> 5.3.1'
 gem 'sprockets', '~> 3.7.2'
 gem 'devise'
 gem 'cancancan'
@@ -93,7 +93,7 @@ end
 
 group :production do
   gem 'asset_sync'
-  gem 'fog-azure-rm', github: 'sleepinglion/fog-azure-rm'
+  gem 'fog-azure-rm', git: 'https://github.com/sleepinglion/fog-azure-rm'
   gem 'mysql2'
   gem 'redis'
   gem 'redis-store', '1.9.1'

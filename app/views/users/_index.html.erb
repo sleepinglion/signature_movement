@@ -7,7 +7,9 @@
           <% if user.photo? %>
             <%= link_to image_tag(user.photo.small_thumb.url, :alt => user.name), user.photo.large_thumb.url, :class => 'simple_image media-object mr-3', :title => user.name, :itemprop => "image" %>
           <% else %>
-            <%= image_tag 'anon.png', :alt => user.name, :itemprop => "image", :class => "media-object mr-3" %>
+            <div  class="media-object mr-3" >
+            <span class="material-icons">person</span>
+            </div>
           <% end %>
         </div>
         <div class="media-body">
@@ -38,7 +40,7 @@
   <% end %>
 </section>
 <div id="sign_up">
-  <span class="mark"><%= @user_count %></span>명이 서명하였습니다.
+  <span class="badge bg-secondary"><%= @user_count %></span>명이 서명하였습니다.
   <% unless user_signed_in? %> &nbsp;&nbsp;
     <%= link_to new_user_registration_path do %>
       <b><%= t(:sign) %></b>

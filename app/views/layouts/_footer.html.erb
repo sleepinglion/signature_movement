@@ -2,7 +2,7 @@
   <div class="container">
     <ul class="row">
       <li class="col-6 col-lg-4"><%= link_to t(:intro, scope: [:activerecord, :models]), intro_index_path %></li>
-      <li class="d-none d-md-block">email:<%= mail_to t(:email_webmaster) %></li>
+      <li class="col-6 col-lg-4">email:<%= mail_to t(:email_webmaster) %></li>
       <li class="col-6 col-lg-4"><%= link_to t(:sitemap, scope: [:activerecord, :models]), sitemap_index_path %></li>
     </ul>
     <div class="row">

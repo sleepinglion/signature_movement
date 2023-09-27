@@ -14,7 +14,6 @@
               <li><%= link_to t(:logout), destroy_user_session_path %></li>
             <% else %>
               <li><%= link_to t(:login), new_user_session_path %></li>
-              <li><%= link_to t(:sign), new_user_registration_path %></li>
             <% end %>
           </ul>
         </div>
@@ -23,7 +22,7 @@
     <div class="row">
         <h1 class="col-12 col-md-3"><%= link_to t(:home_title), root_path %></h1>
       <nav class="col-12 col-md-9">
-        <ul class="nav nav-pills float-right">
+        <ul class="nav nav-pills">
           <li
           <% if params[:controller] == 'reports' %>class="active"
           <% end %>><%= link_to reports_path do %><%= t(:report, scope: [:activerecord, :models]) %>

@@ -3,7 +3,7 @@
   <ul class="media-list col-12">
     <% unless @models.empty? %>
       <% @models.each do |model| %>
-        <li class="media" itemscope itemtype="http://schema.org/Person">
+        <li class="media shadow-sm rounded" itemscope itemtype="http://schema.org/Person">
           <%= link_to model_path(model) do %>
             <%= image_tag model.photo.medium_thumb.url, :itemprop => "image", :class => "mr-3" %>
           <% end %>

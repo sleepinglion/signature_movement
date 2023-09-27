@@ -14,21 +14,18 @@
     <% else %>
       <div class="col-12 col-md-6 col-xl-12">
         <article>
-          <p>서명후 로그인가능합니다</p>
-          <h2><%= link_to t(:login), new_user_session_path, :class => "btn btn-block btn-primary" %></h2>
-          <p>
-            <%= link_to new_user_registration_path do %>
-              <b><%= t(:sign) %></b>
-            <% end %>
-            <%= link_to "비밀번호 찾기", new_user_password_path %>
-          </p>
+          <p>서명에 참여해주세요</p>
+          <h2 class="d-grid gap-2"><%= link_to t(:login), new_user_session_path, :class => "btn btn-block btn-primary" %></h2>
+
         </article>
       </div>
     <% end %>
     <div class="col-12 col-md-6 col-xl-12">
       <article>
         <h3>KB 임직원의 진심</h3>
+        <div class="d-grid gap-2">
         <%= link_to 'KB 임직원의 마음의 소리', '/kbsmind', :class => 'modal_link btn btn-block btn-large btn-success', :'data-toggle' => "modal", :'data-target' => "#myModal" %>
+        </div>
       </article>
     </div>
     <%= render :partial => 'layouts/ad' %>

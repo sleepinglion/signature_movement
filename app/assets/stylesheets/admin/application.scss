@@ -47,7 +47,7 @@
 }
 
 
-html,body {margin:0;padding:0;height: 100%;background:#eee}
+html,body {margin:0;padding:0;background:#eee}
 body { font-family: "Nanum Gothic","나눔고딕","Malgun Gothic","맑은 고딕","굴림",gulim,"돋움",Dotum,Arial,Helvetica, sans-serif;color:#333}
 label {vertical-align:middle;cursor:pointer}
 a img {border:none}
@@ -241,7 +241,7 @@ footer address {margin:0;padding:12px 0 0;line-height:150%;text-align:center}
 
 @media (min-width: 992px) and (max-width: 1199px) {
   header {height:7em}
-  #mom {clear:both;float:left;width:100%;padding:0;margin:-7em 0 -3em;min-height:100%}
+  #mom {clear:both;float:left;width:100%;padding:0;margin:-7em 0 -3em}
   #anon_body #mom {margin-top:0}
   #main {padding-top:7em;padding-bottom:3em}
   #anon_body #main {padding-top:0}
@@ -272,7 +272,7 @@ footer address {margin:0;padding:12px 0 0;line-height:150%;text-align:center}
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14);
   }
 
-  #mom {clear:both;float:left;width:100%;padding:0;margin:-7em 0 -3em;min-height:100%}
+  #mom {clear:both;float:left;width:100%;padding:0;margin:-7em 0 -3em;}
   #anon_body #mom {margin-top:0}
   #main {padding-top:7em;padding-bottom:3em}
   #anon_body #main {padding-top:0}

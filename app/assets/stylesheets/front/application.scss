@@ -46,16 +46,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  background: #eee
-}
 
-body {
-  font-family: "Nanum Gothic", "나눔고딕", "Malgun Gothic", "맑은 고딕", "gulim","굴림","Dotum", "돋움", Arial, Helvetica, sans-serif;
-  color: #333
-}
+$default-bg : #eee;
+$default-color: $body-color;
+$secondary-bg :#fff;
+
+
+
+$color-mode-type: data;
+
+html,body {margin:0;padding:0; height:100%}
+body {background-color:$default-bg;color: $default-color; font-family: "Nanum Gothic", "나눔고딕", "Malgun Gothic", "맑은 고딕", "gulim","굴림","Dotum", "돋움", Arial, Helvetica, sans-serif;}
+
 
 label {
   vertical-align: middle;
@@ -79,7 +81,6 @@ legend {
 }
 
 a {
-  color: #666;
   text-decoration: none;
 }
 
@@ -88,7 +89,6 @@ a:active {
 }
 
 a:hover {
-  color: #333;
   text-decoration: underline;
 }
 
@@ -144,7 +144,7 @@ mark, rp, rt, ruby, summary, time {
   margin: 0.4em 0;
   padding: 0;
   font-weight: bold;
-  color: #666
+  color: $default-color;
 }
 
 .page-header nav {
@@ -175,12 +175,11 @@ mark, rp, rt, ruby, summary, time {
 }
 
 .modal-body, .modal-footer {
-  background: #eee
+  background: $default-bg
 }
 
 .thead-default th {
   background-color: #868e96;
-  color: #fff;
   font-weight: 600;
 }
 
@@ -204,10 +203,10 @@ footer {
 
 .page-header h2, .page-header h1 {
   float: left;
-  margin: 0.7em 0 0;
+  margin: 0.5rem 0;
   padding: 0;
   font-weight: bold;
-  color: #666;
+  color: $default-color;
   font-size: 140%
 }
 
@@ -268,12 +267,7 @@ header h1 {
 header h1 a {
   float: left;
   display: block;
-  width: 150px;
-  height: 30px;
-  color: #666;
-  text-indent: -9999px;
   text-decoration: none;
-  background: asset-url('logo.png') no-repeat
 }
 
 header h1 a:hover {
@@ -298,7 +292,6 @@ header nav ul.nav-pills > li + li {
 header nav a {
   float: left;
   font-size: 1.3em;
-  color: #666;
   text-decoration: none
 }
 
@@ -479,7 +472,7 @@ footer address {
   padding: 11px 0 11px 40px;
   color: #666;
   border-bottom: 1px solid #eee;
-  background: #fff asset-url('board/toggle_open.png') no-repeat 10px 11px;
+  background: $secondary-bg asset-url('board/toggle_open.png') no-repeat 10px 11px;
   text-decoration: none
 }
 
@@ -547,14 +540,12 @@ footer address {
 
 #main_main a.more {
   position: absolute;
-  top: 0px;
+  top: 0;
   right: 15px;
-  color: #999;
   text-decoration: none
 }
 
 #main_main a.more:hover {
-  color: #333;
   text-decoration: underline
 }
 
@@ -649,10 +640,9 @@ footer address {
 }
 
 .users {
-  border: 1px dotted #ccc;
+  border: 1px solid var(--bd-pre-bg);
   margin-bottom: 5px;
-  padding: 10px;
-  background: #fff
+  padding: 1rem;
 }
 
 .users.media {
@@ -661,7 +651,7 @@ footer address {
 }
 
 .users .vote {
-  float: right
+  text-align: right;
 }
 
 .users .vote a {
@@ -682,6 +672,10 @@ footer address {
 
 #new_user .card, #edit_user .card, #new_session_form .card {
   margin-bottom: 20px
+}
+
+.form-group {
+  margin-bottom:1.5rem
 }
 
 .comment_layer {
@@ -723,12 +717,12 @@ footer address {
 /* propose */
 #propose_main .content_list, #model_main .media {
   float: left;
-  background: none repeat scroll 0 0 #FAFAFA;
-  border: 1px solid #CCCCCC;
   margin: 20px 0;
   padding: 2%;
   width: 100%
 }
+
+#model_main .media-list {list-style:none}
 
 #propose_main .content_list_head {
   border-bottom: 1px dotted #CCCCCC;
@@ -827,7 +821,7 @@ footer address {
 
 #main_page #user_new {
   float: none;
-  background: #fff;
+  background: $secondary-bg;
   width: 400px;
   margin: 0 auto;
   border-radius: 5px;
@@ -850,7 +844,7 @@ footer address {
 }
 
 #sl_model_show article div {
-  background: #fff;
+  background: $secondary-bg;
   margin: 0 0 7px;
   padding: 5px 10px;
   border-radius: 5px
@@ -873,7 +867,7 @@ footer address {
 }
 
 aside article {
-  background: #fff;
+  background: $secondary-bg;
   border: none
 }
 
@@ -888,16 +882,7 @@ footer ul {
   padding: 0
 }
 
-footer a {
-  font-weight: bold;
-  color: #666;
-  text-decoration: none;
-}
 
-footer a:hover {
-  color: #000;
-  text-decoration: underline
-}
 
 
 #share ul {margin:20px 0;padding:0;list-style: none}
@@ -965,6 +950,8 @@ table td.sl_registered_date {
   color: red
 }
 
+
+#main_layer .row {position: relative}
 
 /* content */
 .slboard_content {
@@ -1035,7 +1022,7 @@ table td.sl_registered_date {
 
 .continue-sns .sns-link,.no-sns-user-link
 {
-  background-color:#fff;
+  background-color: var(--bs-secondary-color);
   display:block;
   height:90px;
   margin-bottom:20px;
@@ -1070,6 +1057,7 @@ table td.sl_registered_date {
   display:none;
 }
 
+
 @media all and (max-width: 768px) {
   #top_menu {display:none}
   #mobile_menu {display:block;position:absolute;top:5px;right:10px;}
@@ -1094,9 +1082,7 @@ table td.sl_registered_date {
   header h1 a:hover, header h1 a:hover {
     text-decoration: none
   }
-  header h1 a:active, header h1 a:hover {
-    color: red
-  }
+
   header nav {
     float: left;
     width: 100%;
@@ -1108,7 +1094,6 @@ table td.sl_registered_date {
     width: 100%;
     margin: 0;
     padding: 0;
-    background: #fff;
     border-radius: 5px
   }
   header nav ul li, header ul li a {
@@ -1123,7 +1108,6 @@ table td.sl_registered_date {
   header nav ul li {
     margin: 0;
     padding: 0;
-    background: #fff
   }
   header nav ul li a {
     display: block;
@@ -1134,7 +1118,6 @@ table td.sl_registered_date {
   }
   header nav ul li a:hover {
     text-decoration: none;
-    background: #eee
   }
   header nav ul li a:active {
     color: red
@@ -1151,11 +1134,9 @@ table td.sl_registered_date {
   #main {
     float: left;
     margin: 0;
-    padding: 0;
     width: 100%;
     padding: 3%;
     border-radius: 5px;
-    background: #fff
   }
   #section_main_top a.more {
     right: 30px
@@ -1215,7 +1196,7 @@ table td.sl_registered_date {
   }
   footer {
     float: left;
-    background: #fff;
+    background: var(--bs-secondary-bg);
     border-radius: 5px;
     width: 100%;
     margin: 1% 0 0
@@ -1229,10 +1210,8 @@ table td.sl_registered_date {
     position: fixed;
     top:0;
     left:-500px;
-    height:100%;
     width:80%;
     max-width: 500px;
-    background:#eee;
     z-index:999;
     padding:3% 5% 3% 3%;
   }
@@ -1262,7 +1241,7 @@ table td.sl_registered_date {
   }
   header {
     height: 90px;
-    background: #fff;
+    background: $secondary-bg;
     border-bottom: 1px solid #ccc;
   }
   header h1, header h2 {
@@ -1283,9 +1262,9 @@ table td.sl_registered_date {
     position: relative;
     width: 96%;
     height: 50px;
-    margin: 0px 2%;
+    margin: 0 2%;
     text-align: center;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid $secondary-bg;
   }
 }
 
@@ -1306,12 +1285,13 @@ table td.sl_registered_date {
     padding-bottom: 50px
   }
   #main_main nav {
-    margin-bottom: 20px
+    margin-bottom:1.5rem
   }
   header {
     height: 5em;
-    background: #fff;
-    border-bottom: 1px solid #ccc;
+    padding:1.5rem;
+    background: $secondary-bg;
+    border-bottom: 1px solid var(--bs-secondary-bg);
   }
   header h1, header h2 {
     position: relative;
@@ -1332,9 +1312,13 @@ table td.sl_registered_date {
   .sub_main {
     padding-bottom: 40px
   }
+
   .jumbotron, .media {
-    background: #fff
+    background:$secondary-bg
   }
+
+  .media .media-object .material-icons {font-size:35px}
+
   .modal-dialog {
     width: 728px
   }
@@ -1345,13 +1329,13 @@ table td.sl_registered_date {
     height: 4em;
     margin: 0;
     text-align: center;
-    background: #e3e3e3
+    background: $secondary-bg;
   }
   /* aside */
 
   aside article {
-    margin-bottom: 30px;
-    padding: 10px;
+    margin-bottom: 1rem;
+    padding: 1rem;
     border-radius: 5px
   }
   aside article p {
@@ -1364,7 +1348,6 @@ table td.sl_registered_date {
   footer ul li a, footer address {
     font-size: 12px;
     font-weight: normal;
-    color: #666
   }
 }
 
@@ -1374,8 +1357,7 @@ table td.sl_registered_date {
 
 @media all and (min-width: 1200px) {
   html, body {
-    font-size: 16px;
-    height: 100%;
+    font-size: 16px
   }
   aside {
     position: absolute;
@@ -1385,13 +1367,17 @@ table td.sl_registered_date {
     margin: 0
   }
 
+  header nav ul {float: right}
+
+  .jumbotron {margin-bottom:1.5rem}
   .sub_main {
-    padding-bottom: 50px
+    padding-bottom: 50px;
   }
   .modal-dialog {
     width: 750px
   }
   #main_main {
+    position: relative;
     padding-left: 335px
   }
   footer ul li a, footer address {
@@ -1415,4 +1401,15 @@ table td.sl_registered_date {
   .jumbotron {
     text-align: center
   }
+}
+
+
+@include color-mode(dark) {
+  body {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+  }
+
+  .page-header h2, .page-header h1 {color: var(--bs-body-color)}
+  header,footer,.jumbotron,.media,aside article,#faqList dt a.title,.modal-body, .modal-footer {background-color:var(--bs-secondary-bg)}
 }
