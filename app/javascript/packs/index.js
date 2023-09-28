@@ -77,19 +77,6 @@ $(document).ready(function() {
         return false;
     });
 
-    $('#myModal').on('hidden.bs.modal', function () {
-        $(this).removeData('bs.modal');
-    });
-
-    $('.modal_link').click(function(event){
-        event.preventDefault();
-        $('#myModal').removeData("modal");
-        $('#myModal').load($(this).attr('href')+'?no_layout=true',function(){
-            $('#myModal').modal();
-        });
-        return false;
-    });
-
     $('.vote a:not(".confirm_login")').click(vote_click);
     $('.confirm_login').click(confirm_login_click);
 
