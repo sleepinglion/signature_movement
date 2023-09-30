@@ -1,16 +1,16 @@
 class HomeController < ApplicationController
   def index
-    if(params[:tab])
-      if(params[:tab]=='default')
+    if params[:tab]
+      if params[:tab]=='default'
         @users = User.order('id desc').page(params[:page]).per(12)
         @user_count=User.count
       end
 
-      if(params[:tab]=='notice')
+      if params[:tab]=='notice'
         @notices = Notice.order('id desc').page(0).per(12)
       end
 
-      if(params[:tab]=='article')
+      if params[:tab]=='article'
         @articles = Article.order('id desc').page(0).per(12)
       end
     else

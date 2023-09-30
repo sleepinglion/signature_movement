@@ -26,17 +26,14 @@
           <li
           <% if params[:controller] == 'reports' %>class="active"
           <% end %>><%= link_to reports_path do %><%= t(:report, scope: [:activerecord, :models]) %>
-              <span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span>
             <% end %></li>
           <li
           <% if params[:controller] == 'compliments' %>class="active"
           <% end %>><%= link_to compliments_path do %><%= t(:compliment, scope: [:activerecord, :models]) %>
-              <span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span>
             <% end %></li>
           <li
           <% if params[:controller] == 'faqs' %>class="active"
           <% end %>><%= link_to faqs_path do %><%= t(:faq, scope: [:activerecord, :models]) %>
-              <span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span>
             <% end %></li>
           <li class="dropdown
             <% if params[:controller] == 'proposes' || params[:controller] == 'models' || params[:controller] == 'improve' %> active
@@ -48,17 +45,14 @@
               <li
               <% if params[:controller] == 'proposes' %>class="active"
               <% end %>><%= link_to proposes_path do %><%= t(:propose, scope: [:activerecord, :models]) %>
-                  <span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span>
                 <% end %></li>
               <li
               <% if params[:controller] == 'models' %>class="active"
               <% end %>><%= link_to models_path do %><%= t(:model, scope: [:activerecord, :models]) %>
-                  <span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span>
                 <% end %></li>
               <li
               <% if params[:controller] == 'improve' %>class="active"
               <% end %>><%= link_to new_improve_path do %><%= t(:improve, scope: [:activerecord, :models]) %>
-                  <span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span>
                 <% end %></li>
             </ul>
           </li>

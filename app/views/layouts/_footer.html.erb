@@ -1,9 +1,31 @@
 <footer>
   <div class="container">
     <ul class="row">
-      <li class="col-6 col-lg-4"><%= link_to t(:intro, scope: [:activerecord, :models]), intro_index_path %></li>
-      <li class="col-6 col-lg-4">email:<%= mail_to t(:email_webmaster) %></li>
-      <li class="col-6 col-lg-4"><%= link_to t(:sitemap, scope: [:activerecord, :models]), sitemap_index_path %></li>
+      <li class="col-6 col-lg-3"><%= link_to t(:intro, scope: [:activerecord, :models]), intro_index_path %></li>
+      <li class="col-6 col-lg-3">email:<%= mail_to t(:email_webmaster) %></li>
+      <li class="col-6 col-lg-3"><%= link_to t(:sitemap, scope: [:activerecord, :models]), sitemap_index_path %></li>
+      <li class="col-6 col-lg-3 dropdown">
+        <%= link_to '#', { class: 'dropdown-toggle',role:"button",'data-bs-toggle': "dropdown",'aria-expanded':"false"} do %>
+          테마설정
+        <% end %>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+              밝은
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+              어두운
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+              자동
+            </button>
+          </li>
+        </ul>
+      </li>
     </ul>
     <div class="row">
       <address class="col-12">CopyLeft,
