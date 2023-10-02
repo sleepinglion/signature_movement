@@ -127,6 +127,10 @@ class UsersController < ApplicationController
       end
   end
 
+  def sign
+
+  end
+
   # POST /users
   # POST /users.json
   def create

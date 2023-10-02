@@ -11,7 +11,7 @@
                   <span id="username"><%= current_user.name %></span>님 환영합니다.
                 <% end %>
               </li>
-              <li><%= link_to t(:logout), destroy_user_session_path %></li>
+              <li><%= link_to t(:logout), destroy_user_session_path, {method: 'delete' } %></li>
             <% else %>
               <li><%= link_to t(:login), new_user_session_path %></li>
             <% end %>

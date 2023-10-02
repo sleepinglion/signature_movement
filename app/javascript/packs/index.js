@@ -52,7 +52,7 @@ $(document).ready(function() {
         return false;
     }
 
-    $('#sign_now').popover();
+    // $('#sign_now').popover();
 
     $('#main_main nav li a').click(function(){
         var param='no_layout=true&no_nav=true';

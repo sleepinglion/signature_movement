@@ -232,6 +232,12 @@ footer {
   display: none
 }
 
+.close {
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+
 .login-box {
   margin-left: auto;
   margin-right: auto
@@ -308,7 +314,7 @@ header nav .dropdown-menu li {
 
 #top_menu {
   position: absolute;
-  top: 20px;
+  top: 5px;
   right: 30px;
   float: left;
   width: 100%;
@@ -346,8 +352,6 @@ header nav .dropdown-menu li {
   height: 1px;
   text-indent: -9999px
 }
-
-
 
 aside article h3 {
   margin: 0 0 10px;
@@ -773,7 +777,7 @@ footer address {
   color: #999
 }
 
-.carousel-control-prev {
+#main_main .carousel-control-prev {
   background: none;
   top: 50px;
   left: -20px;
@@ -783,7 +787,8 @@ footer address {
   height: 150px
 }
 
-.carousel-control-next {
+#main_main .carousel-control-next {
+  display:none;
   background: none;
   top: 50px;
   right: -20px;
@@ -892,7 +897,7 @@ footer ul {
 #share ul {margin:20px 0;padding:0;list-style: none}
 #share li {display:inline-block;margin:0 10px;padding:0}
 .login-box {margin:3rem auto}
-#sl_login_form {margin-top:10px }
+#sl_login_form {margin-top:1rem;margin-bottom:2rem}
 
 
 .kakao-b-icon,.naver-b-icon,.google-b-icon,.apple-b-icon,.facebook-b-icon,.twitter-b-icon {width:60px;height:60px;border-radius:35px;display:inline-block;line-height:60px;text-align:center}
@@ -1227,7 +1232,7 @@ table td.sl_registered_date {
 
   #new_session_form label.text-right {text-align:left !important}
 
-  .carousel-control-prev, .carousel-control-next { display:none}
+  #main_main .carousel-control-prev, #main_main .carousel-control-next { display:none}
 }
 
 @media all and (min-width: 768px) and (max-width: 992px) {
@@ -1405,6 +1410,13 @@ table td.sl_registered_date {
   html, body {
     font-size: 18px
   }
+
+  #top_menu {top:20px}
+
+  #main_main .carousel-control-next {
+    display:flex;
+  }
+
   .container {
     width: 1500px
   }
@@ -1425,7 +1437,7 @@ table td.sl_registered_date {
 
 
   .page-header h2, .page-header h1 {color: var(--bs-body-color)}
-  header,footer,.jumbotron,.media,aside article,#faqList dt a.title,.modal-body, .modal-footer,.sl_content_header,.thead-default th {background-color:var(--bs-secondary-bg)}
+  header,footer,.jumbotron,.media,.card-body,aside article,#faqList dt a.title,.modal-body, .modal-footer,.sl_content_header,.thead-default th {background-color:var(--bs-secondary-bg)}
 }
 
 @include color-mode(light) {

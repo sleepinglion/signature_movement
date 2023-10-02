@@ -41,6 +41,7 @@ AntiKb::Application.routes.draw do
   resources :comments, only: :destroy
 
   resources :articles, :intro, :improve, :sitemap, :faqs, :faq_categories, :proposes, :notices, :galleries
+  get 'sign', to: 'users#sign'
   get 'kbsmind', to: 'home#kbsmind'
   get 'feed', to: 'home#feed'
   get 'privacy', to: 'home#privacy'

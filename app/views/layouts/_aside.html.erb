@@ -8,7 +8,7 @@
               <span id="username"><%= current_user.name %></span>님 환영합니다.
             <% end %>
           </p>
-          <p id="logout_submit"><%= link_to t(:logout), destroy_user_session_path, :class => 'btn btn-secondary btn-block' %></p>
+          <p id="logout_submit"><%= link_to t(:logout), destroy_user_session_path, :class => 'btn btn-secondary btn-block', :method => 'delete' %></p>
         </article>
       </div>
     <% else %>
