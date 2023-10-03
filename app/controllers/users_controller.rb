@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   load_and_authorize_resource  except: [:index, :show, :create, :new_comment]
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :upvote, :downvote, :create_comment, :new_comment, :delete_confirm]
+  before_action :set_user, only: [:edit, :update, :destroy, :upvote, :downvote, :create_comment, :new_comment, :delete_confirm]
 
   def initialize(*params)
     super(*params)
@@ -106,6 +106,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user= User.find(params[:id])
+
     @title=@user.name
     #  @comments = @user.comments.select('comments.*,r_users.name as username').all.joins("inner join users AS r_users ON comments.user_id=r_users.id")
 

@@ -38,6 +38,7 @@ ko:
   next : '다음'
   choose_file: '파일선택'
   browse: '찾기'
+  new_user : '회원가입'
 
   login_page : '로그인 페이지'
   login_title : '로그인'
@@ -461,7 +462,7 @@ ko:
         current_password : '현재 비밀번호'
         reports_count : '피해신고 갯수'
         compliments_count : '경쟁사칭찬 갯수'
-        url : '홈페이지'
+        url : 'SNS,홈페이지등'
         enable : '사용여부'
   recaptcha:
     errors:
