@@ -1,10 +1,29 @@
+Admin.create!(:id=>1,:email => 'admin@jedaeroweb.co.kr',:name=>'잠자는사자',:password => 'a12345', :password_confirmation => 'a12345', :admin_picture_attributes=>{ :picture=>File.open(Rails.root.join("app","assets", "images", "dog.png"))})
+Admin.create!(:id=>2,:email=>'sub_admin@jedaeroweb.co.kr',:name=>'서브관리자',:password => 'a12345', :password_confirmation => 'a12345', :admin_picture_attributes=>{ :picture=>File.open(Rails.root.join("app","assets", "images", "dog.png"))})
+Admin.create!(:id=>3,:email=>'operator@jedaeroweb.co.kr',:name=>'Operator',:password => 'a12345', :password_confirmation => 'a12345', :admin_picture_attributes=>{ :picture=>File.open(Rails.root.join("app","assets", "images", "dog.png"))})
+Admin.create!(:id=>4,:email=>'exporter@jedaeroweb.co.kr',:name=>'exporter',:password => 'a12345', :password_confirmation => 'a12345', :admin_picture_attributes=>{ :picture=>File.open(Rails.root.join("app","assets", "images", "dog.png"))})
+Admin.create!(:id=>5,:email=>'reader@jedaeroweb.co.kr',:name=>'Reader',:password => 'a12345', :password_confirmation => 'a12345', :admin_picture_attributes=>{ :picture=>File.open(Rails.root.join("app","assets", "images", "dog.png"))})
+
+Role.create!(id: 1, title: '관리자', role: 'administrator')
+Role.create!(id: 2, title: '보조관리자', role: 'sub_administrator')
+Role.create!(id: 3, title: '운영자', role: 'operator')
+Role.create!(id: 4, title: '보조운영자', role: 'sub operator')
+Role.create!(id: 5, title: '읽기만 가능', role: 'reader')
+
+RolesAdmin.create!(role_id: 1, admin_id: 1)
+RolesAdmin.create!(role_id: 1, admin_id: 2)
+RolesAdmin.create!(role_id: 2, admin_id: 3)
+RolesAdmin.create!(role_id: 3, admin_id: 4)
+RolesAdmin.create!(role_id: 4, admin_id: 5)
+
+
 AuthenticationProvider.create!(name: 'facebook')
 AuthenticationProvider.create!(name: 'twitter')
 AuthenticationProvider.create!(name: 'google')
 AuthenticationProvider.create!(name: 'naver')
 AuthenticationProvider.create!(name: 'kakao')
 
-User.create!(:name=>'잠자는-사자',:email => 'admin@sleepinglion.pe.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'살인자 은행 망해라!!',:admin=>true)
+User.create!(:name=>'잠자는-사자',:email => 'admin@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'살인자 은행 망해라!!',:admin=>true)
 #,:created_at=>'2016-11-01 11:22:32'
 User.create!(:name=>'폭탄테러',:email => 'toughjjh1@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'폭파하고 싶다!!')
 #,:created_at=>'2016-11-01 05:22:32'

@@ -11,24 +11,24 @@
     </div>
   <% end %>
   <div class="form-group">
-    <%= f.label :bank_id, :class => 'control-label' %>
+    <%= f.label :bank_id, :class => 'form-label' %>
     <%= f.select :bank_id, options_from_collection_for_select(Bank.where(:enable => true).all, 'id', 'title', @compliment.bank_id), {}, { :class => "form-control input-lg" } %>
   </div>
   <div class="form-group">
-    <%= f.label :compliment_category_id, :class => 'control-label' %>
+    <%= f.label :compliment_category_id, :class => 'form-label' %>
     <%= f.select :compliment_category_id, options_from_collection_for_select(ComplimentCategory.where(:enable => true).all, 'id', 'title', @compliment.compliment_category_id), {}, { :class => "form-control input-lg" } %>
   </div>
   <div class="form-group">
-    <%= f.label :title, :class => 'control-label' %>
+    <%= f.label :title, :class => 'form-label' %>
     <%= f.text_field :title, :class => 'form-control input-lg', :required => 'required' %>
   </div>
   <%= f.fields_for :compliment_content do |c| %>
     <div class="form-group">
-      <%= c.label :content, :class => 'control-label' %>
+      <%= c.label :content, :class => 'form-label' %>
       <%= c.text_area :content, :class => 'form-control input-lg', :rows => 7, :required => 'required' %>
     </div>
   <% end %>
-  <div class="form-group">
-    <%= f.submit :class => 'btn btn-lg btn-block btn-primary' %>
+  <div class="d-grid gap-2">
+    <%= f.submit :class => 'btn btn-lg btn-primary' %>
   </div>
 <% end %>

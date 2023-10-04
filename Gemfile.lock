@@ -533,7 +533,6 @@ DEPENDENCIES
   meta-tags
   mini_magick
   mysql2
-  net-smtp
   nokogiri (>= 1.12.5)
   oauth2 (= 1.4.11)
   omniauth
