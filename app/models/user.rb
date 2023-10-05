@@ -20,6 +20,8 @@ class User < ApplicationRecord
     self.__send__(params.provider, params)
   end
 
+  private
+  
   def default_values
     self.name ||= '#'+SecureRandom.uuid
   end
