@@ -1,3 +1,11 @@
+AuthenticationProvider.create!(name: 'kakao')
+AuthenticationProvider.create!(name: 'twitter')
+AuthenticationProvider.create!(name: 'google_oauth2')
+AuthenticationProvider.create!(name: 'apple')
+AuthenticationProvider.create!(name: 'facebook')
+AuthenticationProvider.create!(name: 'naver')
+AuthenticationProvider.create!(name: 'github')
+
 User.create!(:name=>'잠자는-사자',:email => 'user@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'살인자 은행 망해라!!',:admin=>true)
 #,:created_at=>'2016-11-01 11:22:32'
 User.create!(:name=>'폭탄테러',:email => 'user1@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'폭파하고 싶다!!')
