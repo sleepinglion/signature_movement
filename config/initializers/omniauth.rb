@@ -19,4 +19,13 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   # 또는 Redirect Path를 설정하고 싶다면(or if you want to customize your Redirect Path)
   provider :kakao, ENV['KAKAO_KEY'], {:redirect_path => '/users/auth/kakao/callback'}
   provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
+  provider :twitter, ENV['TWITTER_ID'], ENV['TWITTER_SECRET']
+           {
+             :secure_image_url => 'true',
+             :image_size => 'original',
+             :authorize_params => {
+               :force_login => 'true',
+               :lang => 'pt'
+             }
+           }
 end
