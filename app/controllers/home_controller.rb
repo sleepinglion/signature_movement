@@ -2,8 +2,8 @@ class HomeController < ApplicationController
   def index
     if params[:tab]
       if params[:tab]=='default'
-        @users = User.where.not(description: nil).order('id desc').page(params[:page]).per(12)
-        @user_count=User.where.not(description: nil).count
+        @users = User.where('description IS NOT NULL').order('id desc').page(params[:page]).per(12)
+        @user_count=User.where('description IS NOT NULL').count
       end
 
       if params[:tab]=='notice'
