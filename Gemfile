@@ -57,6 +57,7 @@ gem 'omniauth-naver'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-kakao', path: "lib/omniauth-kakao"
 gem 'omniauth-apple'
+gem 'omniauth-twitter'
 gem 'omniauth-github'
 
 group :development, :test do
