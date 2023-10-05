@@ -58,7 +58,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-kakao', path: "lib/omniauth-kakao"
 gem 'omniauth-apple'
 gem 'omniauth-twitter'
-gem 'omniauth-github', '~> 2.0.0'
+gem 'omniauth-github'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
