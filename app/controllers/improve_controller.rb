@@ -67,7 +67,7 @@ class ImproveController < ApplicationController
   # PUT /improve/1.json
   def update
     respond_to do |format|
-      if @improve.update_attributes(improve_params)
+      if @improve.update(improve_params)
         format.html { redirect_to @improve, :notice=> @controller_name + t(:message_success_update)}
         format.json { head :no_content }
       else

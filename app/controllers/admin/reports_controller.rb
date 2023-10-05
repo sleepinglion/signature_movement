@@ -64,7 +64,7 @@ class Admin::ReportsController < Admin::AdminController
   # PUT /admin/reports/1.json
   def update
     respond_to do |format|
-      if @admin_report.update_attributes(admin_report_params)
+      if @admin_report.update(admin_report_params)
         format.html { redirect_to admin_reports_url, notice: @controller_name + t(:message_success_update) }
         format.json { head :no_content }
       else

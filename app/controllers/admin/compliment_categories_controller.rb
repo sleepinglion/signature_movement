@@ -65,7 +65,7 @@ class Admin::ComplimentCategoriesController < Admin::AdminController
   # PUT /admin/compliment_categories/1.json
   def update
     respond_to do |format|
-      if @admin_compliment_category.update_attributes(admin_compliment_category_params)
+      if @admin_compliment_category.update(admin_compliment_category_params)
         format.html { redirect_to admin_compliment_category_path(@admin_compliment_category), notice: @controller_name +t(:message_success_update)}
         format.json { head :ok }
       else

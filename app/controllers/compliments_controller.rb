@@ -55,7 +55,7 @@ class ComplimentsController < BoardController
   # PUT /compliments/1.json
   def update
     respond_to do |format|
-      if @compliment.update_attributes(compliment_params)
+      if @compliment.update(compliment_params)
         format.html { redirect_to @compliment, :notice=> @controller_name +t(:message_success_update)}
         format.json { head :no_content }
       else

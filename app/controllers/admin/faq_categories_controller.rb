@@ -65,7 +65,7 @@ class Admin::FaqCategoriesController < Admin::AdminController
   # PUT /admin/faq_categories/1.json
   def update
     respond_to do |format|
-      if @admin_faq_category.update_attributes(admin_faq_category_params)
+      if @admin_faq_category.update(admin_faq_category_params)
         format.html { redirect_to admin_faq_category_path(@admin_faq_category), notice: @controller_name + t(:message_success_update)}
         format.json { head :ok }
       else

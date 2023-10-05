@@ -67,7 +67,7 @@ class Admin::ProposesController < Admin::AdminController
   # PUT /admin/proposes/1.json
   def update
     respond_to do |format|
-      if @admin_propose.update_attributes(admin_propose_params)
+      if @admin_propose.update(admin_propose_params)
         format.html { redirect_to admin_proposes_url, notice: @controller_name + t(:message_success_update) }
         format.json { head :no_content }
       else

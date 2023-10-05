@@ -64,7 +64,7 @@ class ProposesController < ApplicationController
   # PUT /proposes/1.json
   def update
     respond_to do |format|
-      if @propose.update_attributes(propose_params)
+      if @propose.update(propose_params)
         format.html { redirect_to proposes_url, :notice=> @controller_name +t(:message_success_update)}
         format.json { head :no_content }
       else

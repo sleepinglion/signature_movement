@@ -66,7 +66,7 @@ class ReportsController < BoardController
   # PUT /reports/1.json
   def update
     respond_to do |format|
-      if @report.update_attributes(report_params)
+      if @report.update(report_params)
         format.html { redirect_to @report, :notice=> @controller_name +t(:message_success_update)}
         format.json { head :no_content }
       else

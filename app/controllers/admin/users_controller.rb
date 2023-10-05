@@ -65,7 +65,7 @@ class Admin::UsersController < Admin::AdminController
   # PUT /admin_users/1.json
   def update
     respond_to do |format|
-      if @admin_user.update_attributes(admin_user_params)
+      if @admin_user.update(admin_user_params)
         format.html { redirect_to admin_user_path(@admin_user), notice: @controller_name +t(:message_success_update) }
         format.json { head :no_content }
       else

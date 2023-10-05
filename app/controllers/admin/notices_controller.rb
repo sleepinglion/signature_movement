@@ -66,7 +66,7 @@ class Admin::NoticesController < Admin::AdminController
   # PUT /admin/notices/1.json
   def update
     respond_to do |format|
-      if @admin_notice.update_attributes(admin_notice_params)
+      if @admin_notice.update(admin_notice_params)
         format.html { redirect_to admin_notice_path(@admin_notice), :notice=> @controller_name +t(:message_success_update)}
         format.json { head :no_content }
       else

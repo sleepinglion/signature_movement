@@ -33,7 +33,7 @@ class CreateDeviseToUsers < ActiveRecord::Migration[6.1]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
       t.string :photo
-      t.string :description, null: false, limit: 150
+      t.string :description, limit: 150
       t.string :url, limit: 150
       t.boolean  :admin, null: false, default: false
 

@@ -64,7 +64,7 @@ class ArticlesController < ApplicationController
   # PUT /articles/1.json
   def update
     respond_to do |format|
-      if @article.update_attributes(article_params)
+      if @article.update(article_params)
         format.html { redirect_to @article, :notice=> @controller_name +t(:message_success_update)}
         format.json { head :no_content }
       else

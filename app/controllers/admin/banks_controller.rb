@@ -65,7 +65,7 @@ class Admin::BanksController < Admin::AdminController
   # PUT /admin/models/1.json
   def update
     respond_to do |format|
-      if @admin_bank.update_attributes(admin_bank_params)
+      if @admin_bank.update(admin_bank_params)
         format.html { redirect_to admin_bank_path(@admin_bank), notice: @controller_name + t(:message_success_update)}
         format.json { head :no_content }
       else

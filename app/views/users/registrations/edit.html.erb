@@ -18,24 +18,24 @@
 		<div class="card-body">
 
 	<div class="form-group">
-  	<%= f.label :email %><br />
-  	<%= f.email_field :email, :class=>'form-control' %>
+  	<%= f.label :email ,:class => 'form-label' %>
+  	<%= f.email_field :email, :class=>'form-control form-control-lg' %>
 	</div>
 	<div class="form-group">
-  <%= f.label :password %> <i>비밀번호 변경을 원하지 않으면 공백으로 제출</i><br />
-  <%= f.password_field :password,:class=>'form-control' %>
+  <%= f.label :password ,:class => 'form-label' %> <i>비밀번호 변경을 원하지 않으면 공백으로 제출</i><br />
+  <%= f.password_field :password,:class=>'form-control form-control-lg' %>
 	</div>
 	<div class="form-group">
- 		<%= f.label :password_confirmation %><br />
-  	<%= f.password_field :password_confirmation, :class=>'form-control' %>
+ 		<%= f.label :password_confirmation ,:class => 'form-label' %>
+  	<%= f.password_field :password_confirmation, :class=>'form-control form-control-lg' %>
 	</div>
 	<div class="form-group">
- 		<%= f.label :current_password %> <i>정보변경하려면 입력하세요</i><br />
- 		<%= f.password_field :current_password, :class=>'form-control',:required=>'required' %>
+ 		<%= f.label :current_password ,:class => 'form-label' %> <i>정보변경하려면 입력하세요</i><br />
+ 		<%= f.password_field :current_password, :class=>'form-control form-control-lg',:required=>'required' %>
 	</div>
  	<div class="form-group">
-  	<%= f.label :description %><br />
-  	<%= f.text_field :description, :class=>'form-control' %>
+  	<%= f.label :description ,:class => 'form-label' %>
+  	<%= f.text_field :description, :class=>'form-control form-control-lg' %>
   </div>
 
 </div>
@@ -48,7 +48,7 @@
 		<div class="card-body">
 
 	<div class="form-group">
-		<%= f.label :photo %>
+		<%= f.label :photo ,:class => 'form-label' %>
 		<% if resource.photo? %>
 			<%= image_tag(resource.photo.small_thumb.url) %>
 		<% end %>
@@ -57,8 +57,8 @@
 		<%= f.hidden_field :photo_cache %>
 	</div>
 	<div class="form-group">
-  	<%= f.label :url %><br />
-  	<%= f.url_field :url, :class=>'form-control' %>
+  	<%= f.label :url ,:class => 'form-label' %>
+  	<%= f.url_field :url, :class=>'form-control form-control-lg' %>
 	</div>
 </div>
 </article>

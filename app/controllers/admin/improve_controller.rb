@@ -65,7 +65,7 @@ class Admin::ImproveController < Admin::AdminController
   # PUT /admin/improve/1.json
   def update
     respond_to do |format|
-      if @admin_improve.update_attributes(admin_improve_params)
+      if @admin_improve.update(admin_improve_params)
         format.html { redirect_to admin_improve_path(@admin_improve), notice: @controller_name + t(:message_success_update) }
         format.json { head :no_content }
       else

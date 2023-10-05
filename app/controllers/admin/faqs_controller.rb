@@ -81,7 +81,7 @@ class Admin::FaqsController < Admin::AdminController
     @admin_faq = Faq.find(params[:id])
 
     respond_to do |format|
-      if @admin_faq.update_attributes(admin_faq_params)
+      if @admin_faq.update(admin_faq_params)
         format.html { redirect_to admin_faq_path(@admin_faq), :notice=> @controller_name +t(:message_success_update)}
         format.json { head :ok }
       else

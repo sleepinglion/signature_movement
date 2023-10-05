@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   load_and_authorize_resource  except: [:index, :show, :create, :new_comment]
-  before_action :set_user, only: [:edit, :update, :destroy, :upvote, :downvote, :create_comment, :new_comment, :delete_confirm]
+  before_action :set_user, only: [:edit, :sign, :update, :destroy, :upvote, :downvote, :create_comment, :new_comment, :delete_confirm]
 
   def initialize(*params)
     super(*params)
@@ -130,7 +130,9 @@ class UsersController < ApplicationController
   end
 
   def sign
-
+    if @user.id!=current_user.id
+      redirect_to @user, :alert=> "권한이 없습니다."
+    end
   end
 
   # POST /users
@@ -150,14 +152,16 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
-    @user = User.find(params[:id])
+
+    puts @user
+    puts user_params
 
     respond_to do |format|
-      if @user.update_attributes(user_params)
+      if @user.update(user_params)
         format.html { redirect_to user_path(@user), :notice => @controller_name +t(:message_success_update)}
         format.json { head :no_content }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => "sign" }
         format.json { render :json => @user.errors, :status => :unprocessable_entity }
       end
     end
@@ -212,7 +216,7 @@ class UsersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :current_password, :photo )
+    params.require(:user).permit(:id, :name, :email, :password, :password_confirmation, :current_password, :photo, :description )
   end
 
   def comment_params
