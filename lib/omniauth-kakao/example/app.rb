@@ -2,7 +2,7 @@ require 'bundler/setup'
 require 'sinatra'
 require 'omniauth-kakao'
 
-client_id = ENV['KAKAO_CLIENT_ID']
+client_id = ENV['KAKAO_KEY']
 if client_id == nil
   class NoClientIDError < StandardError; end
   raise NoClientIDError, "KAKAO_CLIENT_ID is nil. Please run example like `KAKAO_CLIENT_ID='<your-kakako-client-id>' ruby app.rb`"

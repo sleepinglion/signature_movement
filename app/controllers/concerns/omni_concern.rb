@@ -31,6 +31,7 @@ module OmniConcern
 
   def create_user_and_authentication_and_sign_in(auth_params, provider)
     user = User.create_from_omniauth(auth_params)
+    #user.skip_confirmation
     if user.valid?
       create_authentication_and_sign_in(auth_params, user, provider)
     else
