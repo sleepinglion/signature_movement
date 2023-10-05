@@ -896,7 +896,7 @@ footer ul {
 #sl_login_form {margin-top:1rem;margin-bottom:2rem}
 
 
-.kakao-b-icon,.naver-b-icon,.google-b-icon,.apple-b-icon,.facebook-b-icon,.twitter-b-icon {width:60px;height:60px;border-radius:35px;display:inline-block;line-height:60px;text-align:center}
+.kakao-b-icon,.naver-b-icon,.google-b-icon,.apple-b-icon,.facebook-b-icon,.twitter-b-icon,.github-b-icon {width:60px;height:60px;border-radius:35px;display:inline-block;line-height:60px;text-align:center}
 .kakao-b-icon {
   text-indent:-9999px;
   background-image:image-url('btn_kakao.png');
@@ -945,6 +945,14 @@ footer ul {
   background-position:center center;
   background-repeat:no-repeat;
 }
+.github-b-icon {
+  margin-left:15px;
+  text-indent:-9999px;
+  background-image:image-url('btn_github.png');
+  background-position:center center;
+  background-color:#fff;
+}
+
 
 /* default */
 table td.sl_registered_date {
