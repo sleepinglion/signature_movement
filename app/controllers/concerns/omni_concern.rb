@@ -10,7 +10,7 @@ module OmniConcern
       sign_in_with_existing_authentication(existing_user)
     else
       if user_signed_in?
-        SocialAccount.get_provider_account(current_user.id, provider.id).first_or_create(user_id: current_user.id, authentication_provider_id: provider.id, token: auth_params.try(:[], "credentials").try(:[], "token"), secret: auth_params.try(:[], "credentials").try(:[], "secret"))
+        UserAuthentication.get_provider_account(current_user.id, provider.id).first_or_create(user_id: current_user.id, authentication_provider_id: provider.id, token: auth_params.try(:[], "credentials").try(:[], "token"), secret: auth_params.try(:[], "credentials").try(:[], "secret"))
         redirect_to new_user_registration_url
       elsif authentication
         create_authentication_and_sign_in(auth_params, existing_user, provider)

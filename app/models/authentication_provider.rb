@@ -1,5 +1,4 @@
 class AuthenticationProvider < ApplicationRecord
-  has_many :social_accounts
   has_many :users
   has_many :user_authentications
 
