@@ -49,8 +49,7 @@
 
 $default-bg : #ddd;
 $default-color: $body-color;
-$secondary-bg :#fff;
-
+$secondary-bg :#f1f1f1;
 $color-mode-type: data;
 
 html,body {margin:0;padding:0; height:100%}
@@ -1450,7 +1449,8 @@ table td.sl_registered_date {
     color: #000
   }
 
+  .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link,.nav-tabs {border-color:#ccc}
+  .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {border-bottom-color:#f1f1f1}
   a.btn-primary,a.btn-primary:visited {color:#fff}
-
   aside a,aside a:visited {color:#fff}
 }
