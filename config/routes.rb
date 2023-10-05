@@ -5,7 +5,7 @@ AntiKb::Application.routes.draw do
     mount LetsEncrypt::Engine => '/.well-known'
   end
 
-  devise_for :users, :controllers => { :sessions => "users/sessions", :registrations => "users/registrations", :passwords => "users/passwords" }, :path_names => { :sign_up => 'new', :sign_in => 'login', :sign_out => 'logout' } do
+  devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks', :sessions => "users/sessions", :registrations => "users/registrations", :passwords => "users/passwords" }, :path_names => { :sign_up => 'new', :sign_in => 'login', :sign_out => 'logout' } do
     get 'login', to: 'users::Sessions#new'
     get 'logout', to:  'users::Sessions#destroy'
   end
