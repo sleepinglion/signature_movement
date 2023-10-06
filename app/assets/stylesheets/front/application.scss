@@ -230,7 +230,6 @@ footer {
 }
 
 #login-page {
-  background: #fff;
   min-height: 100%;
   width: 728px
 }
@@ -351,7 +350,7 @@ aside article h3 {
 
 aside h2 a {
   display: block;
-  border: 1px solid #ccc;
+  border: 1px solid var(--bs-border-color);
   border-radius: 5px;
   padding: 5px
 }
@@ -360,11 +359,6 @@ aside h2 a span {
   display: block;
   width: 100%;
   text-align: center
-}
-
-aside h2 a:hover {
-  text-decoration: none;
-  color: #000
 }
 
 footer address {
@@ -381,21 +375,14 @@ footer address {
 }
 
 #report_main table tr:last-child td, #compliment_main table tr:last-child td {
-  border-bottom: 1px solid #ccc
+  border-bottom: 1px solid var(--bs-border-color)
 }
 
 #report_main tbody tr:hover, #compliment_main tbody tr:hover {
   cursor: pointer;
-  background: #999
+  background: $secondary-bg
 }
 
-#report_main tbody tr:hover td, #compliment_main tbody tr:hover td {
-  color: #ccc
-}
-
-#report_main tbody tr:hover td a, #compliment_main tbody tr:hover td a {
-  color: #fff
-}
 
 /* FAQ Category*/
 #faqCategoryList {
@@ -886,9 +873,8 @@ footer ul {
 
 #share ul {margin:20px 0;padding:0;list-style: none}
 #share li {display:inline-block;margin:0 10px;padding:0}
-.login-box {margin:3rem auto}
+.login-box,.sns-box {margin:3rem auto}
 #sl_login_form {margin-top:1rem;margin-bottom:2rem}
-
 
 .kakao-b-icon,.naver-b-icon,.google-b-icon,.apple-b-icon,.facebook-b-icon,.twitter-b-icon,.github-b-icon {width:60px;height:60px;border-radius:35px;display:inline-block;line-height:60px;text-align:center}
 .kakao-b-icon {
