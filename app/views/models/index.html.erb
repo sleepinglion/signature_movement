@@ -1,5 +1,6 @@
 <% breadcrumb :models %>
 <section id="model_main" class="sub_main row">
+  <%= render :partial => 'layouts/ad' %>
   <ul class="media-list col-12">
     <% unless @models.empty? %>
       <% @models.each do |model| %>

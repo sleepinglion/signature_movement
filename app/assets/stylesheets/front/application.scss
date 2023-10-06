@@ -131,17 +131,34 @@ mark, rp, rt, ruby, summary, time {
 }
 
 .page-header {
-  margin-top: 30px;
-  border-bottom: 1px solid #999;
-  margin-bottom: 40px
+  float: left;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--bs-border-color);
 }
 
-.page-header h2 {
+.page-header h2, .page-header h1 {
   float: left;
-  margin: 0.4em 0;
+  margin: 0.5rem 0;
   padding: 0;
   font-weight: bold;
   color: $default-color;
+  font-size: 140%
+}
+
+.page-header .breadcrumb {
+  float: right;
+  margin: 0
+}
+
+.page-header .breadcrumb li {
+  margin-left: 5px;
+  margin-right: 5px
+}
+
+.page-header .breadcrumb li:first-child:after {
+  content: ' /'
 }
 
 .page-header nav {
@@ -192,34 +209,6 @@ footer {
   text-align: center
 }
 
-.page-header {
-  float: left;
-  width: 100%;
-  border-bottom: 1px solid #ccc
-}
-
-.page-header h2, .page-header h1 {
-  float: left;
-  margin: 0.5rem 0;
-  padding: 0;
-  font-weight: bold;
-  color: $default-color;
-  font-size: 140%
-}
-
-.page-header .breadcrumb {
-  float: right;
-  margin: 0
-}
-
-.page-header .breadcrumb li {
-  margin-left: 5px;
-  margin-right: 5px
-}
-
-.page-header .breadcrumb li:first-child:after {
-  content: ' /'
-}
 
 .alert-success {
   clear: both
@@ -1071,7 +1060,7 @@ table td.sl_registered_date {
 }
 
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
   #top_menu {display:none}
   #mobile_menu {display:block;position:absolute;top:5px;right:10px;}
 
@@ -1113,7 +1102,7 @@ table td.sl_registered_date {
     clear: both;
     float: left;
     width: 100%;
-    text-align: left
+    text-align: left;
   }
   header nav ul.nav-pills > li + li {
     margin-left: 0
@@ -1124,10 +1113,10 @@ table td.sl_registered_date {
   }
   header nav ul li a {
     display: block;
-    border-bottom: 1px solid #f3f3f3;
+    border-bottom: 1px solid var(--bs-border-color);
     text-indent: 1em;
     padding: 10px;
-    border-radius: 5px
+    border-radius: 0;
   }
   header nav ul li a:hover {
     text-decoration: none;
@@ -1367,6 +1356,8 @@ table td.sl_registered_date {
     font-weight: normal;
   }
 }
+
+
 
 @media all and (min-width: 992px) and (max-width: 1200px) {
   .jumbotron {margin-bottom:2rem}
