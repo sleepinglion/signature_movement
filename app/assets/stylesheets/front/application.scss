@@ -52,6 +52,11 @@ $default-color: $body-color;
 $secondary-bg :#f1f1f1;
 $color-mode-type: data;
 
+
+[data-bs-theme="light"] {
+  --bs-border-color : #ccc
+}
+
 html,body {margin:0;padding:0; height:100%}
 body {background-color:$default-bg;color: $default-color; font-family: "Nanum Gothic", "나눔고딕", "Malgun Gothic", "맑은 고딕", "gulim","굴림","Dotum", "돋움", Arial, Helvetica, sans-serif}
 
@@ -402,6 +407,10 @@ footer address {
   border-right: 1px solid #999
 }
 
+#faqCategoryList li:last-child {
+  border-right:none;
+}
+
 #faqCategoryList li a.title {
   float: left;
   width: 100%;
@@ -453,8 +462,7 @@ footer address {
 #faqList dt a.title {
   display: block;
   padding: 11px 0 11px 40px;
-  color: #666;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--bs-border-color);
   background: $secondary-bg asset-url('board/toggle_open.png') no-repeat 10px 11px;
   text-decoration: none
 }
