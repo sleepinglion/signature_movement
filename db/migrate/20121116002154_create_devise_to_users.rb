@@ -36,12 +36,13 @@ class CreateDeviseToUsers < ActiveRecord::Migration[6.1]
       t.string :description, limit: 150
       t.string :url, limit: 150
       t.boolean  :admin, null: false, default: false
+      t.boolean  :enable, null: false, default: true
 
       t.integer :reports_count, null: false, default: 0
       t.integer :compliments_count, null: false, default: 0
 
       # Uncomment below if timestamps were not included in your original model.
-      # t.timestamps null: false
+      t.timestamps null: false
     end
 
     add_index :users, :email,                unique: true

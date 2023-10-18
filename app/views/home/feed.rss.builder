@@ -19,11 +19,14 @@ xml.rss :version => "2.0" do
         xml.link t(:site_full_url)+ '/users/' + user.id.to_s
         xml.guid user.id
 
+        if user.description
         text = user.description
         # if you like, do something with your content text here e.g. insert image tags.
         # Optional. I'm doing this on my website.
 
+
         xml.description "<p>" + text + "</p>"
+        end
 
       end
     end

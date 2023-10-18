@@ -541,7 +541,7 @@ footer address {
 }
 
 #main_main a.none_more {
-  top: -70px
+  top: -60px
 }
 
 #main_main .date {
@@ -1013,10 +1013,6 @@ table td.sl_registered_date {
   padding: 10px 0
 }
 
-.adsbygoogle {
-  width: 100%
-}
-
 .continue-sns {
   margin-bottom:30px;
 }
@@ -1259,9 +1255,9 @@ table td.sl_registered_date {
     height: 90px;
     border-bottom: 1px solid #ccc;
   }
-  header h1, header h2 {
-    margin-top: 35px
-  }
+
+  header h1 a {display:block;margin-top:1.5rem}
+
   header nav ul {
     clear: both;
     float: left;
@@ -1306,13 +1302,13 @@ table td.sl_registered_date {
     background: $secondary-bg;
     border-bottom: 1px solid var(--bs-secondary-bg);
   }
-  header h1, header h2 {
+  header h1 {
     position: relative;
     z-index: 9;
-    float: left;
-    margin: 30px 0 0 0;
     padding: 0
   }
+
+
   header nav {
     float: right;
     z-index: 9;
@@ -1363,8 +1359,8 @@ table td.sl_registered_date {
 
 
 @media all and (min-width: 992px) and (max-width: 1200px) {
-  .jumbotron {margin-bottom:2rem}
-  #sl-ad {display:none}
+  .jumbotron {margin-top:1rem;margin-bottom:1.5rem}
+  #aside-ad {display:none}
   header nav ul {float:right}
   aside article {
     min-height:8rem
