@@ -92,7 +92,7 @@ end
 group :production do
   gem 'asset_sync'
   gem 'fog-azure-rm', git: 'https://github.com/sleepinglion/fog-azure-rm'
-  gem 'mysql2'
+  gem 'mysql2', '>=0.5.5'
   gem 'redis'
   gem 'redis-store', '1.9.1'
   gem 'dotenv-rails'
