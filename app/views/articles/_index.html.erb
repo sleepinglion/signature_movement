@@ -5,7 +5,7 @@
       <ul>
         <% @articles.each do |article| %>
           <li><%= link_to(article.title, article.url, { :target => '_blank' }) %>
-            <span class="date d-none d-sm-block"><%= get_dt_format article.created_at.to_date %></span></li>
+            <span class="date d-none d-sm-block"><%= time_ago_in_words article.created_at.to_date %></span></li>
         <% end %>
       </ul>
     <% else %>

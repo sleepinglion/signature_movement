@@ -34,7 +34,7 @@
               <td><%= link_to compliment.title.truncate(25), compliment %></td>
               <td class="text-end sl_count"><%= compliment.default_view_count + compliment.impressionist_count(:filter => :ip_address) %></td>
               <td class="text-end sl_count"><%= compliment.cached_votes_up %></td>
-              <td class="text-end sl_registered_date"><%= get_dt_format(compliment.created_at.to_date) %></td>
+              <td class="text-end sl_registered_date"><%= time_ago_in_words compliment.created_at.to_date %></td>
             </tr>
           <% end %>
         <% else %>

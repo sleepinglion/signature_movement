@@ -5,7 +5,7 @@
 		<% unless @proposes.empty? %>
 		<% @proposes.each do |propose| %>
 		<article class="media shadow-sm rounded content_list" itemscope itemprop="article" itemtype="http://schema.org/Article">
-			<div class="content_list_head"><span class="content_list_name"><%=propose.user.name %></span> &nbsp;&nbsp; <span class="content_list_title"  itemprop="name"><%=propose.title %></span> <span class="content_list_date hidden-xs"><%=get_dt_format propose.created_at %></span></div>
+			<div class="content_list_head"><span class="content_list_name"><%=propose.user.name %></span> &nbsp;&nbsp; <span class="content_list_title"  itemprop="name"><%=propose.title %></span> <span class="content_list_date hidden-xs"><%=time_ago_in_words propose.created_at %></span></div>
 			<div class="content_list_content" itemprop="text"><%=simple_format(propose.content) %></div>
 		</article>
 		<% end %>
