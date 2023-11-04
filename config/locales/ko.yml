@@ -228,11 +228,11 @@ ko:
         one: 약 한 달
         other: 약 %{count}달
       about_x_years:
-        one: 약 일 년
-        other: 오래됨
+        one: 약 일년
+        other: 일년 이상
       almost_x_years:
-        one: 일 년 이하
-        other: 오래됨
+        one: 일년 이하
+        other: 일년 이상
       half_a_minute: 30초
       less_than_x_minutes:
         one: 일 분 이하
@@ -241,8 +241,8 @@ ko:
         one: 일 초 이하
         other: ! '%{count}초 이하'
       over_x_years:
-        one: 일 년 이상
-        other: 오래됨
+        one: 일년 이상
+        other: 일년 이상
       x_days:
         one: 하루
         other: ! '%{count}일'
