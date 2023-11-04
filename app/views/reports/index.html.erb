@@ -17,9 +17,9 @@
           <th class="text-center"><%= t(:user_id, scope: [:activerecord, :attributes, :report]) %></th>
           <th><%= t(:report_category_id, scope: [:activerecord, :attributes, :report]) %></th>
           <th><%= t(:title, scope: [:activerecord, :attributes, :report]) %></th>
-          <th class="text-right sl_count"><%= t(:label_count) %></th>
-          <th class="text-right sl_recommend"><%= t(:label_recommend_count) %></th>
-          <th class="text-right sl_registered_date"><%= t(:label_created_at) %></th>
+          <th class="text-end sl_count"><%= t(:label_count) %></th>
+          <th class="text-end sl_recommend"><%= t(:label_recommend_count) %></th>
+          <th class="text-end sl_registered_date"><%= t(:label_created_at) %></th>
         </tr>
         </thead>
         <tbody>
@@ -29,9 +29,9 @@
               <td><%= report.user.name %></td>
               <td><%= report.report_category.title %></td>
               <td><%= link_to report.title.truncate(25), report %></td>
-              <td class="text-right sl_count"><%= report.default_view_count + report.impressionist_count(:filter => :ip_address) %></td>
-              <td class="text-right sl_count"><%= report.cached_votes_up %></td>
-              <td class="text-right sl_registered_date"><%= get_dt_format(report.created_at.to_date) %></td>
+              <td class="text-end sl_count"><%= report.default_view_count + report.impressionist_count(:filter => :ip_address) %></td>
+              <td class="text-end sl_count"><%= report.cached_votes_up %></td>
+              <td class="text-end sl_registered_date"><%= get_dt_format(report.created_at.to_date) %></td>
             </tr>
           <% end %>
         <% else %>

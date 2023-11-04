@@ -1,6 +1,6 @@
 <% breadcrumb :notices %>
 <div id="notice_main" class="table-responsive">
-	<table width="100%" cellpadding="0" cellspacing="0" class="table slboard_list">
+	<table width="100%" class="table slboard_list">
 		<colgroup>
 			<col style="width:10%" />
 			<col />
@@ -11,8 +11,8 @@
 			<tr>
 				<th><%=t(:label_name) %></th>
 				<th><%=t(:label_title) %></th>
-				<th class="text-right"><%=t(:label_count) %></th>
-				<th class="text-right"><%=t(:label_created_at) %></th>
+				<th class="text-end"><%=t(:label_count) %></th>
+				<th class="text-end"><%=t(:label_created_at) %></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -21,8 +21,8 @@
 			<tr>
 				<td><%= notice.user.name %></td>
 				<td><%= link_to notice.title, notice  %></td>
-				<td class="text-right"><%=notice.impressionist_count(:filter=>:ip_address) %></td>
-        <td class="text-right text-secondary"><%= I18n.l notice.created_at.to_date, :format => :long %></td>
+				<td class="text-end"><%=notice.impressionist_count(:filter=>:ip_address) %></td>
+        <td class="text-end text-secondary"><%= I18n.l notice.created_at.to_date, :format => :long %></td>
 			</tr>
 			<% end %>
 			<% else %>
