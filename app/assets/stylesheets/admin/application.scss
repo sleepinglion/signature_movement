@@ -46,9 +46,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+$default-bg : #ddd;
+$default-color: $body-color;
+$secondary-bg :#f1f1f1;
+$color-mode-type: data;
 
-html,body {margin:0;padding:0;background:#eee}
-body { font-family: "Nanum Gothic","나눔고딕","Malgun Gothic","맑은 고딕","굴림",gulim,"돋움",Dotum,Arial,Helvetica, sans-serif;color:#333}
+
+[data-bs-theme="light"] {
+  --bs-border-color : #ccc
+}
+
+html,body {margin:0;padding:0;height: 100%}
+body { font-family: "Nanum Gothic","나눔고딕","Malgun Gothic","맑은 고딕","굴림",gulim,"돋움",Dotum,Arial,Helvetica, sans-serif}
 label {vertical-align:middle;cursor:pointer}
 a img {border:none}
 input {vertical-align:middle}
@@ -59,18 +68,17 @@ a:active {color:red}
 a:hover{color:#333;text-decoration:underline;}
 a img {border:none}
 
-h1 {font-size :180%}
-h2 {font-size :160%}
-h3 {font-size :140%}
-h4,h5,h6 {font-size : 120%}
+h1 {font-size :160%}
+h2 {font-size :130%}
+h3 {font-size :120%}
+h4,h5,h6 {font-size : 110%}
 
 /* Getting the new tags to behave */
 article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {display:block;}
 mark, rp, rt, ruby, summary, time {display:inline;}
 
 /* layout */
-#mom {clear:both;float:left;width:100%;padding:0}
-.sub_main {padding-bottom:30px}
+.sub-main {padding-bottom:30px}
 .page-header {margin-top:30px}
 .page-header div {border-bottom:1px solid #999;margin-bottom:40px}
 .page-header h2 {float:left;margin:0.4em 0;padding:0;font-weight:bold;color:#666}
@@ -86,6 +94,10 @@ mark, rp, rt, ruby, summary, time {display:inline;}
   color: #fff;
   font-weight:600;
 }
+
+
+aside h1 a {display:block;margin-top:1rem;text-indent:30px}
+
 
 .nav > li > a {
   color: #616161;
@@ -117,34 +129,52 @@ mark, rp, rt, ruby, summary, time {display:inline;}
   border:1px solid rgba(0,0,0,.125);
 }
 
+.pager li > a,
+.pager li > span,
+.pagination > li > a {
+  border-color: #E0E0E0;
+  color: #666;
+  background: #E0E0E0
+}
+
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus,
+.pager > .disabled > span,
+.pager > .disabled > a {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  border-color: #ddd;
+}
+.pagination > li > a {
+  color: #666;
+  margin-left: 5px;
+  -webkit-border-radius: 3px !important;
+  -moz-border-radius: 3px !important;
+  border-radius: 3px !important;
+}
+.pagination > li:first-child > a {
+  margin-left: 0;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background: #f6f6f6 !important;
+  border-color: #ccc !important;
+  color:#333;
+}
+.page-item.active .page-link {color:#333;font-weight:bold}
+
 .no-display-title {font-size:18px;text-indent:-9999px}
 
-#main-menu .nav .sub-menu {
-  display: none;
-  position: absolute;
-  left: 0;
-  min-width: 220px;
-  max-width: 320px;
-  top: 100%;
-  background: #2F3C43;
-  list-style-type: none;
-  margin: 0;
-  padding: 10px 0;
-  z-index: 9999;
-}
 
-.main-menu .sub-menu > li > a {
-  padding: 5px 20px;
-  display: block;
-  color: #8a8f94;
-  text-decoration: none;
-  position: relative;
-}
-
-#main-menu .nav > li > a:hover,
-#main-menu  .nav > li > a:focus {
-  background-color: #333;
-}
 
 /* Common Class */
 .arial {font-family:Arial}
@@ -159,31 +189,28 @@ mark, rp, rt, ruby, summary, time {display:inline;}
 .jumbotron {margin:30px 0}
 .sl_categories span.hidden-xs {display:inline!important}
 .c_pointer {cursor:pointer}
-.card {margin-bottom:15px}
 
 
 /* header */
-header {position:relative}
-header h1 {float:left;margin:0.5em 0 0;padding:0}
-header h1 a:active {color:red}
-header nav { position: relative; z-index: 999; margin:0; padding:0}
-header nav a:hover {color:#000}
-header nav a:visited {color:#666}
-header nav a:active {color:red}
+header {position:relative;z-index:9;background:#f6f6f6;color:#fff}
+header h1 {margin-top:0.5em;padding:0}
+header a {color:#ccc}
+header a:hover {color:#fff;text-decoration: none}
+header a:visited {color:#666}
+header a:active {color:#333}
 
-#top-menu {position:absolute;top:10px;right:10px;margin:0;padding:0;list-style:none;z-index:9999}
-#top-menu li {float:left;margin:0;padding:0}
+#top-menu {position:absolute;top:10px;right:30px;margin:0;padding:0;list-style:none;z-index:9999}
+#top-menu li {float:left;margin:0;padding:0;line-height:50px}
+#top-menu li#admin-info {margin-right:35px}
 #top-menu li a {text-decoration: none;vertical-align: bottom;}
-#top-menu li a i {text-align: center;vertical-align: bottom;}
+#top-menu li a i {text-align: center;vertical-align: bottom;margin-right:5px}
 
-#header-main {
-  height:46px;
-  z-index: 1015;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: #37474F;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14);
+#main-menu h1 a {display:block}
+#main-menu h1 a:visited {color:$default-color}
+#main-menu h1 a:hover {text-decoration: none}
+#main-menu {background:#333;margin:0;padding:0}
+#main-menu  .nav > li > a:focus {
+  background-color: #333;
 }
 
 #main-menu a i {
@@ -196,9 +223,8 @@ header nav a:active {color:red}
 
 #main-menu .nav-link {
   display: block;
-  float: left;
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 0 10px 20px;
   color: #cfd8dc;
   line-height: 26px;
   font-weight: 500;
@@ -207,48 +233,65 @@ header nav a:active {color:red}
   vertical-align: bottom;
 }
 
-#main-menu .active>.nav-link {color:#fff}
-.dropdown-menu {margin-top:0;border-top:none;border-top-left-radius:0;border-top-right-radius: 0;background-color:#37474F}
+#main-menu .nav-link:hover {
+  color:#666
+}
+
+#main-menu .nav-link:active {
+  color:#fff
+}
+
+#main-menu .nav-item {width:100%}
+#main-menu li.active a {background:$body-bg}
+#main-menu .active>.nav-link {color:#333}
 .hidden-title {text-indent: -9999px}
 
+.sub-nav {position:relative;margin-top:15px}
 
-footer {display:none;position:relative;float:left;width:100%;height:3em;background: #f6f6f6}
+footer {display:none;position:relative;height:3em}
 footer address {margin:0;padding:12px 0 0;line-height:150%;text-align:center}
+footer .dropdown {padding-top:12px}
+
+#sl_order_add .section_bottom {margin-top:30px}
+#sl_order_add .product {float:left;width:100%;background:#eee;border-radius:5px;padding:20px;margin-bottom:20px}
+#sl_order_add .product figcaption {display:block;width:1px;height:1px;text-indent:-9999px}
+#sl_order_add .product .product_image {float:left;width:25%}
+#sl_order_add .product .product_text {float:right;width:73%}
+#sl_order_add .product .product_text h4 {border-bottom:1px solid #ccc;padding:5px 0}
+#sl_order_add .product .product_text .product_price {float:right;}
+#sl_order_add .product .product_text .product_description {clear:both}
+#sl_order_add table caption {width:1px;height:1px;text-indent:-9999px}
+
 
 .order_form {margin-bottom:3%}
-.show-bottom-menu {border-top:1px solid #ccc;padding:10px 0}
 .login-box {margin:10px auto}
 #sl_login_form {margin-top:10px }
 #account_search_form {margin-top:10px}
 
-@media (max-width: 991px) {
-  header .container {margin:0;padding:0}
+@media (max-width: 745px) {
+  #main-menu h1 a {margin-top:10px;margin-bottom:10px}
   #top-menu nav ul li.nav-item {display:block;width:50%;margin:0;padding:0}
+  #top-menu {top:1px}
+  #admin-info img {display:none}
 }
 
-@media (max-width: 575px) {
-  #top-menu nav ul li.nav-item {display:block;width:100%;margin:0;padding:0}
-  #users .user_sub nav .nav-item {width:31%;text-align:center;margin:0 5px 5px 0}
-}
-
-@media (min-width: 576px) and (max-width: 767px) {
-  #users .user_sub nav .nav-item {width:24%;text-align:center;margin:0 5px 5px 0}
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  #users .user_sub nav .nav-item {width:24%;text-align:center;margin:0 5px 5px 0}
+@media (min-width:746px) {
+  #main-menu h1 a { margin-top:20px}
+  #main-menu nav {margin-top:50px}
+  #main-menu {min-height:100%}
+  #main-menu li a {border-top-left-radius:20px;border-bottom-left-radius:20px}
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  header {height:7em}
-  #mom {clear:both;float:left;width:100%;padding:0;margin:-7em 0 -3em}
+  header {height:5em}
+  #mom {padding-top:0;padding-bottom:0;margin-top:-5em;margin-bottom:-3em;min-height:100vh}
   #anon_body #mom {margin-top:0}
-  #main {padding-top:7em;padding-bottom:3em}
-  #anon_body #main {padding-top:0}
-  .sub_main {margin-top:1em;margin-bottom:1em}
+  #main {padding-top:5em;padding-bottom:3em}
+  #anon_body #main {padding-top:0;float:left;width:100%;}
+  #anon_body footer {margin:0;padding:0;float:left;width:100%;}
+  .sub-main {margin-top:1em;margin-bottom:1em}
   #top-menu nav ul li.nav-item {display:block;width:20%;margin:0;padding:0}
   #top-menu { height: 92px;}
-  header .container {margin:0;padding:0}
   .top-menu {
     z-index: 1015;
     position:absolute;
@@ -262,7 +305,7 @@ footer address {margin:0;padding:12px 0 0;line-height:150%;text-align:center}
 }
 
 @media (min-width: 1200px) {
-  header {height:7em}
+  header {height:5em}
 
   .top-menu {
     z-index: 1015;
@@ -272,11 +315,12 @@ footer address {margin:0;padding:12px 0 0;line-height:150%;text-align:center}
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14);
   }
 
-  #mom {clear:both;float:left;width:100%;padding:0;margin:-7em 0 -3em;}
+  #mom {padding-top:0;padding-bottom:0;margin-top:-5em;margin-bottom:-3em;min-height:100vh}
   #anon_body #mom {margin-top:0}
-  #main {padding-top:7em;padding-bottom:3em}
-  #anon_body #main {padding-top:0}
-  .sub_main {margin-top:1em;margin-bottom:1em}
+  #main {padding-top:5em;padding-bottom:3em}
+  #anon_body #main {padding-top:0;float:left;width:100%;}
+  #anon_body footer {margin:0;padding:0;float:left;width:100%;}
+  .sub-main {margin-top:1em;margin-bottom:1em}
   .top-menu { height: 46px;}
   .container {width:1150px;}
 }
@@ -293,13 +337,13 @@ footer address {margin:0;padding:12px 0 0;line-height:150%;text-align:center}
 @media (min-width: 1500px) {
   .adsbygoogle {height: 140px}
   .container {width:1450px}
-  .sub_main {margin-top:1.5em;margin-bottom:1.5em}
+  .sub-main {margin-top:1.5em;margin-bottom:1.5em}
 
   aside #diet-submit-btn, aside #training-submit-btn {display:block;width:100%}
   aside.left-form,.add-page .list,.edit-page .list {display:block}
 
-  footer {display:block}
-  footer form {position:absolute;top:5px;right:10px}
+  footer {display:block;border-top:1px solid var(--bs-border-color)}
+
 
   .visible-xl-block,
   .visible-xl-inline,
@@ -569,4 +613,48 @@ footer address {margin:0;padding:12px 0 0;line-height:150%;text-align:center}
   .container {
     width: 1700px
   }
+}
+
+
+
+
+.close {
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+
+.btn-block {display:block;width:100%}
+
+.form-group {
+  margin-bottom:1.5rem
+}
+
+@include color-mode(dark) {
+  body {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+  }
+
+  #main-menu li.active a {color: var(--bs-nav-pills-link-active-color); background-color: var(--bs-body-bg) }
+  header h1 a,header h1 a:visited,#main-menu h1 a:visited  {color: var(--bs-body-color)}
+  .page-header h1, .page-header h2 {color: var(--bs-body-color)}
+  header,.jumbotron,.media,.card,.card-body,#faqList dt a.title,.modal-body, .modal-footer,.sl_content_header,.thead-default th,.nav-pills > li > a {background-color:var(--bs-secondary-bg)}
+}
+
+@include color-mode(light) {
+  a {
+    color: #666
+  }
+  a:hover {
+    color: #333
+  }
+  a:visited {
+    color: #999
+  }
+  a:active {
+    color: #000
+  }
+
+  aside a,aside a:visited {color:#fff}
 }

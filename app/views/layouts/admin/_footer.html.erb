@@ -1,3 +1,31 @@
 <footer>
-	<address>&copy; <a href="https://www.sleepinglion.pe.kr" title="<%=t(:sleepinglion) %>" target="_blank"><%=t(:sleepinglion) %></a> 2017</address>
+	<div class="container">
+		<div class="row">
+			<address class="col-12 col-lg-9">
+				<a href="https://www.jedaeroweb.co.kr" target="_blank"><%=t(:jedearoweb) %></a>
+				&nbsp;&nbsp; CopyLeft. 2020, jedaeroweb. All wrongs reserved.</address>
+			<div class="col-12 col-lg-3 dropdown">
+				<%= link_to '#', { class: 'dropdown-toggle',role:"button",'data-bs-toggle': "dropdown",'aria-expanded':"false"} do %>
+					테마설정
+				<% end %>
+				<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+					<li>
+						<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+							밝은
+						</button>
+					</li>
+					<li>
+						<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+							어두운
+						</button>
+					</li>
+					<li>
+						<button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+							자동
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </footer>

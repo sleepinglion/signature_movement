@@ -1,20 +1,10 @@
 class AdminAbility
     include CanCan::Ability
-    def initialize(admin)
-        if admin
-            can :read, [AdminHome]
-            if admin.role? :administrator
-                can :manage, :all
-            elsif admin.role? :operator
-                can :manage, :all
-                cannot :delete, [Operator]
-            elsif admin.role? :exporter
-                can :manage,  [User, Report]
-            elsif admin.role? :reader
-                can :read, :all
-                cannot :read, [Operator]
-            end
-        else
+    def initialize(user)
+        user ||= User.new # guest user (not logged in)
+        if user.admin? # Admin user
+            can :manage, :all
+        else # Non-admin user
             cannot :manage, :all
         end
     end
