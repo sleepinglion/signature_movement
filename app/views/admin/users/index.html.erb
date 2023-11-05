@@ -10,10 +10,10 @@
 		<col style="width:100px" />
 		<col />
 		<col />
-		<col style="width:120px" />
-		<col style="width:120px" />
-		<col style="width:100px" />
-		<col style="width:130px" />
+		<col />
+		<col />
+		<col />
+		<col />
 		<% if can?(:update, User) || can?(:delete, User) %>
 		<col <%= raw manage_width(User) %> />
 		<% end %>
@@ -39,10 +39,10 @@
 				<td><%= user.id %></td>
 				<td><%= link_to user.name, admin_user_path(user) %></td>
 				<td><%= link_to user.description, admin_user_path(user) %></td>
-				<td><%= link_to user.reports_count, admin_user_path(user) %></td>
-				<td><%= link_to user.compliments_count, admin_user_path(user) %></td>
-				<td><%= link_to user.sign_in_count, admin_user_path(user) %></td>
-				<td><%= link_to user.created_at.to_date, admin_user_path(user) %></td>
+				<td><%= user.reports_count %></td>
+				<td><%= user.compliments_count %></td>
+				<td><%= user.sign_in_count %></td>
+				<td><%= user.created_at.to_date %></td>
 				<% if can?(:update, user) || can?(:delete, user) %>
 				<td>
 				<% if can? :update, user %>
