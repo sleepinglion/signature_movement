@@ -222,39 +222,39 @@ ko:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: 약 한 시간
-        other: 약 %{count}시간
+        one: 한시간 전
+        other: '%{count}시간 전'
       about_x_months:
-        one: 약 한 달
-        other: 약 %{count}달
+        one: 한달 전
+        other:  '%{count}달 전'
       about_x_years:
-        one: 약 일년
-        other: 일년 이상
+        one: 1년 전
+        other:  몇 년 전
       almost_x_years:
-        one: 일년 이하
-        other: 일년 이상
+        one: 1년 이내
+        other: ! '몇 년 전'
       half_a_minute: 30초
       less_than_x_minutes:
-        one: 일 분 이하
-        other: ! '%{count}분 이하'
+        one: 일분 이내
+        other: ! '%{count}분 전'
       less_than_x_seconds:
-        one: 일 초 이하
-        other: ! '%{count}초 이하'
+        one: 일초 이내
+        other: ! '%{count}초 전'
       over_x_years:
-        one: 일년 이상
-        other: 일년 이상
+        one: 1년 전
+        other: 몇 년 전
       x_days:
-        one: 하루
-        other: ! '%{count}일'
+        one: 하루 전
+        other: ! '%{count}일 전'
       x_minutes:
-        one: 일 분
-        other: ! '%{count}분'
+        one: 일분 전
+        other: ! '%{count}분 전'
       x_months:
-        one: 한 달
-        other: ! '%{count}달'
+        one: 한달 전
+        other: ! '%{count}달 전'
       x_seconds:
-        one: 일 초
-        other: ! '%{count}초'
+        one: 일초 전
+        other: ! '%{count}초 전'
     prompts:
       day: 일
       hour: 시
