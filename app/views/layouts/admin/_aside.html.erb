@@ -24,6 +24,20 @@
         <% end %>
       </li>
       <li class="nav-item
+            <% if ['admin/proposes'].include?(params[:controller]) %> active
+            <% end %>">
+        <%= link_to admin_proposes_path, :class => "nav-link" do %>
+          <i class="material-icons">local_cafe</i><span><%= t(:propose, scope: [:activerecord, :models]) %></span>
+        <% end %>
+      </li>
+      <li class="nav-item
+            <% if ['admin/models'].include?(params[:controller]) %> active
+            <% end %>">
+        <%= link_to admin_models_path, :class => "nav-link" do %>
+          <i class="material-icons">local_cafe</i><span><%= t(:model, scope: [:activerecord, :models]) %></span>
+        <% end %>
+      </li>
+      <li class="nav-item
             <% if ['admin/users'].include?(params[:controller]) %> active
             <% end %>">
         <%= link_to admin_users_path, :class => "nav-link" do %>

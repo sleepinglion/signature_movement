@@ -28,7 +28,7 @@
 				<th><%=t(:enable,scope:[:activerecord,:attributes,:compliment]) %></th>
 				<th><%= t(:label_created_at) %></th>
 				<% if can?(:update, Compliment) || can?(:delete, Compliment) %>
-				<th><%= t(:label_manage) %></th>
+				<th class="text-center"><%= t(:label_manage) %></th>
 				<% end %>
 			</tr>
 		</thead>
@@ -44,7 +44,7 @@
 				<td><%= raw flagToString(compliment.enable) %></td>
 				<td><%= compliment.created_at.to_date %></td>
 				<% if can?(:update, compliment) || can?(:delete, compliment) %>
-				<td> <% if can? :update, compliment %>
+				<td class="text-center"> <% if can? :update, compliment %>
 				<%= link_to edit_admin_compliment_path(compliment),:class=>"btn btn-secondary" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
 				<% end %>
 				<% end %>

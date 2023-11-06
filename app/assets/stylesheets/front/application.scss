@@ -47,14 +47,14 @@
 }
 
 
-$default-bg : #ddd;
+$default-bg : #eee;
 $default-color: $body-color;
 $secondary-bg :#f1f1f1;
 $color-mode-type: data;
 
 
 [data-bs-theme="light"] {
-  --bs-border-color : #ccc
+  --bs-border-color : #ccc;
 }
 
 html,body {margin:0;padding:0; height:100%}

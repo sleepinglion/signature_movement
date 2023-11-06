@@ -46,18 +46,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-$default-bg : #ddd;
+$default-bg : #eee;
 $default-color: $body-color;
 $secondary-bg :#f1f1f1;
 $color-mode-type: data;
 
 
 [data-bs-theme="light"] {
-  --bs-border-color : #ccc
+  --bs-border-color : #ccc;
+  a.btn, a.btn:visited {color:#fff}
 }
 
-html,body {margin:0;padding:0;height: 100%}
-body { font-family: "Nanum Gothic","나눔고딕","Malgun Gothic","맑은 고딕","굴림",gulim,"돋움",Dotum,Arial,Helvetica, sans-serif}
+html,body {margin:0;padding:0; height:100%}
+body {background-color:$default-bg;color: $default-color; font-family: "Nanum Gothic", "나눔고딕", "Malgun Gothic", "맑은 고딕", "gulim","굴림","Dotum", "돋움", Arial, Helvetica, sans-serif}
+
 label {vertical-align:middle;cursor:pointer}
 a img {border:none}
 input {vertical-align:middle}

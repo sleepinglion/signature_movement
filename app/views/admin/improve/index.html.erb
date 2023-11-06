@@ -10,8 +10,8 @@
 			<col style="width:80px;" />
 			<col />
 			<col />
-			<col style="width:80px;" />
-			<col style="width:100px;" />
+			<col />
+			<col />
 			<% if can?(:update, Improve) || can?(:delete, Improve) %>
 			<col <%= raw manage_width(Improve) %> />
 			<% end %>
@@ -24,7 +24,7 @@
 				<th><%=t(:enable,scope:[:activerecord,:attributes,:improve]) %></th>
 				<th><%= t(:label_created_at) %></th>
 				<% if can?(:update, Improve) || can?(:delete, Improve) %>
-				<th><%= t(:label_manage) %></th>
+				<th class="text-center"><%= t(:label_manage) %></th>
 				<% end %>
 			</tr>
 		</thead>
@@ -38,7 +38,7 @@
 				<td><%= raw flagToString(improve.enable) %></td>
 				<td><%= improve.created_at.to_date %></td>
 				<% if can?(:update, improve) || can?(:delete, improve) %>
-				<td> <% if can? :update, improve %>
+				<td class="text-center"> <% if can? :update, improve %>
 				<%= link_to edit_admin_improve_path(improve),:class=>"btn btn-secondary" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
 				<% end %>
 				<% end %>

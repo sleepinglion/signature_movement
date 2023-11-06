@@ -26,7 +26,7 @@
 				<th><%=t(:enable,scope:[:activerecord,:attributes,:report]) %></th>
 				<th><%= t(:label_created_at) %></th>
 				<% if can?(:update, Report) || can?(:delete, Report) %>
-				<th><%= t(:label_manage) %></th>
+				<th class="text-center"><%= t(:label_manage) %></th>
 				<% end %>
 			</tr>
 		</thead>
@@ -41,7 +41,7 @@
 				<td><%= raw flagToString(report.enable) %></td>
 				<td><%= report.created_at.to_date %></td>
 				<% if can?(:update, report) || can?(:delete, report) %>
-				<td>
+				<td class="text-center">
 				<% if can? :update, report %>
 				<%= link_to edit_admin_report_path(report),:class=>"btn btn-secondary" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
 				<% end %>

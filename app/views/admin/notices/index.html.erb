@@ -24,7 +24,7 @@
 				<th><%=t(:enable,scope:[:activerecord,:attributes,:notice]) %></th>
 				<th><%= t(:label_created_at) %></th>
 				<% if can?(:update, Notice) || can?(:delete, Notice) %>
-				<th><%= t(:label_manage) %></th>
+				<th class="text-center"><%= t(:label_manage) %></th>
 				<% end %>
 			</tr>
 		</thead>
@@ -38,7 +38,7 @@
 				<td><%= raw flagToString(notice.enable) %></td>
 				<td><%= notice.created_at.to_date %></td>
 				<% if can?(:update, notice) || can?(:delete, notice) %>
-				<td> <% if can? :update, notice %>
+				<td class="text-center"> <% if can? :update, notice %>
 				<%= link_to edit_admin_notice_path(notice),:class=>"btn btn-secondary" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
 				<% end %>
 				<% end %>
