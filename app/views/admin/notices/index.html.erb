@@ -39,7 +39,7 @@
 				<td><%= notice.created_at.to_date %></td>
 				<% if can?(:update, notice) || can?(:delete, notice) %>
 				<td> <% if can? :update, notice %>
-				<%= link_to edit_admin_notice_path(notice),:class=>"btn btn-default" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
+				<%= link_to edit_admin_notice_path(notice),:class=>"btn btn-secondary" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
 				<% end %>
 				<% end %>
 				<% if can? :delete, notice %>

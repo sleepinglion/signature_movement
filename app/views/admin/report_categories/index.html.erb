@@ -39,7 +39,7 @@
 				<td><%= report_category.created_at.to_date %></td>
 				<% if can?(:update, report_category) || can?(:delete, report_category) %>
 				<td> <% if can? :update, report_category %>
-				<%= link_to edit_admin_report_category_path(report_category),:class=>"btn btn-default" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
+				<%= link_to edit_admin_report_category_path(report_category),:class=>"btn btn-secondary" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
 				<% end %>
 				<% end %>
 				<% if can? :delete, report_category %>

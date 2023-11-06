@@ -10,8 +10,8 @@
 			<col style="width:80px;" />
 			<col />
 			<col />
-			<col style="width:80px;" />
-			<col style="width:100px;" />
+			<col />
+			<col />
 			<% if can?(:update, Propose) || can?(:delete, Propose) %>
 			<col <%= raw manage_width(Propose) %> />
 			<% end %>
@@ -39,7 +39,7 @@
 				<td><%= propose.created_at.to_date %></td>
 				<% if can?(:update, propose) || can?(:delete, propose) %>
 				<td> <% if can? :update, propose %>
-				<%= link_to edit_admin_propose_path(propose),:class=>"btn btn-default" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
+				<%= link_to edit_admin_propose_path(propose),:class=>"btn btn-secondary" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
 				<% end %>
 				<% end %>
 				<% if can? :delete, propose %>
