@@ -21,6 +21,9 @@ set :deploy_to, "/home/deploy/anti-kb"
 set :rbenv_type, :user
 set :rbenv_ruby, "3.2.2"
 
+set :nvm_node, 'v20.9.0'
+set :nvm_map_bins, %w{node npm}
+
 # Default value for :linked_files is []
 append :linked_files, "config/database.yml", 'config/master.key', ".env"
 
