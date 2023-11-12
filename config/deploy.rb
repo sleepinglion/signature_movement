@@ -19,7 +19,9 @@ set :deploy_to, "/home/deploy/anti-kb"
 # Default value for :pty is false
 #set :pty, true
 set :rbenv_type, :user
+set :rbenv_ruby, "3.2.2"
 
+set :nvm_type, :user
 # Default value for :linked_files is []
 append :linked_files, "config/database.yml", 'config/master.key', ".env"
 
