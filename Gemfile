@@ -100,8 +100,8 @@ group :production do
   gem 'rails-letsencrypt'
   gem 'uglifier'
 
-  #gem 'mini_racer', platforms: :ruby
-  #gem 'execjs'
+  gem 'mini_racer', platforms: :ruby
+  gem 'execjs'
 
   # Redis Cache
   gem 'redis-rails'
