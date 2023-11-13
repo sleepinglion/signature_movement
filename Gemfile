@@ -75,7 +75,7 @@ group :development do
   # Capistrano
   gem 'capistrano'
   gem 'capistrano-rbenv'
-  gem 'capistrano-nvm', require: false
+  gem 'capistrano-yarn'
   gem 'capistrano-bundler'
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
@@ -100,8 +100,8 @@ group :production do
   gem 'rails-letsencrypt'
   gem 'uglifier'
 
-  gem 'mini_racer', platforms: :ruby
-  gem 'execjs'
+  #gem 'mini_racer', platforms: :ruby
+  #gem 'execjs'
 
   # Redis Cache
   gem 'redis-rails'
