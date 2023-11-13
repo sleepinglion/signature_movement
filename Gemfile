@@ -75,7 +75,7 @@ group :development do
   # Capistrano
   gem 'capistrano'
   gem 'capistrano-rbenv'
-  gem 'capistrano-yarn'
+  gem 'capistrano-npm'
   gem 'capistrano-bundler'
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
