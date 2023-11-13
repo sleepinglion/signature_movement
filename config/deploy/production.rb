@@ -43,7 +43,7 @@ server 'deploy_server', user: 'deploy', roles: %w{app db web}
 # --------------
 set :ssh_options, {
 #    keys: %w(/home/deploy/.ssh/id_rsa),
-   forward_agent: false
+   forward_agent: true
 #    auth_methods: %w(password)
 }
 #
