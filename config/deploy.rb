@@ -22,7 +22,7 @@ set :rbenv_type, :user
 set :rbenv_ruby, "3.2.2"
 
 set :nvm_node, 'v20.9.0'
-set :nvm_map_bins, %w{node npm node-gyp}
+set :nvm_map_bins, %w{node npm yarn}
 
 # Default value for :linked_files is []
 append :linked_files, "config/database.yml", 'config/master.key', ".env"
