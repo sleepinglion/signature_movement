@@ -2,7 +2,6 @@
   "name": "signature_movement",
   "private": true,
   "dependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/runtime": "^7.23.2",
     "@fancyapps/fancybox": "^3.5.7",
     "@popperjs/core": "^2.11.8",
@@ -16,7 +15,6 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "^7.23.3",
     "webpack-dev-server": "^3.11.0"
   }
 }
