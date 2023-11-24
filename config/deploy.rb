@@ -21,6 +21,8 @@ set :deploy_to, "/home/deploy/anti-kb"
 set :rbenv_type, :user
 set :rbenv_ruby, "3.2.2"
 
+set :default_env, {'NODE_OPTIONS'=>'--openssl-legacy-provider'}
+
 # Default value for :linked_files is []
 append :linked_files, "config/database.yml", 'config/master.key', ".env"
 
