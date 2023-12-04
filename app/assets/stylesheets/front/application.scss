@@ -389,127 +389,12 @@ footer address {
 }
 
 
-/* FAQ Category*/
-#faqCategoryList {
-  float: left;
-  width: 100%;
-  margin: 10px 0 0 0;
-  padding: 0;
-  background: #666;
-  list-style: none
-}
-
-#faqCategoryList li {
-  position: relative;
-  float: left;
-  margin: 0;
-  padding: 0;
-  border-right: 1px solid #999
-}
-
-#faqCategoryList li:last-child {
-  border-right:none;
-}
-
-#faqCategoryList li a.title {
-  float: left;
-  width: 100%;
-  text-align: center;
-  display: block;
-  padding: 10px 0;
-  color: #fff;
-  text-decoration: none
-}
-
-#faqCategoryList li.on {
-  background: #f3f3f3
-}
-
-#faqCategoryList li.on a.title {
-  background: #f3f3f3;
-  color: #333
-}
-
-#faqCategoryList li.on .sl_faq_category_menu {
-  float: right;
-  background: #f3f3f3;
-  color: #333
-}
-
-/* FAQ List */
-#faqList {
-  float: left;
-  width: 100%;
-  margin: 0;
-  padding: 15px 0;
-  background: #f3f3f3
-}
-
-#faqList dt {
-  position: relative;
-  float: left;
-  width: 98%;
-  display: inline;
-  margin: 2px 1% 0;
-  padding: 0;
-  cursor: pointer;
-}
-
-#faqList dt.none {
-  display: none
-}
-
-#faqList dt a.title {
-  display: block;
-  padding: 11px 0 11px 40px;
-  border-bottom: 1px solid var(--bs-border-color);
-  background: $secondary-bg asset-url('board/toggle_open.png') no-repeat 10px 11px;
-  text-decoration: none
-}
-
-#faqList dt a.title:hover {
-  border-bottom: 1px solid #ddd;
-}
-
-#faqList dt .sl_faq_menu {
-  position: absolute;
-  top: 10px;
-  right: 10px
-}
-
-#faqList dt.on a {
-  background-position: 10px -46px;
-}
-
-#faqList dd {
-  float: left;
-  display: inline;
-  width: 100%;
-  margin: 5px 0 0 15px;
-  padding: 5px 0 10px;
-  line-height: 140%
-}
-
-#faqList dd p {
-  float: left;
-  clear: left;
-  margin: 0;
-  padding: 3px 10px 0 40px;
-  letter-spacing: 0;
-  line-height: 170%
-}
-
-#faqList dd span.wrap {
-  float: left;
-  font-family: Arial;
-  border-radius: 0.2em 0.2em 0.2em 0.2em;
-  color: #fff;
-  display: inline;
-  font-size: 11px;
-  margin: 2px 10px 2px 40px;
-  padding: 0 3px;
-  background: #f90
-}
+#faqCategoryList {margin-bottom:2rem}
+#faqList dt {border-top:1px solid var(--bs-border-color);margin:0;padding:0;border-bottom:1px solid var(--bs-border-color);margin-bottom:10px}
+#faqList dt a {display:block;padding:20px;position:relative;background:#fff}
+#faqList dt.on a {background:#eee}
+#faqList dt a span {position:absolute;top:15px;right:10px;font-weight:bold}
+#faqList dd {background:$secondary-bg;padding:20px;margin-bottom:30px}
 
 
 #users_main {
@@ -1429,8 +1314,9 @@ table td.sl_registered_date {
     background-color: var(--bs-body-bg);
   }
 
+  #faqList dt.on a {background:#ccc}
   .page-header h1, .page-header h2 {color: var(--bs-body-color)}
-  header,footer,.jumbotron,.media,.card-body,aside article,#faqList dt a.title,.modal-body, .modal-footer,.sl_content_header,.thead-default th {background-color:var(--bs-secondary-bg)}
+  header,footer,.jumbotron,.media,.card-body,aside article,#faqList dt a.title,.modal-body, .modal-footer,.sl_content_header,.thead-default th,#faqList dd,#faqList dt a.title {background-color:var(--bs-secondary-bg)}
 }
 
 @include color-mode(light) {

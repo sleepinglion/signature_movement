@@ -11,7 +11,8 @@ environment.plugins.prepend('Provide',
     })
 )
 const aliasConfig = {
-    'jquery': 'jquery/src/jquery'
+    'jquery': 'jquery/src/jquery',
+    'jquery-ui': 'jquery-ui-dist/jquery-ui.js'
 }
 
 environment.config.set('resolve.alias', aliasConfig);
