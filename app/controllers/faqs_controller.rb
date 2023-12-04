@@ -5,6 +5,7 @@ class FaqsController < ApplicationController
     super(*params)
     @controller_name=t('activerecord.models.faq')
     @title=t('activerecord.models.faq')
+    @meta_description=t(:meta_description_faq)
     @page_itemtype="http://schema.org/FAQPage"
   end
   # GET /faqs

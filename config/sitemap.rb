@@ -32,4 +32,10 @@ SitemapGenerator::Sitemap.create do
   Notice.find_each do |notice|
     add notice_path(notice), :lastmod => notice.updated_at
   end
+
+  add faqs_path, :priority => 0.9, :changefreq => 'daily'
+
+  Faq.find_each do |faq|
+    add faq_path(faq), :lastmod => faq.updated_at
+  end
 end
