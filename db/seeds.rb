@@ -73,12 +73,15 @@ User.create!(:name=>'죽일놈들',:email => 'user31@jedaeroweb.co.kr',:password
 
 Article.create!(:title=>'국부유출의 최고가 되겠습니다.',:url=>'http://media.daum.net/economic/finance/newsview?newsid=20131127034103604',:description=>'국민의 돈을 모아서
 국부유출의 최고의 은행이 되겠습니다.~~
-뭐 망해도 다시 세금으로 살려줄꺼지요?')
+뭐 망해도 다시 세금으로 살려줄꺼지요?',:created_at=>10.year.ago)
 Article.create!(:title=>'횡령 직원은 우리의 자랑입니다.',:url=>'http://media.daum.net/economic/finance/newsview?newsid=20131128033706474',:description=>'횡령의 최고의 직원들을 키우는것으 우리의 목표입니다,
-세금은 먼저 먹는게 임자~ 망하면 세금 투입해줘요~~')
-Article.create!(:title=>'이새끼들 또 돈풀었나?, 듣보잡 언론에도 돈 많이 푸나보네요',:url=>'http://media.daum.net/economic/finance/newsview?newsid=20131202062504190',:description=>'머니 투데이? 개세들 살인자-은행에 돈 받았나보네')
-Article.create!(:title=>'횡령과 비리는 KB전문분야',:url=>'http://media.daum.net/economic/others/newsview?newsid=20131202150206737',:description=>'ㅋㅋㅋ 이번엔 걸렸네?')
-Article.create!(:title=>'ㅋㅋㅋ 미친놈들 이게 사과로 될일이냐?',:url=>'https://omoney.kbstar.com/quics?page=C018592&bbsMode=view&articleId=8580',:description=>'니들이 그렇지 뭐')
+세금은 먼저 먹는게 임자~ 망하면 세금 투입해줘요~~',:created_at=>10.year.ago)
+Article.create!(:title=>'이새끼들 또 돈풀었나?, 듣보잡 언론에도 돈 많이 푸나보네요',:url=>'http://media.daum.net/economic/finance/newsview?newsid=20131202062504190',:description=>'머니 투데이? 개세들 살인자-은행에 돈 받았나보네',:created_at=>10.year.ago)
+Article.create!(:title=>'횡령과 비리는 KB전문분야',:url=>'http://media.daum.net/economic/others/newsview?newsid=20131202150206737',:description=>'ㅋㅋㅋ 이번엔 걸렸네?',:created_at=>10.year.ago)
+Article.create!(:title=>'ㅋㅋㅋ 미친놈들 이게 사과로 될일이냐?',:url=>'https://omoney.kbstar.com/quics?page=C018592&bbsMode=view&articleId=8580',:description=>'니들이 그렇지 뭐',:created_at=>10.year.ago)
+Article.create!(:title=>'앱을 몇개 깔아야 되는건가요? 뫼비우스의띠 앱 KB',:url=> 'https://weekly.cnbnews.com/news/article.html?no=139122',:description=>'이놈들은 이정도면 사용자들 일부러 골탕먹는거 즐기는거지??',:created_at=>2.year.ago)
+Article.create!(:title=>'이새끼들 하는짓은 언제나 이런짓',:url=>'https://www.youtube.com/watch?v=h42e5Er2uMc',:description=>'어휴..... 욕도 안나온다',:created_at=>10.day.ago)
+
 
 ReportCategory.create!(:id=>1,:title=>'불친절')
 ReportCategory.create!(:id=>2,:title=>'대출거부')
