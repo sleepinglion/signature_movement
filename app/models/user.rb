@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   include OmniauthAttributesConcern
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable,  :validatable, :omniauthable, omniauth_providers: [:kakao, :naver, :twitter, :facebook, :apple, :google_oauth2, :github]
+  devise :database_authenticatable, :registerable, :recoverable,  :validatable, :omniauthable, omniauth_providers: [:kakao, :naver, :twitter, :facebook, :apple, :google_oauth2, :github]
   acts_as_voter
   acts_as_votable
   before_create :default_values
