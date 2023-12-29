@@ -41,11 +41,13 @@ server 'deploy_server', user: 'deploy', roles: %w{app db web}
 #
 # Global options
 # --------------
-#]set :ssh_options, {
-#    keys: %w(/home/deploy/.ssh/id_rsa),
-#   forward_agent: true,
+set :ssh_options, {
+
+  keys: %w(/home/toughjjh/.ssh/deploy_key.pem),
+   forward_agent: true,
+   paranoid: false
 #    auth_methods: %w(password)
-#  }
+  }
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
