@@ -7,6 +7,7 @@
 <main id="faq_main">
 	<div class="row">
 	<nav class="col-12">
+		<%= render :partial => 'layouts/ad' %>
 		<ul id="faqCategoryList" class="nav nav-pills">
 			<% unless @faq_categories.empty? %>
 				<li class="nav-item"><%=link_to t(:all),faqs_path,class: faq_all_class %></li>
