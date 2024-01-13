@@ -1,6 +1,7 @@
 class Report < ApplicationRecord
-  acts_as_votable
   is_impressionable
+  acts_as_commentable
+  acts_as_votable
   validates_presence_of :title
   belongs_to :user, counter_cache: true
   belongs_to :report_category, counter_cache: true

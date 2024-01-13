@@ -25,6 +25,7 @@ class ReportsController < BoardController
   def show
     @title=@report.title
     @meta_description=@report.report_content.content
+    @comment  = Comment.build_from(@report, current_user, "")
   end
 
   # GET /reports/new

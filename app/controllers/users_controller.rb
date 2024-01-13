@@ -109,7 +109,7 @@ class UsersController < ApplicationController
     @user= User.find(params[:id])
 
     @title=@user.name
-    #  @comments = @user.comments.select('comments.*,r_users.name as username').all.joins("inner join users AS r_users ON comments.user_id=r_users.id")
+    @comment  = Comment.build_from(@user, current_user, "")
 
     respond_to do |format|
       format.html # show.html.erb

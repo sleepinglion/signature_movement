@@ -1,5 +1,6 @@
 <% breadcrumb :report, @report %>
-<div id="report_show" class="sub_main row">
+<div id="report_show" class="sub_main">
+  <div class="row">
   <div class="slboard_content col-12" itemscope itemprop="article" itemtype="http://schema.org/Article">
     <div class="sl_content_header">
       <h3 itemprop="name"><%= @report.title %></h3>
@@ -28,12 +29,21 @@
       </div>
     </div>
   </div>
-  <div id="sl_content_bottom_menu">
-    <%= link_to t(:link_new), new_report_path %> &nbsp; | &nbsp;
-    <%= link_to t(:link_list), reports_path %>
-    <% if can? :update, @report and @report.user_id == current_user.id %>
-      &nbsp; | &nbsp;
-      <%= link_to t(:link_edit), edit_report_path(@report) %>
-    <% end %>
+</div>
+  <div class="row">
+    <div class="col-12">
+      <%= render partial: "comments/templete", locals: {commentable: @report, new_comment: @comment} %>
+    </div>
   </div>
+<div class="row">
+  <div  id="sl_content_bottom_menu" class="col-12">
+
+  <%= link_to t(:link_new), new_report_path %> &nbsp; | &nbsp;
+  <%= link_to t(:link_list), reports_path %>
+  <% if can? :update, @report and @report.user_id == current_user.id %>
+    &nbsp; | &nbsp;
+    <%= link_to t(:link_edit), edit_report_path(@report) %>
+  <% end %>
+  </div>
+</div>
 </div>

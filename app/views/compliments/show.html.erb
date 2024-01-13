@@ -1,5 +1,6 @@
 <% breadcrumb :compliment, @compliment %>
-<div id="compliment_show" class="sub_main row">
+<div id="compliment_show" class="sub_main">
+  <div class="row">
   <div class="slboard_content col-12" itemscope itemprop="article" itemtype="http://schema.org/Article">
     <div class="sl_content_header">
       <h3 itemprop="name"><%= @compliment.title %></h3>
@@ -27,13 +28,22 @@
         <% end %>
       </div>
     </div>
+    </div>
   </div>
-  <div id="sl_content_bottom_menu">
+
+  <div class="row">
+    <div class="col-12">
+      <%= render partial: "comments/templete", locals: {commentable: @compliment, new_comment: @comment} %>
+    </div>
+  </div>
+  <div class="row">
+    <div  id="sl_content_bottom_menu" class="col-12">
     <%= link_to t(:link_new), new_compliment_path %> &nbsp; | &nbsp;
     <%= link_to t(:link_list), compliments_path %>
     <% if can? :update, @compliment and @compliment.user_id == current_user.id %>
       &nbsp; | &nbsp;
       <%= link_to t(:link_edit), edit_compliment_path(@compliment) %>
     <% end %>
+  </div>
   </div>
 </div>

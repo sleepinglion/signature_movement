@@ -3,6 +3,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable,  :validatable, :omniauthable, omniauth_providers: [:kakao, :naver, :twitter, :facebook, :apple, :google_oauth2, :github]
   acts_as_voter
   acts_as_votable
+  acts_as_commentable
   before_create :default_values
   validates_presence_of :name, :email, :on => :create
   validates_length_of :name, within: 1..60

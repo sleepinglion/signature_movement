@@ -20,6 +20,7 @@ class ComplimentsController < BoardController
   def show
     @title=@compliment.title
     @meta_description=@compliment.compliment_content.content
+    @comment  = Comment.build_from(@compliment, current_user, "")
   end
 
   # GET /notices/new

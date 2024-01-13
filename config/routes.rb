@@ -44,7 +44,7 @@ AntiKb::Application.routes.draw do
     end
   end
 
-  resources :comments, only: :destroy
+  resources :comments, only: [:create, :destroy]
 
   resources :articles, :intro, :improve, :sitemap, :faqs, :faq_categories, :proposes, :notices, :galleries
   get 'sign', to: 'users#sign'

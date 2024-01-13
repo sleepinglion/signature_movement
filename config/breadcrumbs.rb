@@ -23,6 +23,15 @@ crumb :report do |report|
   parent :reports
 end
 
+crumb :users do
+  link t('activerecord.models.user'), users_path
+end
+
+crumb :user do |user|
+  link user.name, user_path(user)
+  parent :users
+end
+
 crumb :compliments do
   link t('activerecord.models.compliment'), compliments_path
 end
