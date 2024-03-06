@@ -1,6 +1,6 @@
 class ModelsController < BoardController
   load_and_authorize_resource  except: [:index, :show, :create]
-  before_action :set_model, only: [:show, :edit, :update, :destroy]
+  before_action :set_model, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def initialize(*params)
     super(*params)

@@ -1,7 +1,7 @@
 class ComplimentsController < BoardController
   load_and_authorize_resource  except: [:index, :show, :create]
   impressionist :actions=>[:show]
-  before_action :set_compliment, only: [:show, :edit, :update, :destroy]
+  before_action :set_compliment, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def initialize(*params)
     super(*params)
