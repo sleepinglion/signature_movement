@@ -37,9 +37,13 @@ class ApplicationController < ActionController::Base
 
   def layout
     if params[:no_layout]
-      return false
+      false
     else
-      return 'application'
+      if params[:popup]
+        'popup'
+      else
+        'application'
+      end
     end
   end
 
