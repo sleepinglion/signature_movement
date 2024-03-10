@@ -81,7 +81,7 @@ Article.create!(:title=>'횡령과 비리는 KB전문분야',:url=>'http://media
 Article.create!(:title=>'ㅋㅋㅋ 미친놈들 이게 사과로 될일이냐?',:url=>'https://omoney.kbstar.com/quics?page=C018592&bbsMode=view&articleId=8580',:description=>'니들이 그렇지 뭐',:created_at=>10.year.ago)
 Article.create!(:title=>'앱을 몇개 깔아야 되는건가요? 뫼비우스의띠 앱 KB',:url=> 'https://weekly.cnbnews.com/news/article.html?no=139122',:description=>'이놈들은 이정도면 사용자들 일부러 골탕먹는거 즐기는거지??',:created_at=>2.year.ago)
 Article.create!(:title=>'이새끼들 하는짓은 언제나 이런짓',:url=>'https://www.youtube.com/watch?v=h42e5Er2uMc',:description=>'어휴..... 욕도 안나온다',:created_at=>10.day.ago)
-
+Article.create!(:title=>'KB쓰다가는 대규모 손실날수도 있어요',:url=>'https://www.youtube.com/watch?v=tKmB__zHJPg',:description=>'언제나 망하는 시스템 만드는 KB로 증권거래한다고요??!!',:created_at=>5.day.ago)
 
 ReportCategory.create!(:id=>1,:title=>'불친절')
 ReportCategory.create!(:id=>2,:title=>'대출거부')
