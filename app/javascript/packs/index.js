@@ -1,5 +1,3 @@
-import { Modal } from 'bootstrap'
-
 $(function () {
     $('.btn-modal').click(btn_modal_click);
 
@@ -17,6 +15,8 @@ $(function () {
             let myModal = new Modal(document.getElementById('myModal'));
             myModal.show();
         });
+
+        return false;
     }
 
     var mobile_menu=1;
