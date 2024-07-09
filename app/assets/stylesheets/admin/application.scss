@@ -10,24 +10,24 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
 
-
 @charset "utf-8";
-@import "bootstrap";
+
+@import '../jquery.fancybox';
+@import 'bootstrap/scss/bootstrap';
 
 @font-face {
   font-family: 'Nanum Gothic';
-  src: local('☺'),url(asset-path('NanumGothic-Regular.eot?#iefix')) format('embedded-opentype'),url(asset-path('NanumGothic-Regular.woff')) format('woff');
+  src: local('☺'),url('NanumGothic-Regular.eot?#iefix') format('embedded-opentype'),url('NanumGothic-Regular.woff') format('woff');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src:  url(asset-path('material-icon.woff2')) format('woff2');
+  src:  url('material-icon.woff2') format('woff2');
 }
 
 .material-icons {

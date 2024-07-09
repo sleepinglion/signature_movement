@@ -10,16 +10,16 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
 
 @charset "utf-8";
-@import "bootstrap";
+
+@import '../jquery.fancybox';
+@import 'bootstrap/scss/bootstrap';
 
 @font-face {
   font-family: 'Nanum Gothic';
-  src: local('☺'), url(asset-path('NanumGothic-Regular.eot?#iefix')) format('embedded-opentype'), url(asset-path('NanumGothic-Regular.woff')) format('woff');
+  src: local('☺'),url('NanumGothic-Regular.eot?#iefix') format('embedded-opentype'),url('NanumGothic-Regular.woff') format('woff');
   font-display: swap;
 }
 
@@ -27,7 +27,7 @@
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: url(asset-path('material-icon.woff2')) format('woff2');
+  src:  url('material-icon.woff2') format('woff2');
 }
 
 .material-icons {
@@ -772,7 +772,7 @@ footer ul {
 .kakao-b-icon,.naver-b-icon,.google-b-icon,.apple-b-icon,.facebook-b-icon,.twitter-b-icon,.github-b-icon {width:60px;height:60px;border-radius:35px;display:inline-block;line-height:60px;text-align:center}
 .kakao-b-icon {
   text-indent:-9999px;
-  background-image:image-url('btn_kakao.png');
+  background-image:url('btn_kakao.png');
   background-position:center center;
   background-repeat: no-repeat;
   background-color:#fee500;
@@ -780,13 +780,13 @@ footer ul {
 .naver-b-icon {
   margin-left:15px;
   text-indent:-9999px;
-  background-image:image-url('btn_naver.png');
+  background-image:url('btn_naver.png');
   background-position:center center;
 }
 .apple-b-icon {
   text-indent:-9999px;
   margin-left:15px;
-  background-image:image-url('btn_apple.png');
+  background-image:url('btn_apple.png');
   background-position:center center;
   background-color:#000;
   background-repeat: no-repeat;
@@ -796,7 +796,7 @@ footer ul {
   text-indent:-9999px;
   margin-left:15px;
   background-color:#fff;
-  background-image:image-url('btn_google.png');
+  background-image:url('btn_google.png');
   background-position:center center;
   background-repeat:no-repeat;
 }
@@ -805,7 +805,7 @@ footer ul {
   text-indent:-9999px;
   margin-left:15px;
   background-color:#fff;
-  background-image:image-url('btn_facebook.png');
+  background-image:url('btn_facebook.png');
   background-position:center center;
   background-repeat:no-repeat;
 }
@@ -814,14 +814,14 @@ footer ul {
   text-indent:-9999px;
   margin-left:15px;
   background-color:#fff;
-  background-image:image-url('btn_twitter.png');
+  background-image:url('btn_twitter.png');
   background-position:center center;
   background-repeat:no-repeat;
 }
 .github-b-icon {
   margin-left:15px;
   text-indent:-9999px;
-  background-image:image-url('btn_github.png');
+  background-image:url('btn_github.png');
   background-position:center center;
   background-color:#fff;
 }

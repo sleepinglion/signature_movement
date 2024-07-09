@@ -1,19 +1,24 @@
-# What is signature_movement source
+# README
 
-[www.anti-kb.site](https://www.anti-kb.site) Source
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-[www.anti-kb.site](https://www.anti-kb.site) is anti kukmin-bank(Korea's large bank) signature_movement site
+Things you may want to cover:
 
-This Application is composed of [Rails](http://rubyonrails.org/) + UI [Boostrap](http://getbootstrap.com)
+* Ruby version
 
-## Server Requirements
+* System dependencies
 
-[Rails](http://rubyonrails.org/) version 6 or newer is recommended.
+* Configuration
 
-## License
+* Database creation
 
-MIT, All Free
+* Database initialization
 
-## Author
+* How to run the test suite
 
-[SleepingLion](https://www.sleepinglion.pe.kr)
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
