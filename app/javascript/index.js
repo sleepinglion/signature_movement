@@ -100,14 +100,7 @@ var ready=function(){
     $('.vote a:not(".confirm_login")').click(vote_click);
     $('.confirm_login').click(confirm_login_click);
 
-    $("#report_main tbody tr,#compliment_main tbody tr").click(function(){
-        location.href=$(this).find('a:first').attr('href');
-    });
 
-    $("#report_main tbody tr td a,#compliment_main tbody tr td a").click(function(){
-        location.href=$(this).attr('href');
-        return false;
-    });
 
     $(".comment_form_only").click(function(){
         if($(this).parent().find('.comment_layer').length) {

@@ -13073,7 +13073,6 @@ footer address {
 }
 
 #report_main tbody tr:hover, #compliment_main tbody tr:hover {
-  cursor: pointer;
   background: #fff;
 }
 
