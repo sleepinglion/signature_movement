@@ -8,12 +8,9 @@
 			<div class="sl_content_text" itemprop="text"><%= simple_format(@notice.notice_content.content) %></div>
 		</div>
 	</article>
-	<div id="sl_content_bottom_menu">
-		<%= link_to t(:link_list),notices_path %>
-		<% if user_signed_in? %>
-		<% if current_user.admin? %>
-		&nbsp; | &nbsp; <%= link_to t(:link_edit), edit_notice_path(@notice) %> &nbsp; | &nbsp; <%= link_to t(:link_delete), @notice, method: :delete, data: { confirm: t(:delete_confirm) } %>
-		<% end %>
-		<% end %>
+	<div class="row">
+		<div class="btn-group btn-group-lg col-12" role="group" style="margin-top:3rem">
+			<%=link_to t(:link_list),notices_path,{class: 'btn btn-secondary btn-large btn-block'} %>
+		</div>
 	</div>
 </div>

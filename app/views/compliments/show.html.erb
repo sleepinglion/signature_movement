@@ -37,13 +37,8 @@
     </div>
   </div>
   <div class="row">
-    <div  id="sl_content_bottom_menu" class="col-12">
-    <%= link_to t(:link_new), new_compliment_path %> &nbsp; | &nbsp;
-    <%= link_to t(:link_list), compliments_path %>
-    <% if can? :update, @compliment and @compliment.user_id == current_user.id %>
-      &nbsp; | &nbsp;
-      <%= link_to t(:link_edit), edit_compliment_path(@compliment) %>
-    <% end %>
-  </div>
+    <div class="btn-group btn-group-lg col-12" role="group" style="margin-top:3rem">
+      <%=link_to t(:link_list),compliments_path,{class: 'btn btn-secondary btn-large btn-block'} %>
+    </div>
   </div>
 </div>

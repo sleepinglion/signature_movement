@@ -895,14 +895,14 @@ var require_jquery = __commonJS({
           return first;
         },
         grep: function(elems, callback, invert) {
-          var callbackInverse, matches = [], i = 0, length = elems.length, callbackExpect = !invert;
+          var callbackInverse, matches2 = [], i = 0, length = elems.length, callbackExpect = !invert;
           for (; i < length; i++) {
             callbackInverse = !callback(elems[i], i);
             if (callbackInverse !== callbackExpect) {
-              matches.push(elems[i]);
+              matches2.push(elems[i]);
             }
           }
-          return matches;
+          return matches2;
         },
         // arg is for internal usage only
         map: function(elems, callback, arg) {
@@ -979,7 +979,7 @@ var require_jquery = __commonJS({
       };
       var preferredDoc = document2, pushNative = push;
       (function() {
-        var i, Expr, outermostContext, sortInput, hasDuplicate, push2 = pushNative, document3, documentElement2, documentIsHTML, rbuggyQSA, matches, expando = jQuery2.expando, dirruns = 0, done = 0, classCache = createCache(), tokenCache = createCache(), compilerCache = createCache(), nonnativeSelectorCache = createCache(), sortOrder = function(a, b) {
+        var i, Expr, outermostContext, sortInput, hasDuplicate, push2 = pushNative, document3, documentElement2, documentIsHTML, rbuggyQSA, matches2, expando = jQuery2.expando, dirruns = 0, done = 0, classCache = createCache(), tokenCache = createCache(), compilerCache = createCache(), nonnativeSelectorCache = createCache(), sortOrder = function(a, b) {
           if (a === b) {
             hasDuplicate = true;
           }
@@ -1037,7 +1037,7 @@ var require_jquery = __commonJS({
           };
         }
         function find(selector, context, results, seed) {
-          var m, i2, elem, nid, match, groups, newSelector, newContext = context && context.ownerDocument, nodeType = context ? context.nodeType : 9;
+          var m2, i2, elem, nid, match, groups, newSelector, newContext = context && context.ownerDocument, nodeType = context ? context.nodeType : 9;
           results = results || [];
           if (typeof selector !== "string" || !selector || nodeType !== 1 && nodeType !== 9 && nodeType !== 11) {
             return results;
@@ -1047,10 +1047,10 @@ var require_jquery = __commonJS({
             context = context || document3;
             if (documentIsHTML) {
               if (nodeType !== 11 && (match = rquickExpr2.exec(selector))) {
-                if (m = match[1]) {
+                if (m2 = match[1]) {
                   if (nodeType === 9) {
-                    if (elem = context.getElementById(m)) {
-                      if (elem.id === m) {
+                    if (elem = context.getElementById(m2)) {
+                      if (elem.id === m2) {
                         push2.call(results, elem);
                         return results;
                       }
@@ -1058,7 +1058,7 @@ var require_jquery = __commonJS({
                       return results;
                     }
                   } else {
-                    if (newContext && (elem = newContext.getElementById(m)) && find.contains(context, elem) && elem.id === m) {
+                    if (newContext && (elem = newContext.getElementById(m2)) && find.contains(context, elem) && elem.id === m2) {
                       push2.call(results, elem);
                       return results;
                     }
@@ -1066,8 +1066,8 @@ var require_jquery = __commonJS({
                 } else if (match[2]) {
                   push2.apply(results, context.getElementsByTagName(selector));
                   return results;
-                } else if ((m = match[3]) && context.getElementsByClassName) {
-                  push2.apply(results, context.getElementsByClassName(m));
+                } else if ((m2 = match[3]) && context.getElementsByClassName) {
+                  push2.apply(results, context.getElementsByClassName(m2));
                   return results;
                 }
               }
@@ -1169,11 +1169,11 @@ var require_jquery = __commonJS({
         function createPositionalPseudo(fn2) {
           return markFunction(function(argument) {
             argument = +argument;
-            return markFunction(function(seed, matches2) {
+            return markFunction(function(seed, matches3) {
               var j, matchIndexes = fn2([], seed.length, argument), i2 = matchIndexes.length;
               while (i2--) {
                 if (seed[j = matchIndexes[i2]]) {
-                  seed[j] = !(matches2[j] = seed[j]);
+                  seed[j] = !(matches3[j] = seed[j]);
                 }
               }
             });
@@ -1190,7 +1190,7 @@ var require_jquery = __commonJS({
           document3 = doc;
           documentElement2 = document3.documentElement;
           documentIsHTML = !jQuery2.isXMLDoc(document3);
-          matches = documentElement2.matches || documentElement2.webkitMatchesSelector || documentElement2.msMatchesSelector;
+          matches2 = documentElement2.matches || documentElement2.webkitMatchesSelector || documentElement2.msMatchesSelector;
           if (documentElement2.msMatchesSelector && // Support: IE 11+, Edge 17 - 18+
           // IE/Edge sometimes throw a "Permission denied" error when strict-comparing
           // two documents; shallow comparisons work.
@@ -1203,7 +1203,7 @@ var require_jquery = __commonJS({
             return !document3.getElementsByName || !document3.getElementsByName(jQuery2.expando).length;
           });
           support.disconnectedMatch = assert(function(el) {
-            return matches.call(el, "*");
+            return matches2.call(el, "*");
           });
           support.scope = assert(function() {
             return document3.querySelectorAll(":scope");
@@ -1337,7 +1337,7 @@ var require_jquery = __commonJS({
           setDocument(elem);
           if (documentIsHTML && !nonnativeSelectorCache[expr + " "] && (!rbuggyQSA || !rbuggyQSA.test(expr))) {
             try {
-              var ret = matches.call(elem, expr);
+              var ret = matches2.call(elem, expr);
               if (ret || support.disconnectedMatch || // As well, disconnected nodes are said to be in a document
               // fragment in IE 9
               elem.document && elem.document.nodeType !== 11) {
@@ -1499,7 +1499,7 @@ var require_jquery = __commonJS({
                   return !!elem.parentNode;
                 }
               ) : function(elem, _context, xml) {
-                var cache2, outerCache, node, nodeIndex, start3, dir2 = simple !== forward ? "nextSibling" : "previousSibling", parent = elem.parentNode, name = ofType && elem.nodeName.toLowerCase(), useCache = !xml && !ofType, diff = false;
+                var cache2, outerCache, node, nodeIndex, start4, dir2 = simple !== forward ? "nextSibling" : "previousSibling", parent = elem.parentNode, name = ofType && elem.nodeName.toLowerCase(), useCache = !xml && !ofType, diff = false;
                 if (parent) {
                   if (simple) {
                     while (dir2) {
@@ -1509,11 +1509,11 @@ var require_jquery = __commonJS({
                           return false;
                         }
                       }
-                      start3 = dir2 = type === "only" && !start3 && "nextSibling";
+                      start4 = dir2 = type === "only" && !start4 && "nextSibling";
                     }
                     return true;
                   }
-                  start3 = [forward ? parent.firstChild : parent.lastChild];
+                  start4 = [forward ? parent.firstChild : parent.lastChild];
                   if (forward && useCache) {
                     outerCache = parent[expando] || (parent[expando] = {});
                     cache2 = outerCache[type] || [];
@@ -1521,7 +1521,7 @@ var require_jquery = __commonJS({
                     diff = nodeIndex && cache2[2];
                     node = nodeIndex && parent.childNodes[nodeIndex];
                     while (node = ++nodeIndex && node && node[dir2] || // Fallback to seeking `elem` from the start
-                    (diff = nodeIndex = 0) || start3.pop()) {
+                    (diff = nodeIndex = 0) || start4.pop()) {
                       if (node.nodeType === 1 && ++diff && node === elem) {
                         outerCache[type] = [dirruns, nodeIndex, diff];
                         break;
@@ -1535,7 +1535,7 @@ var require_jquery = __commonJS({
                       diff = nodeIndex;
                     }
                     if (diff === false) {
-                      while (node = ++nodeIndex && node && node[dir2] || (diff = nodeIndex = 0) || start3.pop()) {
+                      while (node = ++nodeIndex && node && node[dir2] || (diff = nodeIndex = 0) || start4.pop()) {
                         if ((ofType ? nodeName(node, name) : node.nodeType === 1) && ++diff) {
                           if (useCache) {
                             outerCache = node[expando] || (node[expando] = {});
@@ -1560,11 +1560,11 @@ var require_jquery = __commonJS({
               }
               if (fn2.length > 1) {
                 args = [pseudo, pseudo, "", argument];
-                return Expr.setFilters.hasOwnProperty(pseudo.toLowerCase()) ? markFunction(function(seed, matches2) {
+                return Expr.setFilters.hasOwnProperty(pseudo.toLowerCase()) ? markFunction(function(seed, matches3) {
                   var idx, matched = fn2(seed, argument), i2 = matched.length;
                   while (i2--) {
                     idx = indexOf2.call(seed, matched[i2]);
-                    seed[idx] = !(matches2[idx] = matched[i2]);
+                    seed[idx] = !(matches3[idx] = matched[i2]);
                   }
                 }) : function(elem) {
                   return fn2(elem, 0, args);
@@ -1577,11 +1577,11 @@ var require_jquery = __commonJS({
             // Potentially complex pseudos
             not: markFunction(function(selector) {
               var input = [], results = [], matcher = compile(selector.replace(rtrimCSS, "$1"));
-              return matcher[expando] ? markFunction(function(seed, matches2, _context, xml) {
+              return matcher[expando] ? markFunction(function(seed, matches3, _context, xml) {
                 var elem, unmatched = matcher(seed, null, xml, []), i2 = seed.length;
                 while (i2--) {
                   if (elem = unmatched[i2]) {
-                    seed[i2] = !(matches2[i2] = elem);
+                    seed[i2] = !(matches3[i2] = elem);
                   }
                 }
               }) : function(elem, _context, xml) {
@@ -2411,7 +2411,7 @@ var require_jquery = __commonJS({
       }
       jQuery2.Callbacks = function(options) {
         options = typeof options === "string" ? createOptions(options) : jQuery2.extend({}, options);
-        var firing, memory, fired, locked, list = [], queue = [], firingIndex = -1, fire = function() {
+        var firing, memory, fired, locked, list = [], queue = [], firingIndex = -1, fire2 = function() {
           locked = locked || options.once;
           fired = firing = true;
           for (; queue.length; firingIndex = -1) {
@@ -2454,7 +2454,7 @@ var require_jquery = __commonJS({
                 });
               })(arguments);
               if (memory && !firing) {
-                fire();
+                fire2();
               }
             }
             return this;
@@ -2515,7 +2515,7 @@ var require_jquery = __commonJS({
               args = [context, args.slice ? args.slice() : args];
               queue.push(args);
               if (!firing) {
-                fire();
+                fire2();
               }
             }
             return this;
@@ -2962,7 +2962,7 @@ var require_jquery = __commonJS({
       var dataPriv = new Data2();
       var dataUser = new Data2();
       var rbrace = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/, rmultiDash = /[A-Z]/g;
-      function getData(data) {
+      function getData2(data) {
         if (data === "true") {
           return true;
         }
@@ -2987,7 +2987,7 @@ var require_jquery = __commonJS({
           data = elem.getAttribute(name);
           if (typeof data === "string") {
             try {
-              data = getData(data);
+              data = getData2(data);
             } catch (e) {
             }
             dataUser.set(elem, key, data);
@@ -4408,10 +4408,10 @@ var require_jquery = __commonJS({
         fontWeight: "400"
       };
       function setPositiveNumber(_elem, value, subtract) {
-        var matches = rcssNum.exec(value);
-        return matches ? (
+        var matches2 = rcssNum.exec(value);
+        return matches2 ? (
           // Guard against undefined "subtract", e.g., when used as in cssHooks
-          Math.max(0, matches[2] - (subtract || 0)) + (matches[3] || "px")
+          Math.max(0, matches2[2] - (subtract || 0)) + (matches2[3] || "px")
         ) : value;
       }
       function boxModelAdjustment(elem, dimension, box, isBorderBox, styles, computedVal) {
@@ -4607,7 +4607,7 @@ var require_jquery = __commonJS({
             }
           },
           set: function(elem, value, extra) {
-            var matches, styles = getStyles(elem), scrollboxSizeBuggy = !support.scrollboxSize() && styles.position === "absolute", boxSizingNeeded = scrollboxSizeBuggy || extra, isBorderBox = boxSizingNeeded && jQuery2.css(elem, "boxSizing", false, styles) === "border-box", subtract = extra ? boxModelAdjustment(
+            var matches2, styles = getStyles(elem), scrollboxSizeBuggy = !support.scrollboxSize() && styles.position === "absolute", boxSizingNeeded = scrollboxSizeBuggy || extra, isBorderBox = boxSizingNeeded && jQuery2.css(elem, "boxSizing", false, styles) === "border-box", subtract = extra ? boxModelAdjustment(
               elem,
               dimension,
               extra,
@@ -4619,7 +4619,7 @@ var require_jquery = __commonJS({
                 elem["offset" + dimension[0].toUpperCase() + dimension.slice(1)] - parseFloat(styles[dimension]) - boxModelAdjustment(elem, dimension, "border", false, styles) - 0.5
               );
             }
-            if (subtract && (matches = rcssNum.exec(value)) && (matches[3] || "px") !== "px") {
+            if (subtract && (matches2 = rcssNum.exec(value)) && (matches2[3] || "px") !== "px") {
               elem.style[dimension] = value;
               value = jQuery2.css(elem, dimension);
             }
@@ -5647,7 +5647,7 @@ var require_jquery = __commonJS({
         }
       });
       var location2 = window2.location;
-      var nonce = { guid: Date.now() };
+      var nonce2 = { guid: Date.now() };
       var rquery = /\?/;
       jQuery2.parseXML = function(data) {
         var xml, parserErrorElem;
@@ -6173,7 +6173,7 @@ var require_jquery = __commonJS({
             }
             if (s.cache === false) {
               cacheURL = cacheURL.replace(rantiCache, "$1");
-              uncached = (rquery.test(cacheURL) ? "&" : "?") + "_=" + nonce.guid++ + uncached;
+              uncached = (rquery.test(cacheURL) ? "&" : "?") + "_=" + nonce2.guid++ + uncached;
             }
             s.url = cacheURL + uncached;
           } else if (s.data && s.processData && (s.contentType || "").indexOf("application/x-www-form-urlencoded") === 0) {
@@ -6570,7 +6570,7 @@ var require_jquery = __commonJS({
       jQuery2.ajaxSetup({
         jsonp: "callback",
         jsonpCallback: function() {
-          var callback = oldCallbacks.pop() || jQuery2.expando + "_" + nonce.guid++;
+          var callback = oldCallbacks.pop() || jQuery2.expando + "_" + nonce2.guid++;
           this[callback] = true;
           return callback;
         }
@@ -7307,9 +7307,9 @@ function activateScriptElement(element) {
     return element;
   } else {
     const createdScriptElement = document.createElement("script");
-    const cspNonce = getMetaContent("csp-nonce");
-    if (cspNonce) {
-      createdScriptElement.nonce = cspNonce;
+    const cspNonce2 = getMetaContent("csp-nonce");
+    if (cspNonce2) {
+      createdScriptElement.nonce = cspNonce2;
     }
     createdScriptElement.textContent = element.textContent;
     createdScriptElement.async = false;
@@ -7562,9 +7562,9 @@ var FetchRequest = class {
   abortController = new AbortController();
   #resolveRequestPromise = (_value) => {
   };
-  constructor(delegate, method, location2, requestBody = new URLSearchParams(), target = null, enctype = FetchEnctype.urlEncoded) {
+  constructor(delegate2, method, location2, requestBody = new URLSearchParams(), target = null, enctype = FetchEnctype.urlEncoded) {
     const [url, body] = buildResourceAndBody(expandURL(location2), method, requestBody, enctype);
-    this.delegate = delegate;
+    this.delegate = delegate2;
     this.url = url;
     this.target = target;
     this.fetchOptions = {
@@ -7724,8 +7724,8 @@ function mergeIntoURLSearchParams(url, requestBody) {
 }
 var AppearanceObserver = class {
   started = false;
-  constructor(delegate, element) {
-    this.delegate = delegate;
+  constructor(delegate2, element) {
+    this.delegate = delegate2;
     this.element = element;
     this.intersectionObserver = new IntersectionObserver(this.intersect);
   }
@@ -7811,12 +7811,12 @@ var FormSubmission = class _FormSubmission {
   static confirmMethod(message, _element, _submitter) {
     return Promise.resolve(confirm(message));
   }
-  constructor(delegate, formElement, submitter, mustRedirect = false) {
+  constructor(delegate2, formElement, submitter, mustRedirect = false) {
     const method = getMethod(formElement, submitter);
     const action = getAction(getFormAction(formElement, submitter), method);
     const body = buildFormData(formElement, submitter);
     const enctype = getEnctype(formElement, submitter);
-    this.delegate = delegate;
+    this.delegate = delegate2;
     this.formElement = formElement;
     this.submitter = submitter;
     this.fetchRequest = new FetchRequest(this, method, action, body, formElement, enctype);
@@ -8053,8 +8053,8 @@ function queryPermanentElementsAll(node) {
 }
 var FormSubmitObserver = class {
   started = false;
-  constructor(delegate, eventTarget) {
-    this.delegate = delegate;
+  constructor(delegate2, eventTarget) {
+    this.delegate = delegate2;
     this.eventTarget = eventTarget;
   }
   start() {
@@ -8105,8 +8105,8 @@ var View = class {
   };
   #resolveInterceptionPromise = (_value) => {
   };
-  constructor(delegate, element) {
-    this.delegate = delegate;
+  constructor(delegate2, element) {
+    this.delegate = delegate2;
     this.element = element;
   }
   // Scrolling
@@ -8207,8 +8207,8 @@ var FrameView = class extends View {
   }
 };
 var LinkInterceptor = class {
-  constructor(delegate, element) {
-    this.delegate = delegate;
+  constructor(delegate2, element) {
+    this.delegate = delegate2;
     this.element = element;
   }
   start() {
@@ -8248,8 +8248,8 @@ var LinkInterceptor = class {
 };
 var LinkClickObserver = class {
   started = false;
-  constructor(delegate, eventTarget) {
-    this.delegate = delegate;
+  constructor(delegate2, eventTarget) {
+    this.delegate = delegate2;
     this.eventTarget = eventTarget;
   }
   start() {
@@ -8286,8 +8286,8 @@ var LinkClickObserver = class {
   }
 };
 var FormLinkClickObserver = class {
-  constructor(delegate, element) {
-    this.delegate = delegate;
+  constructor(delegate2, element) {
+    this.delegate = delegate2;
     this.linkInterceptor = new LinkClickObserver(this, element);
   }
   start() {
@@ -8334,14 +8334,14 @@ var FormLinkClickObserver = class {
   }
 };
 var Bardo = class {
-  static async preservingPermanentElements(delegate, permanentElementMap, callback) {
-    const bardo = new this(delegate, permanentElementMap);
+  static async preservingPermanentElements(delegate2, permanentElementMap, callback) {
+    const bardo = new this(delegate2, permanentElementMap);
     bardo.enter();
     await callback();
     bardo.leave();
   }
-  constructor(delegate, permanentElementMap) {
-    this.delegate = delegate;
+  constructor(delegate2, permanentElementMap) {
+    this.delegate = delegate2;
     this.permanentElementMap = permanentElementMap;
   }
   enter() {
@@ -8461,9 +8461,9 @@ var FrameRenderer = class extends Renderer {
       currentElement.appendChild(sourceRange.extractContents());
     }
   }
-  constructor(delegate, currentSnapshot, newSnapshot, renderElement, isPreview, willRender = true) {
+  constructor(delegate2, currentSnapshot, newSnapshot, renderElement, isPreview, willRender = true) {
     super(currentSnapshot, newSnapshot, renderElement, isPreview, willRender);
-    this.delegate = delegate;
+    this.delegate = delegate2;
   }
   get shouldRender() {
     return true;
@@ -8837,8 +8837,8 @@ var Visit = class {
   snapshotCached = false;
   state = VisitState.initialized;
   viewTransitioner = new ViewTransitioner();
-  constructor(delegate, location2, restorationIdentifier, options = {}) {
-    this.delegate = delegate;
+  constructor(delegate2, location2, restorationIdentifier, options = {}) {
+    this.delegate = delegate2;
     this.location = location2;
     this.restorationIdentifier = restorationIdentifier || uuid();
     const {
@@ -9374,8 +9374,8 @@ var History = class {
   started = false;
   pageLoaded = false;
   currentIndex = 0;
-  constructor(delegate) {
-    this.delegate = delegate;
+  constructor(delegate2) {
+    this.delegate = delegate2;
   }
   start() {
     if (!this.started) {
@@ -9460,8 +9460,8 @@ var History = class {
 var LinkPrefetchObserver = class {
   started = false;
   #prefetchedLink = null;
-  constructor(delegate, eventTarget) {
-    this.delegate = delegate;
+  constructor(delegate2, eventTarget) {
+    this.delegate = delegate2;
     this.eventTarget = eventTarget;
   }
   start() {
@@ -9559,8 +9559,8 @@ var LinkPrefetchObserver = class {
     return Number(getMetaContent("turbo-prefetch-cache-time")) || cacheTtl;
   }
   #isPrefetchable(link) {
-    const href = link.getAttribute("href");
-    if (!href) return false;
+    const href2 = link.getAttribute("href");
+    if (!href2) return false;
     if (unfetchableLink(link)) return false;
     if (linkToTheSamePage(link)) return false;
     if (linkOptsOut(link)) return false;
@@ -9598,8 +9598,8 @@ var eventPrevented = (link) => {
   return event.defaultPrevented;
 };
 var Navigator = class {
-  constructor(delegate) {
-    this.delegate = delegate;
+  constructor(delegate2) {
+    this.delegate = delegate2;
   }
   proposeVisit(location2, options = {}) {
     if (this.delegate.allowsVisitingLocationWithAction(location2, options.action)) {
@@ -9730,8 +9730,8 @@ var PageStage = {
 var PageObserver = class {
   stage = PageStage.initial;
   started = false;
-  constructor(delegate) {
-    this.delegate = delegate;
+  constructor(delegate2) {
+    this.delegate = delegate2;
   }
   start() {
     if (!this.started) {
@@ -9780,8 +9780,8 @@ var PageObserver = class {
 };
 var ScrollObserver = class {
   started = false;
-  constructor(delegate) {
-    this.delegate = delegate;
+  constructor(delegate2) {
+    this.delegate = delegate2;
   }
   start() {
     if (!this.started) {
@@ -9881,8 +9881,8 @@ function firstAutofocusableElementInStreams(nodeListOfStreamElements) {
 var StreamObserver = class {
   sources = /* @__PURE__ */ new Set();
   #started = false;
-  constructor(delegate) {
-    this.delegate = delegate;
+  constructor(delegate2) {
+    this.delegate = delegate2;
   }
   start() {
     if (!this.#started) {
@@ -10871,8 +10871,8 @@ var PageView = class extends View {
 };
 var Preloader = class {
   selector = "a[data-turbo-preload]";
-  constructor(delegate, snapshotCache) {
-    this.delegate = delegate;
+  constructor(delegate2, snapshotCache) {
+    this.delegate = delegate2;
     this.snapshotCache = snapshotCache;
   }
   start() {
@@ -12057,7 +12057,7 @@ function walk(obj) {
   if (obj instanceof Date || obj instanceof RegExp) return obj;
   if (Array.isArray(obj)) return obj.map(walk);
   return Object.keys(obj).reduce(function(acc, key) {
-    var camel = key[0].toLowerCase() + key.slice(1).replace(/([A-Z]+)/g, function(m, x) {
+    var camel = key[0].toLowerCase() + key.slice(1).replace(/([A-Z]+)/g, function(m2, x) {
       return "_" + x.toLowerCase();
     });
     acc[camel] = walk(obj[key]);
@@ -12150,6 +12150,623 @@ function isBodyInit(body) {
 window.Turbo = turbo_es2017_esm_exports;
 addEventListener("turbo:before-fetch-request", encodeMethodIntoRequestBody);
 
+// node_modules/@rails/ujs/app/assets/javascripts/rails-ujs.esm.js
+var linkClickSelector = "a[data-confirm], a[data-method], a[data-remote]:not([disabled]), a[data-disable-with], a[data-disable]";
+var buttonClickSelector = {
+  selector: "button[data-remote]:not([form]), button[data-confirm]:not([form])",
+  exclude: "form button"
+};
+var inputChangeSelector = "select[data-remote], input[data-remote], textarea[data-remote]";
+var formSubmitSelector = "form:not([data-turbo=true])";
+var formInputClickSelector = "form:not([data-turbo=true]) input[type=submit], form:not([data-turbo=true]) input[type=image], form:not([data-turbo=true]) button[type=submit], form:not([data-turbo=true]) button:not([type]), input[type=submit][form], input[type=image][form], button[type=submit][form], button[form]:not([type])";
+var formDisableSelector = "input[data-disable-with]:enabled, button[data-disable-with]:enabled, textarea[data-disable-with]:enabled, input[data-disable]:enabled, button[data-disable]:enabled, textarea[data-disable]:enabled";
+var formEnableSelector = "input[data-disable-with]:disabled, button[data-disable-with]:disabled, textarea[data-disable-with]:disabled, input[data-disable]:disabled, button[data-disable]:disabled, textarea[data-disable]:disabled";
+var fileInputSelector = "input[name][type=file]:not([disabled])";
+var linkDisableSelector = "a[data-disable-with], a[data-disable]";
+var buttonDisableSelector = "button[data-remote][data-disable-with], button[data-remote][data-disable]";
+var nonce = null;
+var loadCSPNonce = () => {
+  const metaTag = document.querySelector("meta[name=csp-nonce]");
+  return nonce = metaTag && metaTag.content;
+};
+var cspNonce = () => nonce || loadCSPNonce();
+var m = Element.prototype.matches || Element.prototype.matchesSelector || Element.prototype.mozMatchesSelector || Element.prototype.msMatchesSelector || Element.prototype.oMatchesSelector || Element.prototype.webkitMatchesSelector;
+var matches = function(element, selector) {
+  if (selector.exclude) {
+    return m.call(element, selector.selector) && !m.call(element, selector.exclude);
+  } else {
+    return m.call(element, selector);
+  }
+};
+var EXPANDO = "_ujsData";
+var getData = (element, key) => element[EXPANDO] ? element[EXPANDO][key] : void 0;
+var setData = function(element, key, value) {
+  if (!element[EXPANDO]) {
+    element[EXPANDO] = {};
+  }
+  return element[EXPANDO][key] = value;
+};
+var $2 = (selector) => Array.prototype.slice.call(document.querySelectorAll(selector));
+var isContentEditable = function(element) {
+  var isEditable = false;
+  do {
+    if (element.isContentEditable) {
+      isEditable = true;
+      break;
+    }
+    element = element.parentElement;
+  } while (element);
+  return isEditable;
+};
+var csrfToken = () => {
+  const meta = document.querySelector("meta[name=csrf-token]");
+  return meta && meta.content;
+};
+var csrfParam = () => {
+  const meta = document.querySelector("meta[name=csrf-param]");
+  return meta && meta.content;
+};
+var CSRFProtection = (xhr) => {
+  const token = csrfToken();
+  if (token) {
+    return xhr.setRequestHeader("X-CSRF-Token", token);
+  }
+};
+var refreshCSRFTokens = () => {
+  const token = csrfToken();
+  const param = csrfParam();
+  if (token && param) {
+    return $2('form input[name="' + param + '"]').forEach((input) => input.value = token);
+  }
+};
+var AcceptHeaders = {
+  "*": "*/*",
+  text: "text/plain",
+  html: "text/html",
+  xml: "application/xml, text/xml",
+  json: "application/json, text/javascript",
+  script: "text/javascript, application/javascript, application/ecmascript, application/x-ecmascript"
+};
+var ajax = (options) => {
+  options = prepareOptions(options);
+  var xhr = createXHR(options, function() {
+    const response = processResponse(xhr.response != null ? xhr.response : xhr.responseText, xhr.getResponseHeader("Content-Type"));
+    if (Math.floor(xhr.status / 100) === 2) {
+      if (typeof options.success === "function") {
+        options.success(response, xhr.statusText, xhr);
+      }
+    } else {
+      if (typeof options.error === "function") {
+        options.error(response, xhr.statusText, xhr);
+      }
+    }
+    return typeof options.complete === "function" ? options.complete(xhr, xhr.statusText) : void 0;
+  });
+  if (options.beforeSend && !options.beforeSend(xhr, options)) {
+    return false;
+  }
+  if (xhr.readyState === XMLHttpRequest.OPENED) {
+    return xhr.send(options.data);
+  }
+};
+var prepareOptions = function(options) {
+  options.url = options.url || location.href;
+  options.type = options.type.toUpperCase();
+  if (options.type === "GET" && options.data) {
+    if (options.url.indexOf("?") < 0) {
+      options.url += "?" + options.data;
+    } else {
+      options.url += "&" + options.data;
+    }
+  }
+  if (!(options.dataType in AcceptHeaders)) {
+    options.dataType = "*";
+  }
+  options.accept = AcceptHeaders[options.dataType];
+  if (options.dataType !== "*") {
+    options.accept += ", */*; q=0.01";
+  }
+  return options;
+};
+var createXHR = function(options, done) {
+  const xhr = new XMLHttpRequest();
+  xhr.open(options.type, options.url, true);
+  xhr.setRequestHeader("Accept", options.accept);
+  if (typeof options.data === "string") {
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+  }
+  if (!options.crossDomain) {
+    xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    CSRFProtection(xhr);
+  }
+  xhr.withCredentials = !!options.withCredentials;
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      return done(xhr);
+    }
+  };
+  return xhr;
+};
+var processResponse = function(response, type) {
+  if (typeof response === "string" && typeof type === "string") {
+    if (type.match(/\bjson\b/)) {
+      try {
+        response = JSON.parse(response);
+      } catch (error) {
+      }
+    } else if (type.match(/\b(?:java|ecma)script\b/)) {
+      const script = document.createElement("script");
+      script.setAttribute("nonce", cspNonce());
+      script.text = response;
+      document.head.appendChild(script).parentNode.removeChild(script);
+    } else if (type.match(/\b(xml|html|svg)\b/)) {
+      const parser = new DOMParser();
+      type = type.replace(/;.+/, "");
+      try {
+        response = parser.parseFromString(response, type);
+      } catch (error1) {
+      }
+    }
+  }
+  return response;
+};
+var href = (element) => element.href;
+var isCrossDomain = function(url) {
+  const originAnchor = document.createElement("a");
+  originAnchor.href = location.href;
+  const urlAnchor = document.createElement("a");
+  try {
+    urlAnchor.href = url;
+    return !((!urlAnchor.protocol || urlAnchor.protocol === ":") && !urlAnchor.host || originAnchor.protocol + "//" + originAnchor.host === urlAnchor.protocol + "//" + urlAnchor.host);
+  } catch (e) {
+    return true;
+  }
+};
+var preventDefault;
+var { CustomEvent: CustomEvent2 } = window;
+if (typeof CustomEvent2 !== "function") {
+  CustomEvent2 = function(event, params) {
+    const evt = document.createEvent("CustomEvent");
+    evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+    return evt;
+  };
+  CustomEvent2.prototype = window.Event.prototype;
+  ({ preventDefault } = CustomEvent2.prototype);
+  CustomEvent2.prototype.preventDefault = function() {
+    const result = preventDefault.call(this);
+    if (this.cancelable && !this.defaultPrevented) {
+      Object.defineProperty(this, "defaultPrevented", {
+        get() {
+          return true;
+        }
+      });
+    }
+    return result;
+  };
+}
+var fire = (obj, name, data) => {
+  const event = new CustomEvent2(name, {
+    bubbles: true,
+    cancelable: true,
+    detail: data
+  });
+  obj.dispatchEvent(event);
+  return !event.defaultPrevented;
+};
+var stopEverything = (e) => {
+  fire(e.target, "ujs:everythingStopped");
+  e.preventDefault();
+  e.stopPropagation();
+  e.stopImmediatePropagation();
+};
+var delegate = (element, selector, eventType, handler) => element.addEventListener(eventType, function(e) {
+  let { target } = e;
+  while (!!(target instanceof Element) && !matches(target, selector)) {
+    target = target.parentNode;
+  }
+  if (target instanceof Element && handler.call(target, e) === false) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+});
+var toArray = (e) => Array.prototype.slice.call(e);
+var serializeElement = (element, additionalParam) => {
+  let inputs = [element];
+  if (matches(element, "form")) {
+    inputs = toArray(element.elements);
+  }
+  const params = [];
+  inputs.forEach(function(input) {
+    if (!input.name || input.disabled) {
+      return;
+    }
+    if (matches(input, "fieldset[disabled] *")) {
+      return;
+    }
+    if (matches(input, "select")) {
+      toArray(input.options).forEach(function(option) {
+        if (option.selected) {
+          params.push({
+            name: input.name,
+            value: option.value
+          });
+        }
+      });
+    } else if (input.checked || ["radio", "checkbox", "submit"].indexOf(input.type) === -1) {
+      params.push({
+        name: input.name,
+        value: input.value
+      });
+    }
+  });
+  if (additionalParam) {
+    params.push(additionalParam);
+  }
+  return params.map(function(param) {
+    if (param.name) {
+      return `${encodeURIComponent(param.name)}=${encodeURIComponent(param.value)}`;
+    } else {
+      return param;
+    }
+  }).join("&");
+};
+var formElements = (form, selector) => {
+  if (matches(form, "form")) {
+    return toArray(form.elements).filter((el) => matches(el, selector));
+  } else {
+    return toArray(form.querySelectorAll(selector));
+  }
+};
+var handleConfirmWithRails = (rails) => function(e) {
+  if (!allowAction(this, rails)) {
+    stopEverything(e);
+  }
+};
+var confirm2 = (message, element) => window.confirm(message);
+var allowAction = function(element, rails) {
+  let callback;
+  const message = element.getAttribute("data-confirm");
+  if (!message) {
+    return true;
+  }
+  let answer = false;
+  if (fire(element, "confirm")) {
+    try {
+      answer = rails.confirm(message, element);
+    } catch (error) {
+    }
+    callback = fire(element, "confirm:complete", [answer]);
+  }
+  return answer && callback;
+};
+var handleDisabledElement = function(e) {
+  const element = this;
+  if (element.disabled) {
+    stopEverything(e);
+  }
+};
+var enableElement = (e) => {
+  let element;
+  if (e instanceof Event) {
+    if (isXhrRedirect(e)) {
+      return;
+    }
+    element = e.target;
+  } else {
+    element = e;
+  }
+  if (isContentEditable(element)) {
+    return;
+  }
+  if (matches(element, linkDisableSelector)) {
+    return enableLinkElement(element);
+  } else if (matches(element, buttonDisableSelector) || matches(element, formEnableSelector)) {
+    return enableFormElement(element);
+  } else if (matches(element, formSubmitSelector)) {
+    return enableFormElements(element);
+  }
+};
+var disableElement = (e) => {
+  const element = e instanceof Event ? e.target : e;
+  if (isContentEditable(element)) {
+    return;
+  }
+  if (matches(element, linkDisableSelector)) {
+    return disableLinkElement(element);
+  } else if (matches(element, buttonDisableSelector) || matches(element, formDisableSelector)) {
+    return disableFormElement(element);
+  } else if (matches(element, formSubmitSelector)) {
+    return disableFormElements(element);
+  }
+};
+var disableLinkElement = function(element) {
+  if (getData(element, "ujs:disabled")) {
+    return;
+  }
+  const replacement = element.getAttribute("data-disable-with");
+  if (replacement != null) {
+    setData(element, "ujs:enable-with", element.innerHTML);
+    element.innerHTML = replacement;
+  }
+  element.addEventListener("click", stopEverything);
+  return setData(element, "ujs:disabled", true);
+};
+var enableLinkElement = function(element) {
+  const originalText = getData(element, "ujs:enable-with");
+  if (originalText != null) {
+    element.innerHTML = originalText;
+    setData(element, "ujs:enable-with", null);
+  }
+  element.removeEventListener("click", stopEverything);
+  return setData(element, "ujs:disabled", null);
+};
+var disableFormElements = (form) => formElements(form, formDisableSelector).forEach(disableFormElement);
+var disableFormElement = function(element) {
+  if (getData(element, "ujs:disabled")) {
+    return;
+  }
+  const replacement = element.getAttribute("data-disable-with");
+  if (replacement != null) {
+    if (matches(element, "button")) {
+      setData(element, "ujs:enable-with", element.innerHTML);
+      element.innerHTML = replacement;
+    } else {
+      setData(element, "ujs:enable-with", element.value);
+      element.value = replacement;
+    }
+  }
+  element.disabled = true;
+  return setData(element, "ujs:disabled", true);
+};
+var enableFormElements = (form) => formElements(form, formEnableSelector).forEach((element) => enableFormElement(element));
+var enableFormElement = function(element) {
+  const originalText = getData(element, "ujs:enable-with");
+  if (originalText != null) {
+    if (matches(element, "button")) {
+      element.innerHTML = originalText;
+    } else {
+      element.value = originalText;
+    }
+    setData(element, "ujs:enable-with", null);
+  }
+  element.disabled = false;
+  return setData(element, "ujs:disabled", null);
+};
+var isXhrRedirect = function(event) {
+  const xhr = event.detail ? event.detail[0] : void 0;
+  return xhr && xhr.getResponseHeader("X-Xhr-Redirect");
+};
+var handleMethodWithRails = (rails) => function(e) {
+  const link = this;
+  const method = link.getAttribute("data-method");
+  if (!method) {
+    return;
+  }
+  if (isContentEditable(this)) {
+    return;
+  }
+  const href2 = rails.href(link);
+  const csrfToken$1 = csrfToken();
+  const csrfParam$1 = csrfParam();
+  const form = document.createElement("form");
+  let formContent = `<input name='_method' value='${method}' type='hidden' />`;
+  if (csrfParam$1 && csrfToken$1 && !isCrossDomain(href2)) {
+    formContent += `<input name='${csrfParam$1}' value='${csrfToken$1}' type='hidden' />`;
+  }
+  formContent += '<input type="submit" />';
+  form.method = "post";
+  form.action = href2;
+  form.target = link.target;
+  form.innerHTML = formContent;
+  form.style.display = "none";
+  document.body.appendChild(form);
+  form.querySelector('[type="submit"]').click();
+  stopEverything(e);
+};
+var isRemote = function(element) {
+  const value = element.getAttribute("data-remote");
+  return value != null && value !== "false";
+};
+var handleRemoteWithRails = (rails) => function(e) {
+  let data, method, url;
+  const element = this;
+  if (!isRemote(element)) {
+    return true;
+  }
+  if (!fire(element, "ajax:before")) {
+    fire(element, "ajax:stopped");
+    return false;
+  }
+  if (isContentEditable(element)) {
+    fire(element, "ajax:stopped");
+    return false;
+  }
+  const withCredentials = element.getAttribute("data-with-credentials");
+  const dataType = element.getAttribute("data-type") || "script";
+  if (matches(element, formSubmitSelector)) {
+    const button = getData(element, "ujs:submit-button");
+    method = getData(element, "ujs:submit-button-formmethod") || element.getAttribute("method") || "get";
+    url = getData(element, "ujs:submit-button-formaction") || element.getAttribute("action") || location.href;
+    if (method.toUpperCase() === "GET") {
+      url = url.replace(/\?.*$/, "");
+    }
+    if (element.enctype === "multipart/form-data") {
+      data = new FormData(element);
+      if (button != null) {
+        data.append(button.name, button.value);
+      }
+    } else {
+      data = serializeElement(element, button);
+    }
+    setData(element, "ujs:submit-button", null);
+    setData(element, "ujs:submit-button-formmethod", null);
+    setData(element, "ujs:submit-button-formaction", null);
+  } else if (matches(element, buttonClickSelector) || matches(element, inputChangeSelector)) {
+    method = element.getAttribute("data-method");
+    url = element.getAttribute("data-url");
+    data = serializeElement(element, element.getAttribute("data-params"));
+  } else {
+    method = element.getAttribute("data-method");
+    url = rails.href(element);
+    data = element.getAttribute("data-params");
+  }
+  ajax({
+    type: method || "GET",
+    url,
+    data,
+    dataType,
+    beforeSend(xhr, options) {
+      if (fire(element, "ajax:beforeSend", [xhr, options])) {
+        return fire(element, "ajax:send", [xhr]);
+      } else {
+        fire(element, "ajax:stopped");
+        return false;
+      }
+    },
+    success(...args) {
+      return fire(element, "ajax:success", args);
+    },
+    error(...args) {
+      return fire(element, "ajax:error", args);
+    },
+    complete(...args) {
+      return fire(element, "ajax:complete", args);
+    },
+    crossDomain: isCrossDomain(url),
+    withCredentials: withCredentials != null && withCredentials !== "false"
+  });
+  stopEverything(e);
+};
+var formSubmitButtonClick = function(e) {
+  const button = this;
+  const { form } = button;
+  if (!form) {
+    return;
+  }
+  if (button.name) {
+    setData(form, "ujs:submit-button", {
+      name: button.name,
+      value: button.value
+    });
+  }
+  setData(form, "ujs:formnovalidate-button", button.formNoValidate);
+  setData(form, "ujs:submit-button-formaction", button.getAttribute("formaction"));
+  return setData(form, "ujs:submit-button-formmethod", button.getAttribute("formmethod"));
+};
+var preventInsignificantClick = function(e) {
+  const link = this;
+  const method = (link.getAttribute("data-method") || "GET").toUpperCase();
+  const data = link.getAttribute("data-params");
+  const metaClick = e.metaKey || e.ctrlKey;
+  const insignificantMetaClick = metaClick && method === "GET" && !data;
+  const nonPrimaryMouseClick = e.button != null && e.button !== 0;
+  if (nonPrimaryMouseClick || insignificantMetaClick) {
+    e.stopImmediatePropagation();
+  }
+};
+var Rails2 = {
+  $: $2,
+  ajax,
+  buttonClickSelector,
+  buttonDisableSelector,
+  confirm: confirm2,
+  cspNonce,
+  csrfToken,
+  csrfParam,
+  CSRFProtection,
+  delegate,
+  disableElement,
+  enableElement,
+  fileInputSelector,
+  fire,
+  formElements,
+  formEnableSelector,
+  formDisableSelector,
+  formInputClickSelector,
+  formSubmitButtonClick,
+  formSubmitSelector,
+  getData,
+  handleDisabledElement,
+  href,
+  inputChangeSelector,
+  isCrossDomain,
+  linkClickSelector,
+  linkDisableSelector,
+  loadCSPNonce,
+  matches,
+  preventInsignificantClick,
+  refreshCSRFTokens,
+  serializeElement,
+  setData,
+  stopEverything
+};
+var handleConfirm = handleConfirmWithRails(Rails2);
+Rails2.handleConfirm = handleConfirm;
+var handleMethod = handleMethodWithRails(Rails2);
+Rails2.handleMethod = handleMethod;
+var handleRemote = handleRemoteWithRails(Rails2);
+Rails2.handleRemote = handleRemote;
+var start2 = function() {
+  if (window._rails_loaded) {
+    throw new Error("rails-ujs has already been loaded!");
+  }
+  window.addEventListener("pageshow", function() {
+    $2(formEnableSelector).forEach(function(el) {
+      if (getData(el, "ujs:disabled")) {
+        enableElement(el);
+      }
+    });
+    $2(linkDisableSelector).forEach(function(el) {
+      if (getData(el, "ujs:disabled")) {
+        enableElement(el);
+      }
+    });
+  });
+  delegate(document, linkDisableSelector, "ajax:complete", enableElement);
+  delegate(document, linkDisableSelector, "ajax:stopped", enableElement);
+  delegate(document, buttonDisableSelector, "ajax:complete", enableElement);
+  delegate(document, buttonDisableSelector, "ajax:stopped", enableElement);
+  delegate(document, linkClickSelector, "click", preventInsignificantClick);
+  delegate(document, linkClickSelector, "click", handleDisabledElement);
+  delegate(document, linkClickSelector, "click", handleConfirm);
+  delegate(document, linkClickSelector, "click", disableElement);
+  delegate(document, linkClickSelector, "click", handleRemote);
+  delegate(document, linkClickSelector, "click", handleMethod);
+  delegate(document, buttonClickSelector, "click", preventInsignificantClick);
+  delegate(document, buttonClickSelector, "click", handleDisabledElement);
+  delegate(document, buttonClickSelector, "click", handleConfirm);
+  delegate(document, buttonClickSelector, "click", disableElement);
+  delegate(document, buttonClickSelector, "click", handleRemote);
+  delegate(document, inputChangeSelector, "change", handleDisabledElement);
+  delegate(document, inputChangeSelector, "change", handleConfirm);
+  delegate(document, inputChangeSelector, "change", handleRemote);
+  delegate(document, formSubmitSelector, "submit", handleDisabledElement);
+  delegate(document, formSubmitSelector, "submit", handleConfirm);
+  delegate(document, formSubmitSelector, "submit", handleRemote);
+  delegate(document, formSubmitSelector, "submit", (e) => setTimeout(() => disableElement(e), 13));
+  delegate(document, formSubmitSelector, "ajax:send", disableElement);
+  delegate(document, formSubmitSelector, "ajax:complete", enableElement);
+  delegate(document, formInputClickSelector, "click", preventInsignificantClick);
+  delegate(document, formInputClickSelector, "click", handleDisabledElement);
+  delegate(document, formInputClickSelector, "click", handleConfirm);
+  delegate(document, formInputClickSelector, "click", formSubmitButtonClick);
+  document.addEventListener("DOMContentLoaded", refreshCSRFTokens);
+  document.addEventListener("DOMContentLoaded", loadCSPNonce);
+  return window._rails_loaded = true;
+};
+Rails2.start = start2;
+if (typeof jQuery !== "undefined" && jQuery && jQuery.ajax) {
+  if (jQuery.rails) {
+    throw new Error("If you load both jquery_ujs and rails-ujs, use rails-ujs only.");
+  }
+  jQuery.rails = Rails2;
+  jQuery.ajaxPrefilter(function(options, originalOptions, xhr) {
+    if (!options.crossDomain) {
+      return CSRFProtection(xhr);
+    }
+  });
+}
+
 // node_modules/@popperjs/core/lib/index.js
 var lib_exports = {};
 __export(lib_exports, {
@@ -12186,7 +12803,7 @@ __export(lib_exports, {
   read: () => read,
   reference: () => reference,
   right: () => right,
-  start: () => start2,
+  start: () => start3,
   top: () => top2,
   variationPlacements: () => variationPlacements,
   viewport: () => viewport,
@@ -12200,17 +12817,17 @@ var right = "right";
 var left = "left";
 var auto = "auto";
 var basePlacements = [top2, bottom, right, left];
-var start2 = "start";
+var start3 = "start";
 var end = "end";
 var clippingParents = "clippingParents";
 var viewport = "viewport";
 var popper = "popper";
 var reference = "reference";
 var variationPlacements = /* @__PURE__ */ basePlacements.reduce(function(acc, placement) {
-  return acc.concat([placement + "-" + start2, placement + "-" + end]);
+  return acc.concat([placement + "-" + start3, placement + "-" + end]);
 }, []);
 var placements = /* @__PURE__ */ [].concat(basePlacements, [auto]).reduce(function(acc, placement) {
-  return acc.concat([placement, placement + "-" + start2, placement + "-" + end]);
+  return acc.concat([placement, placement + "-" + start3, placement + "-" + end]);
 }, []);
 var beforeRead = "beforeRead";
 var read = "read";
@@ -12981,7 +13598,7 @@ function computeOffsets(_ref) {
   if (mainAxis != null) {
     var len = mainAxis === "y" ? "height" : "width";
     switch (variation) {
-      case start2:
+      case start3:
         offsets[mainAxis] = offsets[mainAxis] - (reference2[len] / 2 - element[len] / 2);
         break;
       case end:
@@ -13097,7 +13714,7 @@ function flip(_ref) {
   for (var i = 0; i < placements2.length; i++) {
     var placement = placements2[i];
     var _basePlacement = getBasePlacement(placement);
-    var isStartVariation = getVariation(placement) === start2;
+    var isStartVariation = getVariation(placement) === start3;
     var isVertical = [top2, bottom].indexOf(_basePlacement) >= 0;
     var len = isVertical ? "width" : "height";
     var overflow = detectOverflow(state, {
@@ -13327,8 +13944,8 @@ function preventOverflow(_ref) {
     var min2 = offset2 + overflow[mainSide];
     var max2 = offset2 - overflow[altSide];
     var additive = tether ? -popperRect[len] / 2 : 0;
-    var minLen = variation === start2 ? referenceRect[len] : popperRect[len];
-    var maxLen = variation === start2 ? -popperRect[len] : -referenceRect[len];
+    var minLen = variation === start3 ? referenceRect[len] : popperRect[len];
+    var maxLen = variation === start3 ? -popperRect[len] : -referenceRect[len];
     var arrowElement = state.elements.arrow;
     var arrowRect = tether && arrowElement ? getLayoutRect(arrowElement) : {
       width: 0,
@@ -13552,8 +14169,8 @@ function popperGenerator(generatorOptions) {
           popper: listScrollParents(popper2)
         };
         var orderedModifiers = orderModifiers(mergeByName([].concat(defaultModifiers3, state.options.modifiers)));
-        state.orderedModifiers = orderedModifiers.filter(function(m) {
-          return m.enabled;
+        state.orderedModifiers = orderedModifiers.filter(function(m2) {
+          return m2.enabled;
         });
         runModifierEffects();
         return instance.update();
@@ -13824,14 +14441,14 @@ var onDOMContentLoaded = (callback) => {
 var isRTL = () => document.documentElement.dir === "rtl";
 var defineJQueryPlugin = (plugin) => {
   onDOMContentLoaded(() => {
-    const $2 = getjQuery();
-    if ($2) {
+    const $3 = getjQuery();
+    if ($3) {
       const name = plugin.NAME;
-      const JQUERY_NO_CONFLICT = $2.fn[name];
-      $2.fn[name] = plugin.jQueryInterface;
-      $2.fn[name].Constructor = plugin;
-      $2.fn[name].noConflict = () => {
-        $2.fn[name] = JQUERY_NO_CONFLICT;
+      const JQUERY_NO_CONFLICT = $3.fn[name];
+      $3.fn[name] = plugin.jQueryInterface;
+      $3.fn[name].Constructor = plugin;
+      $3.fn[name].noConflict = () => {
+        $3.fn[name] = JQUERY_NO_CONFLICT;
         return plugin.jQueryInterface;
       };
     }
@@ -14030,16 +14647,16 @@ var EventHandler = {
     if (typeof event !== "string" || !element) {
       return null;
     }
-    const $2 = getjQuery();
+    const $3 = getjQuery();
     const typeEvent = getTypeEvent(event);
     const inNamespace = event !== typeEvent;
     let jQueryEvent = null;
     let bubbles = true;
     let nativeDispatch = true;
     let defaultPrevented = false;
-    if (inNamespace && $2) {
-      jQueryEvent = $2.Event(event, args);
-      $2(element).trigger(jQueryEvent);
+    if (inNamespace && $3) {
+      jQueryEvent = $3.Event(event, args);
+      $3(element).trigger(jQueryEvent);
       bubbles = !jQueryEvent.isPropagationStopped();
       nativeDispatch = !jQueryEvent.isImmediatePropagationStopped();
       defaultPrevented = jQueryEvent.isDefaultPrevented();
@@ -17314,16 +17931,16 @@ window.jQuery = import_jquery.default;
 window.$ = import_jquery.default;
 
 // node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js
-(function(window2, document2, $2, undefined2) {
+(function(window2, document2, $3, undefined2) {
   "use strict";
   window2.console = window2.console || {
     info: function(stuff) {
     }
   };
-  if (!$2) {
+  if (!$3) {
     return;
   }
-  if ($2.fn.fancybox) {
+  if ($3.fn.fancybox) {
     console.info("fancyBox already initialized");
     return;
   }
@@ -17524,23 +18141,23 @@ window.$ = import_jquery.default;
         console.info( current.opts.$orig );
       }
     */
-    onInit: $2.noop,
+    onInit: $3.noop,
     // When instance has been initialized
-    beforeLoad: $2.noop,
+    beforeLoad: $3.noop,
     // Before the content of a slide is being loaded
-    afterLoad: $2.noop,
+    afterLoad: $3.noop,
     // When the content of a slide is done loading
-    beforeShow: $2.noop,
+    beforeShow: $3.noop,
     // Before open animation starts
-    afterShow: $2.noop,
+    afterShow: $3.noop,
     // When content is done loading and animating
-    beforeClose: $2.noop,
+    beforeClose: $3.noop,
     // Before the instance attempts to close. Return false to cancel the close.
-    afterClose: $2.noop,
+    afterClose: $3.noop,
     // After instance has been closed
-    onActivate: $2.noop,
+    onActivate: $3.noop,
     // When instance is brought to front
-    onDeactivate: $2.noop,
+    onDeactivate: $3.noop,
     // When other instance has been activated
     // Interaction
     // ===========
@@ -17617,11 +18234,11 @@ window.$ = import_jquery.default;
       }
     }
   };
-  var $W = $2(window2);
-  var $D = $2(document2);
+  var $W = $3(window2);
+  var $D = $3(document2);
   var called = 0;
   var isQuery = function(obj) {
-    return obj && obj.hasOwnProperty && obj instanceof $2;
+    return obj && obj.hasOwnProperty && obj instanceof $3;
   };
   var requestAFrame = function() {
     return window2.requestAnimationFrame || window2.webkitRequestAnimationFrame || window2.mozRequestAnimationFrame || window2.oRequestAnimationFrame || // if all else fails, use setTimeout
@@ -17653,9 +18270,9 @@ window.$ = import_jquery.default;
     return $el && $el.length && $el[0].offsetHeight;
   };
   var mergeOpts = function(opts1, opts2) {
-    var rez = $2.extend(true, {}, opts1, opts2);
-    $2.each(opts2, function(key, value) {
-      if ($2.isArray(value)) {
+    var rez = $3.extend(true, {}, opts1, opts2);
+    $3.each(opts2, function(key, value) {
+      if ($3.isArray(value)) {
         rez[key] = value;
       }
     });
@@ -17666,24 +18283,24 @@ window.$ = import_jquery.default;
     if (!elem || elem.ownerDocument !== document2) {
       return false;
     }
-    $2(".fancybox-container").css("pointer-events", "none");
+    $3(".fancybox-container").css("pointer-events", "none");
     elemCenter = {
       x: elem.getBoundingClientRect().left + elem.offsetWidth / 2,
       y: elem.getBoundingClientRect().top + elem.offsetHeight / 2
     };
     rez = document2.elementFromPoint(elemCenter.x, elemCenter.y) === elem;
-    $2(".fancybox-container").css("pointer-events", "");
+    $3(".fancybox-container").css("pointer-events", "");
     return rez;
   };
   var FancyBox = function(content, opts, index) {
     var self2 = this;
     self2.opts = mergeOpts({
       index
-    }, $2.fancybox.defaults);
-    if ($2.isPlainObject(opts)) {
+    }, $3.fancybox.defaults);
+    if ($3.isPlainObject(opts)) {
       self2.opts = mergeOpts(self2.opts, opts);
     }
-    if ($2.fancybox.isMobile) {
+    if ($3.fancybox.isMobile) {
       self2.opts = mergeOpts(self2.opts, self2.opts.mobile);
     }
     self2.id = self2.opts.id || ++called;
@@ -17700,26 +18317,26 @@ window.$ = import_jquery.default;
     }
     self2.init();
   };
-  $2.extend(FancyBox.prototype, {
+  $3.extend(FancyBox.prototype, {
     // Create DOM structure
     // ====================
     init: function() {
       var self2 = this, firstItem = self2.group[self2.currIndex], firstItemOpts = firstItem.opts, $container, buttonStr;
       if (firstItemOpts.closeExisting) {
-        $2.fancybox.close(true);
+        $3.fancybox.close(true);
       }
-      $2("body").addClass("fancybox-active");
-      if (!$2.fancybox.getInstance() && firstItemOpts.hideScrollbar !== false && !$2.fancybox.isMobile && document2.body.scrollHeight > window2.innerHeight) {
-        $2("head").append(
+      $3("body").addClass("fancybox-active");
+      if (!$3.fancybox.getInstance() && firstItemOpts.hideScrollbar !== false && !$3.fancybox.isMobile && document2.body.scrollHeight > window2.innerHeight) {
+        $3("head").append(
           '<style id="fancybox-style-noscroll" type="text/css">.compensate-for-scrollbar{margin-right:' + (window2.innerWidth - document2.documentElement.clientWidth) + "px;}</style>"
         );
-        $2("body").addClass("compensate-for-scrollbar");
+        $3("body").addClass("compensate-for-scrollbar");
       }
       buttonStr = "";
-      $2.each(firstItemOpts.buttons, function(index, value) {
+      $3.each(firstItemOpts.buttons, function(index, value) {
         buttonStr += firstItemOpts.btnTpl[value] || "";
       });
-      $container = $2(
+      $container = $3(
         self2.translate(
           self2,
           firstItemOpts.baseTpl.replace("{{buttons}}", buttonStr).replace("{{arrows}}", firstItemOpts.btnTpl.arrowLeft + firstItemOpts.btnTpl.arrowRight)
@@ -17748,16 +18365,16 @@ window.$ = import_jquery.default;
     // Check if each object has valid type and content
     // ===============================================
     addContent: function(content) {
-      var self2 = this, items = $2.makeArray(content), thumbs;
-      $2.each(items, function(i, item) {
+      var self2 = this, items = $3.makeArray(content), thumbs;
+      $3.each(items, function(i, item) {
         var obj = {}, opts = {}, $item, type, found, src, srcParts;
-        if ($2.isPlainObject(item)) {
+        if ($3.isPlainObject(item)) {
           obj = item;
           opts = item.opts || item;
-        } else if ($2.type(item) === "object" && $2(item).length) {
-          $item = $2(item);
+        } else if ($3.type(item) === "object" && $3(item).length) {
+          $item = $3(item);
           opts = $item.data() || {};
-          opts = $2.extend(true, {}, opts, opts.options);
+          opts = $3.extend(true, {}, opts, opts.options);
           opts.$orig = $item;
           obj.src = self2.opts.src || opts.src || $item.attr("href");
           if (!obj.type && !obj.src) {
@@ -17770,11 +18387,11 @@ window.$ = import_jquery.default;
             src: item + ""
           };
         }
-        obj.opts = $2.extend(true, {}, self2.opts, opts);
-        if ($2.isArray(opts.buttons)) {
+        obj.opts = $3.extend(true, {}, self2.opts, opts);
+        if ($3.isArray(opts.buttons)) {
           obj.opts.buttons = opts.buttons;
         }
-        if ($2.fancybox.isMobile && obj.opts.mobile) {
+        if ($3.fancybox.isMobile && obj.opts.mobile) {
           obj.opts = mergeOpts(obj.opts, obj.opts.mobile);
         }
         type = obj.type || obj.opts.type;
@@ -17789,7 +18406,7 @@ window.$ = import_jquery.default;
             type = "image";
           } else if (src.match(/\.(pdf)((\?|#).*)?$/i)) {
             type = "iframe";
-            obj = $2.extend(true, obj, {
+            obj = $3.extend(true, obj, {
               contentType: "pdf",
               opts: {
                 iframe: {
@@ -17807,11 +18424,11 @@ window.$ = import_jquery.default;
           self2.trigger("objectNeedsType", obj);
         }
         if (!obj.contentType) {
-          obj.contentType = $2.inArray(obj.type, ["html", "inline", "ajax"]) > -1 ? "html" : obj.type;
+          obj.contentType = $3.inArray(obj.type, ["html", "inline", "ajax"]) > -1 ? "html" : obj.type;
         }
         obj.index = self2.group.length;
         if (obj.opts.smallBtn == "auto") {
-          obj.opts.smallBtn = $2.inArray(obj.type, ["html", "inline", "ajax"]) > -1;
+          obj.opts.smallBtn = $3.inArray(obj.type, ["html", "inline", "ajax"]) > -1;
         }
         if (obj.opts.toolbar === "auto") {
           obj.opts.toolbar = !obj.opts.smallBtn;
@@ -17830,13 +18447,13 @@ window.$ = import_jquery.default;
           obj.$thumb = null;
         }
         obj.thumb = obj.opts.thumb || (obj.$thumb ? obj.$thumb[0].src : null);
-        if ($2.type(obj.opts.caption) === "function") {
+        if ($3.type(obj.opts.caption) === "function") {
           obj.opts.caption = obj.opts.caption.apply(item, [self2, obj]);
         }
-        if ($2.type(self2.opts.caption) === "function") {
+        if ($3.type(self2.opts.caption) === "function") {
           obj.opts.caption = self2.opts.caption.apply(item, [self2, obj]);
         }
-        if (!(obj.opts.caption instanceof $2)) {
+        if (!(obj.opts.caption instanceof $3)) {
           obj.opts.caption = obj.opts.caption === undefined2 ? "" : obj.opts.caption + "";
         }
         if (obj.type === "ajax") {
@@ -17847,7 +18464,7 @@ window.$ = import_jquery.default;
           }
         }
         if (obj.opts.modal) {
-          obj.opts = $2.extend(true, obj.opts, {
+          obj.opts = $3.extend(true, obj.opts, {
             trapFocus: true,
             // Remove buttons
             infobar: 0,
@@ -17922,19 +18539,19 @@ window.$ = import_jquery.default;
               self2.$refs.stage.show();
               self2.update(e);
             },
-            $2.fancybox.isMobile ? 600 : 250
+            $3.fancybox.isMobile ? 600 : 250
           );
         }
       });
       $D.on("keydown.fb", function(e) {
-        var instance = $2.fancybox ? $2.fancybox.getInstance() : null, current = instance.current, keycode = e.keyCode || e.which;
+        var instance = $3.fancybox ? $3.fancybox.getInstance() : null, current = instance.current, keycode = e.keyCode || e.which;
         if (keycode == 9) {
           if (current.opts.trapFocus) {
             self2.focus(e);
           }
           return;
         }
-        if (!current.opts.keyboard || e.ctrlKey || e.altKey || e.shiftKey || $2(e.target).is("input,textarea,video,audio,select")) {
+        if (!current.opts.keyboard || e.ctrlKey || e.altKey || e.shiftKey || $3(e.target).is("input,textarea,video,audio,select")) {
           return;
         }
         if (keycode === 8 || keycode === 27) {
@@ -18029,7 +18646,7 @@ window.$ = import_jquery.default;
       self2.trigger("beforeShow", firstRun);
       self2.updateControls();
       current.forcedDuration = undefined2;
-      if ($2.isNumeric(duration)) {
+      if ($3.isNumeric(duration)) {
         current.forcedDuration = duration;
       } else {
         duration = current.opts[firstRun ? "animationDuration" : "transitionDuration"];
@@ -18046,10 +18663,10 @@ window.$ = import_jquery.default;
         self2.preload("image");
         return;
       }
-      slidePos = $2.fancybox.getTranslate(previous.$slide);
-      stagePos = $2.fancybox.getTranslate(self2.$refs.stage);
-      $2.each(self2.slides, function(index, slide) {
-        $2.fancybox.stop(slide.$slide, true);
+      slidePos = $3.fancybox.getTranslate(previous.$slide);
+      stagePos = $3.fancybox.getTranslate(self2.$refs.stage);
+      $3.each(self2.slides, function(index, slide) {
+        $3.fancybox.stop(slide.$slide, true);
       });
       if (previous.pos !== current.pos) {
         previous.isComplete = false;
@@ -18057,12 +18674,12 @@ window.$ = import_jquery.default;
       previous.$slide.removeClass("fancybox-slide--complete fancybox-slide--current");
       if (isMoved) {
         diff = slidePos.left - (previous.pos * slidePos.width + previous.pos * previous.opts.gutter);
-        $2.each(self2.slides, function(index, slide) {
+        $3.each(self2.slides, function(index, slide) {
           slide.$slide.removeClass("fancybox-animated").removeClass(function(index2, className) {
             return (className.match(/(^|\s)fancybox-fx-\S+/g) || []).join(" ");
           });
           var leftPos = slide.pos * slidePos.width + slide.pos * slide.opts.gutter;
-          $2.fancybox.setTranslate(slide.$slide, {
+          $3.fancybox.setTranslate(slide.$slide, {
             top: 0,
             left: leftPos - stagePos.left + diff
           });
@@ -18070,7 +18687,7 @@ window.$ = import_jquery.default;
             slide.$slide.addClass("fancybox-slide--" + (slide.pos > current.pos ? "next" : "previous"));
           }
           forceRedraw(slide.$slide);
-          $2.fancybox.animate(
+          $3.fancybox.animate(
             slide.$slide,
             {
               top: 0,
@@ -18091,7 +18708,7 @@ window.$ = import_jquery.default;
       } else if (duration && current.opts.transitionEffect) {
         prop = "fancybox-animated fancybox-fx-" + current.opts.transitionEffect;
         previous.$slide.addClass("fancybox-slide--" + (previous.pos > current.pos ? "next" : "previous"));
-        $2.fancybox.animate(
+        $3.fancybox.animate(
           previous.$slide,
           prop,
           duration,
@@ -18116,8 +18733,8 @@ window.$ = import_jquery.default;
       index = pos % self2.group.length;
       index = index < 0 ? self2.group.length + index : index;
       if (!self2.slides[pos] && self2.group[index]) {
-        $slide = $2('<div class="fancybox-slide"></div>').appendTo(self2.$refs.stage);
-        self2.slides[pos] = $2.extend(true, {}, self2.group[index], {
+        $slide = $3('<div class="fancybox-slide"></div>').appendTo(self2.$refs.stage);
+        self2.slides[pos] = $3.extend(true, {}, self2.group[index], {
           pos,
           $slide,
           isLoaded: false
@@ -18130,17 +18747,17 @@ window.$ = import_jquery.default;
     // x and y values should be relative to the slide
     // ==============================================
     scaleToActual: function(x, y, duration) {
-      var self2 = this, current = self2.current, $content = current.$content, canvasWidth = $2.fancybox.getTranslate(current.$slide).width, canvasHeight = $2.fancybox.getTranslate(current.$slide).height, newImgWidth = current.width, newImgHeight = current.height, imgPos, posX, posY, scaleX, scaleY;
+      var self2 = this, current = self2.current, $content = current.$content, canvasWidth = $3.fancybox.getTranslate(current.$slide).width, canvasHeight = $3.fancybox.getTranslate(current.$slide).height, newImgWidth = current.width, newImgHeight = current.height, imgPos, posX, posY, scaleX, scaleY;
       if (self2.isAnimating || self2.isMoved() || !$content || !(current.type == "image" && current.isLoaded && !current.hasError)) {
         return;
       }
       self2.isAnimating = true;
-      $2.fancybox.stop($content);
+      $3.fancybox.stop($content);
       x = x === undefined2 ? canvasWidth * 0.5 : x;
       y = y === undefined2 ? canvasHeight * 0.5 : y;
-      imgPos = $2.fancybox.getTranslate($content);
-      imgPos.top -= $2.fancybox.getTranslate(current.$slide).top;
-      imgPos.left -= $2.fancybox.getTranslate(current.$slide).left;
+      imgPos = $3.fancybox.getTranslate($content);
+      imgPos.top -= $3.fancybox.getTranslate(current.$slide).top;
+      imgPos.left -= $3.fancybox.getTranslate(current.$slide).left;
       scaleX = newImgWidth / imgPos.width;
       scaleY = newImgHeight / imgPos.height;
       posX = canvasWidth * 0.5 - newImgWidth * 0.5;
@@ -18164,7 +18781,7 @@ window.$ = import_jquery.default;
         }
       }
       self2.updateCursor(newImgWidth, newImgHeight);
-      $2.fancybox.animate(
+      $3.fancybox.animate(
         $content,
         {
           top: posY,
@@ -18189,10 +18806,10 @@ window.$ = import_jquery.default;
         return;
       }
       self2.isAnimating = true;
-      $2.fancybox.stop($content);
+      $3.fancybox.stop($content);
       end2 = self2.getFitPos(current);
       self2.updateCursor(end2.width, end2.height);
-      $2.fancybox.animate(
+      $3.fancybox.animate(
         $content,
         {
           top: end2.top,
@@ -18213,8 +18830,8 @@ window.$ = import_jquery.default;
       if (!slide.isLoaded || !$content || !$content.length) {
         return false;
       }
-      maxWidth = $2.fancybox.getTranslate(self2.$refs.stage).width;
-      maxHeight = $2.fancybox.getTranslate(self2.$refs.stage).height;
+      maxWidth = $3.fancybox.getTranslate(self2.$refs.stage).width;
+      maxHeight = $3.fancybox.getTranslate(self2.$refs.stage).height;
       maxWidth -= parseFloat($slide.css("paddingLeft")) + parseFloat($slide.css("paddingRight")) + parseFloat($content.css("marginLeft")) + parseFloat($content.css("marginRight"));
       maxHeight -= parseFloat($slide.css("paddingTop")) + parseFloat($slide.css("paddingBottom")) + parseFloat($content.css("marginTop")) + parseFloat($content.css("marginBottom"));
       if (!width || !height) {
@@ -18249,7 +18866,7 @@ window.$ = import_jquery.default;
     // ==============================================
     update: function(e) {
       var self2 = this;
-      $2.each(self2.slides, function(key, slide) {
+      $3.each(self2.slides, function(key, slide) {
         self2.updateSlide(slide, e);
       });
     },
@@ -18259,8 +18876,8 @@ window.$ = import_jquery.default;
       var self2 = this, $content = slide && slide.$content, width = slide.width || slide.opts.width, height = slide.height || slide.opts.height, $slide = slide.$slide;
       self2.adjustCaption(slide);
       if ($content && (width || height || slide.contentType === "video") && !slide.hasError) {
-        $2.fancybox.stop($content);
-        $2.fancybox.setTranslate($content, self2.getFitPos(slide));
+        $3.fancybox.stop($content);
+        $3.fancybox.setTranslate($content, self2.getFitPos(slide));
         if (slide.pos === self2.currPos) {
           self2.isAnimating = false;
           self2.updateCursor();
@@ -18287,7 +18904,7 @@ window.$ = import_jquery.default;
         opacity: ""
       });
       $slide.parent().children().removeClass("fancybox-slide--previous fancybox-slide--next");
-      $2.fancybox.animate(
+      $3.fancybox.animate(
         $slide,
         {
           top: 0,
@@ -18314,8 +18931,8 @@ window.$ = import_jquery.default;
       if (!current) {
         return false;
       }
-      stagePos = $2.fancybox.getTranslate(this.$refs.stage);
-      slidePos = $2.fancybox.getTranslate(current.$slide);
+      stagePos = $3.fancybox.getTranslate(this.$refs.stage);
+      slidePos = $3.fancybox.getTranslate(current.$slide);
       return !current.$slide.hasClass("fancybox-animated") && (Math.abs(slidePos.top - stagePos.top) > 0.5 || Math.abs(slidePos.left - stagePos.left) > 0.5);
     },
     // Update cursor style depending if content can be zoomed
@@ -18329,10 +18946,10 @@ window.$ = import_jquery.default;
       canPan = self2.canPan(nextWidth, nextHeight);
       isZoomable = canPan ? true : self2.isZoomable();
       $container.toggleClass("fancybox-is-zoomable", isZoomable);
-      $2("[data-fancybox-zoom]").prop("disabled", !isZoomable);
+      $3("[data-fancybox-zoom]").prop("disabled", !isZoomable);
       if (canPan) {
         $container.addClass("fancybox-can-pan");
-      } else if (isZoomable && (current.opts.clickContent === "zoom" || $2.isFunction(current.opts.clickContent) && current.opts.clickContent(current) == "zoom")) {
+      } else if (isZoomable && (current.opts.clickContent === "zoom" || $3.isFunction(current.opts.clickContent) && current.opts.clickContent(current) == "zoom")) {
         $container.addClass("fancybox-can-zoomIn");
       } else if (current.opts.touch && (current.opts.touch.vertical || self2.group.length > 1) && current.contentType !== "video") {
         $container.addClass("fancybox-can-swipe");
@@ -18360,7 +18977,7 @@ window.$ = import_jquery.default;
       if (nextWidth !== undefined2 && nextHeight !== undefined2) {
         rez = nextWidth < current.width && nextHeight < current.height;
       } else if ($content) {
-        rez = $2.fancybox.getTranslate($content);
+        rez = $3.fancybox.getTranslate($content);
         rez = rez.width < current.width && rez.height < current.height;
       }
       return rez;
@@ -18377,7 +18994,7 @@ window.$ = import_jquery.default;
             height: nextHeight
           };
         } else if (current.isComplete) {
-          pos = $2.fancybox.getTranslate(current.$content);
+          pos = $3.fancybox.getTranslate(current.$content);
         }
         if (pos && rez) {
           rez = Math.abs(pos.width - rez.width) > 1.5 || Math.abs(pos.height - rez.height) > 1.5;
@@ -18417,16 +19034,16 @@ window.$ = import_jquery.default;
           );
           break;
         case "inline":
-          if ($2(slide.src).length) {
-            self2.setContent(slide, $2(slide.src));
+          if ($3(slide.src).length) {
+            self2.setContent(slide, $3(slide.src));
           } else {
             self2.setError(slide);
           }
           break;
         case "ajax":
           self2.showLoading(slide);
-          ajaxLoad = $2.ajax(
-            $2.extend({}, slide.opts.ajax.settings, {
+          ajaxLoad = $3.ajax(
+            $3.extend({}, slide.opts.ajax.settings, {
               url: slide.src,
               success: function(data, textStatus) {
                 if (textStatus === "success") {
@@ -18461,19 +19078,19 @@ window.$ = import_jquery.default;
         }
       }, 50);
       self2.checkSrcset(slide);
-      slide.$content = $2('<div class="fancybox-content"></div>').addClass("fancybox-is-hidden").appendTo(slide.$slide.addClass("fancybox-slide--image"));
+      slide.$content = $3('<div class="fancybox-content"></div>').addClass("fancybox-is-hidden").appendTo(slide.$slide.addClass("fancybox-slide--image"));
       if (slide.opts.preload !== false && slide.opts.width && slide.opts.height && slide.thumb) {
         slide.width = slide.opts.width;
         slide.height = slide.opts.height;
         ghost = document2.createElement("img");
         ghost.onerror = function() {
-          $2(this).remove();
+          $3(this).remove();
           slide.$ghost = null;
         };
         ghost.onload = function() {
           self2.afterLoad(slide);
         };
-        slide.$ghost = $2(ghost).addClass("fancybox-image").appendTo(slide.$content).attr("src", slide.thumb);
+        slide.$ghost = $3(ghost).addClass("fancybox-image").appendTo(slide.$content).attr("src", slide.thumb);
       }
       self2.setBigImage(slide);
     },
@@ -18524,7 +19141,7 @@ window.$ = import_jquery.default;
     // Create full-size image
     // ======================
     setBigImage: function(slide) {
-      var self2 = this, img = document2.createElement("img"), $img = $2(img);
+      var self2 = this, img = document2.createElement("img"), $img = $3(img);
       slide.$image = $img.one("error", function() {
         self2.setError(slide);
       }).one("load", function() {
@@ -18577,9 +19194,9 @@ window.$ = import_jquery.default;
     // ==========================================
     setIframe: function(slide) {
       var self2 = this, opts = slide.opts.iframe, $slide = slide.$slide, $iframe;
-      slide.$content = $2('<div class="fancybox-content' + (opts.preload ? " fancybox-is-hidden" : "") + '"></div>').css(opts.css).appendTo($slide);
+      slide.$content = $3('<div class="fancybox-content' + (opts.preload ? " fancybox-is-hidden" : "") + '"></div>').css(opts.css).appendTo($slide);
       $slide.addClass("fancybox-slide--" + slide.contentType);
-      slide.$iframe = $iframe = $2(opts.tpl.replace(/\{rnd\}/g, (/* @__PURE__ */ new Date()).getTime())).attr(opts.attr).appendTo(slide.$content);
+      slide.$iframe = $iframe = $3(opts.tpl.replace(/\{rnd\}/g, (/* @__PURE__ */ new Date()).getTime())).attr(opts.attr).appendTo(slide.$content);
       if (opts.preload) {
         self2.showLoading(slide);
         $iframe.on("load.fb error.fb", function(e) {
@@ -18622,10 +19239,10 @@ window.$ = import_jquery.default;
       $iframe.attr("src", slide.src);
       $slide.one("onReset", function() {
         try {
-          $2(this).find("iframe").hide().unbind().attr("src", "//about:blank");
+          $3(this).find("iframe").hide().unbind().attr("src", "//about:blank");
         } catch (ignore) {
         }
-        $2(this).off("refresh.fb").empty();
+        $3(this).off("refresh.fb").empty();
         slide.isLoaded = false;
         slide.isRevealed = false;
       });
@@ -18639,25 +19256,25 @@ window.$ = import_jquery.default;
       }
       self2.hideLoading(slide);
       if (slide.$content) {
-        $2.fancybox.stop(slide.$content);
+        $3.fancybox.stop(slide.$content);
       }
       slide.$slide.empty();
       if (isQuery(content) && content.parent().length) {
         if (content.hasClass("fancybox-content") || content.parent().hasClass("fancybox-content")) {
           content.parents(".fancybox-slide").trigger("onReset");
         }
-        slide.$placeholder = $2("<div>").hide().insertAfter(content);
+        slide.$placeholder = $3("<div>").hide().insertAfter(content);
         content.css("display", "inline-block");
       } else if (!slide.hasError) {
-        if ($2.type(content) === "string") {
-          content = $2("<div>").append($2.trim(content)).contents();
+        if ($3.type(content) === "string") {
+          content = $3("<div>").append($3.trim(content)).contents();
         }
         if (slide.opts.filter) {
-          content = $2("<div>").html(content).find(slide.opts.filter);
+          content = $3("<div>").html(content).find(slide.opts.filter);
         }
       }
       slide.$slide.one("onReset", function() {
-        $2(this).find("video,audio").trigger("pause");
+        $3(this).find("video,audio").trigger("pause");
         if (slide.$placeholder) {
           slide.$placeholder.after(content.removeClass("fancybox-content").hide()).remove();
           slide.$placeholder = null;
@@ -18667,18 +19284,18 @@ window.$ = import_jquery.default;
           slide.$smallBtn = null;
         }
         if (!slide.hasError) {
-          $2(this).empty();
+          $3(this).empty();
           slide.isLoaded = false;
           slide.isRevealed = false;
         }
       });
-      $2(content).appendTo(slide.$slide);
-      if ($2(content).is("video,audio")) {
-        $2(content).addClass("fancybox-video");
-        $2(content).wrap("<div></div>");
+      $3(content).appendTo(slide.$slide);
+      if ($3(content).is("video,audio")) {
+        $3(content).addClass("fancybox-video");
+        $3(content).wrap("<div></div>");
         slide.contentType = "video";
-        slide.opts.width = slide.opts.width || $2(content).attr("width");
-        slide.opts.height = slide.opts.height || $2(content).attr("height");
+        slide.opts.width = slide.opts.width || $3(content).attr("width");
+        slide.opts.height = slide.opts.height || $3(content).attr("height");
       }
       slide.$content = slide.$slide.children().filter("div,form,main,video,audio,article,.fancybox-content").first();
       slide.$content.siblings().hide();
@@ -18706,7 +19323,7 @@ window.$ = import_jquery.default;
       var self2 = this;
       slide = slide || self2.current;
       if (slide && !slide.$spinner) {
-        slide.$spinner = $2(self2.translate(self2, self2.opts.spinnerTpl)).appendTo(slide.$slide).hide().fadeIn("fast");
+        slide.$spinner = $3(self2.translate(self2, self2.opts.spinnerTpl)).appendTo(slide.$slide).hide().fadeIn("fast");
       }
     },
     // Remove loading icon from the slide
@@ -18731,7 +19348,7 @@ window.$ = import_jquery.default;
       self2.trigger("afterLoad", slide);
       self2.hideLoading(slide);
       if (slide.opts.smallBtn && (!slide.$smallBtn || !slide.$smallBtn.length)) {
-        slide.$smallBtn = $2(self2.translate(slide, slide.opts.btnTpl.smallBtn)).appendTo(slide.$content);
+        slide.$smallBtn = $3(self2.translate(slide, slide.opts.btnTpl.smallBtn)).appendTo(slide.$content);
       }
       if (slide.opts.protect && slide.$content && !slide.hasError) {
         slide.$content.on("contextmenu.fb", function(e) {
@@ -18741,7 +19358,7 @@ window.$ = import_jquery.default;
           return true;
         });
         if (slide.type === "image") {
-          $2('<div class="fancybox-spaceball"></div>').appendTo(slide.$content);
+          $3('<div class="fancybox-spaceball"></div>').appendTo(slide.$content);
         }
       }
       self2.adjustCaption(slide);
@@ -18796,7 +19413,7 @@ window.$ = import_jquery.default;
     // user navigates gallery and transition should start
     // ============================================================
     revealContent: function(slide) {
-      var self2 = this, $slide = slide.$slide, end2 = false, start3 = false, isMoved = self2.isMoved(slide), isRevealed = slide.isRevealed, effect4, effectClassName, duration, opacity;
+      var self2 = this, $slide = slide.$slide, end2 = false, start4 = false, isMoved = self2.isMoved(slide), isRevealed = slide.isRevealed, effect4, effectClassName, duration, opacity;
       slide.isRevealed = true;
       effect4 = slide.opts[self2.firstRun ? "animationEffect" : "transitionEffect"];
       duration = slide.opts[self2.firstRun ? "animationDuration" : "transitionDuration"];
@@ -18805,7 +19422,7 @@ window.$ = import_jquery.default;
         effect4 = false;
       }
       if (effect4 === "zoom") {
-        if (slide.pos === self2.currPos && duration && slide.type === "image" && !slide.hasError && (start3 = self2.getThumbPos(slide))) {
+        if (slide.pos === self2.currPos && duration && slide.type === "image" && !slide.hasError && (start4 = self2.getThumbPos(slide))) {
           end2 = self2.getFitPos(slide);
         } else {
           effect4 = "fade";
@@ -18813,19 +19430,19 @@ window.$ = import_jquery.default;
       }
       if (effect4 === "zoom") {
         self2.isAnimating = true;
-        end2.scaleX = end2.width / start3.width;
-        end2.scaleY = end2.height / start3.height;
+        end2.scaleX = end2.width / start4.width;
+        end2.scaleY = end2.height / start4.height;
         opacity = slide.opts.zoomOpacity;
         if (opacity == "auto") {
-          opacity = Math.abs(slide.width / slide.height - start3.width / start3.height) > 0.1;
+          opacity = Math.abs(slide.width / slide.height - start4.width / start4.height) > 0.1;
         }
         if (opacity) {
-          start3.opacity = 0.1;
+          start4.opacity = 0.1;
           end2.opacity = 1;
         }
-        $2.fancybox.setTranslate(slide.$content.removeClass("fancybox-is-hidden"), start3);
+        $3.fancybox.setTranslate(slide.$content.removeClass("fancybox-is-hidden"), start4);
         forceRedraw(slide.$content);
-        $2.fancybox.animate(slide.$content, end2, duration, function() {
+        $3.fancybox.animate(slide.$content, end2, duration, function() {
           self2.isAnimating = false;
           self2.complete();
         });
@@ -18842,7 +19459,7 @@ window.$ = import_jquery.default;
         }
         return;
       }
-      $2.fancybox.stop($slide);
+      $3.fancybox.stop($slide);
       effectClassName = "fancybox-slide--" + (slide.pos >= self2.prevPos ? "next" : "previous") + " fancybox-animated fancybox-fx-" + effect4;
       $slide.addClass(effectClassName).removeClass("fancybox-slide--current");
       slide.$content.removeClass("fancybox-is-hidden");
@@ -18850,7 +19467,7 @@ window.$ = import_jquery.default;
       if (slide.type !== "image") {
         slide.$content.hide().show(0);
       }
-      $2.fancybox.animate(
+      $3.fancybox.animate(
         $slide,
         "fancybox-slide--current",
         duration,
@@ -18873,7 +19490,7 @@ window.$ = import_jquery.default;
       if (!$thumb || !inViewport($thumb[0])) {
         return false;
       }
-      thumbPos = $2.fancybox.getTranslate($thumb);
+      thumbPos = $3.fancybox.getTranslate($thumb);
       btw = parseFloat($thumb.css("border-top-width") || 0);
       brw = parseFloat($thumb.css("border-right-width") || 0);
       bbw = parseFloat($thumb.css("border-bottom-width") || 0);
@@ -18902,11 +19519,11 @@ window.$ = import_jquery.default;
         self2.preload("inline");
         forceRedraw(current.$slide);
         current.$slide.addClass("fancybox-slide--complete");
-        $2.each(self2.slides, function(key, slide) {
+        $3.each(self2.slides, function(key, slide) {
           if (slide.pos >= self2.currPos - 1 && slide.pos <= self2.currPos + 1) {
             slides[slide.pos] = slide;
           } else if (slide) {
-            $2.fancybox.stop(slide.$slide);
+            $3.fancybox.stop(slide.$slide);
             slide.$slide.off().remove();
           }
         });
@@ -18978,7 +19595,7 @@ window.$ = import_jquery.default;
         focusableItems = self2.current.$slide.find("*:visible" + (firstRun ? ":not(.fancybox-close-small)" : ""));
       }
       focusableItems = focusableItems.filter(focusableStr).filter(function() {
-        return $2(this).css("visibility") !== "hidden" && !$2(this).hasClass("disabled");
+        return $3(this).css("visibility") !== "hidden" && !$3(this).hasClass("disabled");
       });
       if (focusableItems.length) {
         focusedItemIndex = focusableItems.index(document2.activeElement);
@@ -19004,8 +19621,8 @@ window.$ = import_jquery.default;
     // =================================================================================
     activate: function() {
       var self2 = this;
-      $2(".fancybox-container").each(function() {
-        var instance = $2(this).data("FancyBox");
+      $3(".fancybox-container").each(function() {
+        var instance = $3(this).data("FancyBox");
         if (instance && instance.id !== self2.id && !instance.isClosing) {
           instance.trigger("onDeactivate");
           instance.removeEvents();
@@ -19024,7 +19641,7 @@ window.$ = import_jquery.default;
     // This will start "zoom-out" animation if needed and clean everything up afterwards
     // =================================================================================
     close: function(e, d) {
-      var self2 = this, current = self2.current, effect4, duration, $content, domRect, opacity, start3, end2;
+      var self2 = this, current = self2.current, effect4, duration, $content, domRect, opacity, start4, end2;
       var done = function() {
         self2.cleanUp(e);
       };
@@ -19042,10 +19659,10 @@ window.$ = import_jquery.default;
       self2.removeEvents();
       $content = current.$content;
       effect4 = current.opts.animationEffect;
-      duration = $2.isNumeric(d) ? d : effect4 ? current.opts.animationDuration : 0;
+      duration = $3.isNumeric(d) ? d : effect4 ? current.opts.animationDuration : 0;
       current.$slide.removeClass("fancybox-slide--complete fancybox-slide--next fancybox-slide--previous fancybox-animated");
       if (e !== true) {
-        $2.fancybox.stop(current.$slide);
+        $3.fancybox.stop(current.$slide);
       } else {
         effect4 = false;
       }
@@ -19060,9 +19677,9 @@ window.$ = import_jquery.default;
         effect4 = "fade";
       }
       if (effect4 === "zoom") {
-        $2.fancybox.stop($content);
-        domRect = $2.fancybox.getTranslate($content);
-        start3 = {
+        $3.fancybox.stop($content);
+        domRect = $3.fancybox.getTranslate($content);
+        start4 = {
           top: domRect.top,
           left: domRect.left,
           scaleX: domRect.width / end2.width,
@@ -19077,13 +19694,13 @@ window.$ = import_jquery.default;
         if (opacity) {
           end2.opacity = 0;
         }
-        $2.fancybox.setTranslate($content, start3);
+        $3.fancybox.setTranslate($content, start4);
         forceRedraw($content);
-        $2.fancybox.animate($content, end2, duration, done);
+        $3.fancybox.animate($content, end2, duration, done);
         return true;
       }
       if (effect4 && duration) {
-        $2.fancybox.animate(
+        $3.fancybox.animate(
           current.$slide.addClass("fancybox-slide--previous").removeClass("fancybox-slide--current"),
           "fancybox-animated fancybox-fx-" + effect4,
           duration,
@@ -19113,16 +19730,16 @@ window.$ = import_jquery.default;
           x = window2.scrollX;
           y = window2.scrollY;
           $focus.trigger("focus");
-          $2("html, body").scrollTop(y).scrollLeft(x);
+          $3("html, body").scrollTop(y).scrollLeft(x);
         }
       }
       self2.current = null;
-      instance = $2.fancybox.getInstance();
+      instance = $3.fancybox.getInstance();
       if (instance) {
         instance.activate();
       } else {
-        $2("body").removeClass("fancybox-active compensate-for-scrollbar");
-        $2("#fancybox-style-noscroll").remove();
+        $3("body").removeClass("fancybox-active compensate-for-scrollbar");
+        $3("#fancybox-style-noscroll").remove();
       }
     },
     // Call callback and trigger an event
@@ -19135,7 +19752,7 @@ window.$ = import_jquery.default;
         obj = self2;
       }
       args.unshift(self2);
-      if ($2.isFunction(obj.opts[name])) {
+      if ($3.isFunction(obj.opts[name])) {
         rez = obj.opts[name].apply(obj, args);
       }
       if (rez === false) {
@@ -19170,7 +19787,7 @@ window.$ = import_jquery.default;
       } else if (current.opts.toolbar) {
         $container.find("[data-fancybox-download],[data-fancybox-zoom]").hide();
       }
-      if ($2(document2.activeElement).is(":hidden,[disabled]")) {
+      if ($3(document2.activeElement).is(":hidden,[disabled]")) {
         self2.$refs.container.trigger("focus");
       }
     },
@@ -19204,7 +19821,7 @@ window.$ = import_jquery.default;
       }
     }
   });
-  $2.fancybox = {
+  $3.fancybox = {
     version: "3.5.7",
     defaults,
     // Get current instance and execute a command.
@@ -19219,11 +19836,11 @@ window.$ = import_jquery.default;
     //   });
     // ======================================================
     getInstance: function(command) {
-      var instance = $2('.fancybox-container:not(".fancybox-is-closing"):last').data("FancyBox"), args = Array.prototype.slice.call(arguments, 1);
+      var instance = $3('.fancybox-container:not(".fancybox-is-closing"):last').data("FancyBox"), args = Array.prototype.slice.call(arguments, 1);
       if (instance instanceof FancyBox) {
-        if ($2.type(command) === "string") {
+        if ($3.type(command) === "string") {
           instance[command].apply(instance, args);
-        } else if ($2.type(command) === "function") {
+        } else if ($3.type(command) === "function") {
           command.apply(instance, args);
         }
         return instance;
@@ -19317,7 +19934,7 @@ window.$ = import_jquery.default;
     // =============================
     animate: function($el, to, duration, callback, leaveAnimationName) {
       var self2 = this, from;
-      if ($2.isFunction(duration)) {
+      if ($3.isFunction(duration)) {
         callback = duration;
         duration = null;
       }
@@ -19328,10 +19945,10 @@ window.$ = import_jquery.default;
           return;
         }
         self2.stop($el);
-        if ($2.isNumeric(duration)) {
+        if ($3.isNumeric(duration)) {
           $el.css("transition-duration", "");
         }
-        if ($2.isPlainObject(to)) {
+        if ($3.isPlainObject(to)) {
           if (to.scaleX !== undefined2 && to.scaleY !== undefined2) {
             self2.setTranslate($el, {
               top: to.top,
@@ -19345,14 +19962,14 @@ window.$ = import_jquery.default;
         } else if (leaveAnimationName !== true) {
           $el.removeClass(to);
         }
-        if ($2.isFunction(callback)) {
+        if ($3.isFunction(callback)) {
           callback(e);
         }
       });
-      if ($2.isNumeric(duration)) {
+      if ($3.isNumeric(duration)) {
         $el.css("transition-duration", duration + "ms");
       }
-      if ($2.isPlainObject(to)) {
+      if ($3.isPlainObject(to)) {
         if (to.scaleX !== undefined2 && to.scaleY !== undefined2) {
           delete to.width;
           delete to.height;
@@ -19360,7 +19977,7 @@ window.$ = import_jquery.default;
             $el.parent().addClass("fancybox-is-scaling");
           }
         }
-        $2.fancybox.setTranslate($el, to);
+        $3.fancybox.setTranslate($el, to);
       } else {
         $el.addClass(to);
       }
@@ -19392,35 +20009,35 @@ window.$ = import_jquery.default;
     if (e && e.data) {
       opts = mergeOpts(e.data.options, opts);
     }
-    $target = opts.$target || $2(e.currentTarget).trigger("blur");
-    instance = $2.fancybox.getInstance();
+    $target = opts.$target || $3(e.currentTarget).trigger("blur");
+    instance = $3.fancybox.getInstance();
     if (instance && instance.$trigger && instance.$trigger.is($target)) {
       return;
     }
     if (opts.selector) {
-      items = $2(opts.selector);
+      items = $3(opts.selector);
     } else {
       value = $target.attr("data-fancybox") || "";
       if (value) {
         items = e.data ? e.data.items : [];
-        items = items.length ? items.filter('[data-fancybox="' + value + '"]') : $2('[data-fancybox="' + value + '"]');
+        items = items.length ? items.filter('[data-fancybox="' + value + '"]') : $3('[data-fancybox="' + value + '"]');
       } else {
         items = [$target];
       }
     }
-    index = $2(items).index($target);
+    index = $3(items).index($target);
     if (index < 0) {
       index = 0;
     }
-    instance = $2.fancybox.open(items, opts, index);
+    instance = $3.fancybox.open(items, opts, index);
     instance.$trigger = $target;
   }
-  $2.fn.fancybox = function(options) {
+  $3.fn.fancybox = function(options) {
     var selector;
     options = options || {};
     selector = options.selector || false;
     if (selector) {
-      $2("body").off("click.fb-start", selector).on("click.fb-start", selector, {
+      $3("body").off("click.fb-start", selector).on("click.fb-start", selector, {
         options
       }, _run);
     } else {
@@ -19437,8 +20054,8 @@ window.$ = import_jquery.default;
   };
   $D.on("click.fb-start", "[data-fancybox]", _run);
   $D.on("click.fb-start", "[data-fancybox-trigger]", function(e) {
-    $2('[data-fancybox="' + $2(this).attr("data-fancybox-trigger") + '"]').eq($2(this).attr("data-fancybox-index") || 0).trigger("click.fb-start", {
-      $trigger: $2(this)
+    $3('[data-fancybox="' + $3(this).attr("data-fancybox-trigger") + '"]').eq($3(this).attr("data-fancybox-index") || 0).trigger("click.fb-start", {
+      $trigger: $3(this)
     });
   });
   (function() {
@@ -19446,25 +20063,25 @@ window.$ = import_jquery.default;
     $D.on("mousedown mouseup focus blur", buttonStr, function(e) {
       switch (e.type) {
         case "mousedown":
-          $pressed = $2(this);
+          $pressed = $3(this);
           break;
         case "mouseup":
           $pressed = null;
           break;
         case "focusin":
-          $2(buttonStr).removeClass(focusStr);
-          if (!$2(this).is($pressed) && !$2(this).is("[disabled]")) {
-            $2(this).addClass(focusStr);
+          $3(buttonStr).removeClass(focusStr);
+          if (!$3(this).is($pressed) && !$3(this).is("[disabled]")) {
+            $3(this).addClass(focusStr);
           }
           break;
         case "focusout":
-          $2(buttonStr).removeClass(focusStr);
+          $3(buttonStr).removeClass(focusStr);
           break;
       }
     });
   })();
 })(window, document, jQuery);
-(function($2) {
+(function($3) {
   "use strict";
   var defaults = {
     youtube: {
@@ -19532,10 +20149,10 @@ window.$ = import_jquery.default;
       return;
     }
     params = params || "";
-    if ($2.type(params) === "object") {
-      params = $2.param(params, true);
+    if ($3.type(params) === "object") {
+      params = $3.param(params, true);
     }
-    $2.each(rez, function(key, value) {
+    $3.each(rez, function(key, value) {
       url = url.replace("$" + key, value || "");
     });
     if (params.length) {
@@ -19543,10 +20160,10 @@ window.$ = import_jquery.default;
     }
     return url;
   };
-  $2(document).on("objectNeedsType.fb", function(e, instance, item) {
+  $3(document).on("objectNeedsType.fb", function(e, instance, item) {
     var url = item.src || "", type = false, media, thumb, rez, params, urlParams, paramObj, provider;
-    media = $2.extend(true, {}, defaults, item.opts.media);
-    $2.each(media, function(providerName, providerOpts) {
+    media = $3.extend(true, {}, defaults, item.opts.media);
+    $3.each(media, function(providerName, providerOpts) {
       rez = url.match(providerOpts.matcher);
       if (!rez) {
         return;
@@ -19560,19 +20177,19 @@ window.$ = import_jquery.default;
           urlParams = urlParams.substring(1);
         }
         urlParams = urlParams.split("&");
-        for (var m = 0; m < urlParams.length; ++m) {
-          var p = urlParams[m].split("=", 2);
+        for (var m2 = 0; m2 < urlParams.length; ++m2) {
+          var p = urlParams[m2].split("=", 2);
           if (p.length == 2) {
             paramObj[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
           }
         }
       }
-      params = $2.extend(true, {}, providerOpts.params, item.opts[providerName], paramObj);
-      url = $2.type(providerOpts.url) === "function" ? providerOpts.url.call(this, rez, params, item) : format(providerOpts.url, rez, params);
-      thumb = $2.type(providerOpts.thumb) === "function" ? providerOpts.thumb.call(this, rez, params, item) : format(providerOpts.thumb, rez);
+      params = $3.extend(true, {}, providerOpts.params, item.opts[providerName], paramObj);
+      url = $3.type(providerOpts.url) === "function" ? providerOpts.url.call(this, rez, params, item) : format(providerOpts.url, rez, params);
+      thumb = $3.type(providerOpts.thumb) === "function" ? providerOpts.thumb.call(this, rez, params, item) : format(providerOpts.thumb, rez);
       if (providerName === "youtube") {
-        url = url.replace(/&t=((\d+)m)?(\d+)s/, function(match, p1, m2, s) {
-          return "&start=" + ((m2 ? parseInt(m2, 10) * 60 : 0) + parseInt(s, 10));
+        url = url.replace(/&t=((\d+)m)?(\d+)s/, function(match, p1, m3, s) {
+          return "&start=" + ((m3 ? parseInt(m3, 10) * 60 : 0) + parseInt(s, 10));
         });
       } else if (providerName === "vimeo") {
         url = url.replace("&%23", "#");
@@ -19584,7 +20201,7 @@ window.$ = import_jquery.default;
         item.opts.thumb = thumb;
       }
       if (type === "iframe") {
-        item.opts = $2.extend(true, item.opts, {
+        item.opts = $3.extend(true, item.opts, {
           iframe: {
             preload: false,
             attr: {
@@ -19593,7 +20210,7 @@ window.$ = import_jquery.default;
           }
         });
       }
-      $2.extend(item, {
+      $3.extend(item, {
         type,
         src: url,
         origSrc: item.src,
@@ -19650,7 +20267,7 @@ window.$ = import_jquery.default;
       if (vendor === "youtube") {
         delete window.onYouTubeIframeAPIReady;
       }
-      instance = $2.fancybox.getInstance();
+      instance = $3.fancybox.getInstance();
       if (instance) {
         $el = instance.current.$content.find("iframe");
         if (vendor === "youtube" && YT !== void 0 && YT) {
@@ -19672,7 +20289,7 @@ window.$ = import_jquery.default;
       }
     }
   };
-  $2(document).on({
+  $3(document).on({
     "afterShow.fb": function(e, instance, current) {
       if (instance.group.length > 1 && (current.contentSource === "youtube" || current.contentSource === "vimeo")) {
         VideoAPILoader.load(current.contentSource);
@@ -19680,7 +20297,7 @@ window.$ = import_jquery.default;
     }
   });
 })(jQuery);
-(function(window2, document2, $2) {
+(function(window2, document2, $3) {
   "use strict";
   var requestAFrame = function() {
     return window2.requestAnimationFrame || window2.webkitRequestAnimationFrame || window2.mozRequestAnimationFrame || window2.oRequestAnimationFrame || // if all else fails, use setTimeout
@@ -19724,7 +20341,7 @@ window.$ = import_jquery.default;
     return Math.sqrt(Math.pow(point2.x - point1.x, 2) + Math.pow(point2.y - point1.y, 2));
   };
   var isClickable = function($el) {
-    if ($el.is('a,area,button,[role="button"],input,label,select,summary,textarea,video,audio,iframe') || $2.isFunction($el.get(0).onclick) || $el.data("selectable")) {
+    if ($el.is('a,area,button,[role="button"],input,label,select,summary,textarea,video,audio,iframe') || $3.isFunction($el.get(0).onclick) || $el.data("selectable")) {
       return true;
     }
     for (var i = 0, atts = $el[0].attributes, n = atts.length; i < n; i++) {
@@ -19759,12 +20376,12 @@ window.$ = import_jquery.default;
     self2.$stage = instance.$refs.stage;
     self2.$container = instance.$refs.container;
     self2.destroy();
-    self2.$container.on("touchstart.fb.touch mousedown.fb.touch", $2.proxy(self2, "ontouchstart"));
+    self2.$container.on("touchstart.fb.touch mousedown.fb.touch", $3.proxy(self2, "ontouchstart"));
   };
   Guestures.prototype.destroy = function() {
     var self2 = this;
     self2.$container.off(".fb.touch");
-    $2(document2).off(".fb.touch");
+    $3(document2).off(".fb.touch");
     if (self2.requestId) {
       cancelAFrame(self2.requestId);
       self2.requestId = null;
@@ -19775,7 +20392,7 @@ window.$ = import_jquery.default;
     }
   };
   Guestures.prototype.ontouchstart = function(e) {
-    var self2 = this, $target = $2(e.target), instance = self2.instance, current = instance.current, $slide = current.$slide, $content = current.$content, isTouchDevice = e.type == "touchstart";
+    var self2 = this, $target = $3(e.target), instance = self2.instance, current = instance.current, $slide = current.$slide, $content = current.$content, isTouchDevice = e.type == "touchstart";
     if (isTouchDevice) {
       self2.$container.off("mousedown.fb.touch");
     }
@@ -19815,35 +20432,35 @@ window.$ = import_jquery.default;
     self2.canvasWidth = Math.round($slide[0].clientWidth);
     self2.canvasHeight = Math.round($slide[0].clientHeight);
     self2.contentLastPos = null;
-    self2.contentStartPos = $2.fancybox.getTranslate(self2.$content) || {
+    self2.contentStartPos = $3.fancybox.getTranslate(self2.$content) || {
       top: 0,
       left: 0
     };
-    self2.sliderStartPos = $2.fancybox.getTranslate($slide);
-    self2.stagePos = $2.fancybox.getTranslate(instance.$refs.stage);
+    self2.sliderStartPos = $3.fancybox.getTranslate($slide);
+    self2.stagePos = $3.fancybox.getTranslate(instance.$refs.stage);
     self2.sliderStartPos.top -= self2.stagePos.top;
     self2.sliderStartPos.left -= self2.stagePos.left;
     self2.contentStartPos.top -= self2.stagePos.top;
     self2.contentStartPos.left -= self2.stagePos.left;
-    $2(document2).off(".fb.touch").on(isTouchDevice ? "touchend.fb.touch touchcancel.fb.touch" : "mouseup.fb.touch mouseleave.fb.touch", $2.proxy(self2, "ontouchend")).on(isTouchDevice ? "touchmove.fb.touch" : "mousemove.fb.touch", $2.proxy(self2, "ontouchmove"));
-    if ($2.fancybox.isMobile) {
+    $3(document2).off(".fb.touch").on(isTouchDevice ? "touchend.fb.touch touchcancel.fb.touch" : "mouseup.fb.touch mouseleave.fb.touch", $3.proxy(self2, "ontouchend")).on(isTouchDevice ? "touchmove.fb.touch" : "mousemove.fb.touch", $3.proxy(self2, "ontouchmove"));
+    if ($3.fancybox.isMobile) {
       document2.addEventListener("scroll", self2.onscroll, true);
     }
     if (!(self2.opts || self2.canPan) || !($target.is(self2.$stage) || self2.$stage.find($target).length)) {
       if ($target.is(".fancybox-image")) {
         e.preventDefault();
       }
-      if (!($2.fancybox.isMobile && $target.parents(".fancybox-caption").length)) {
+      if (!($3.fancybox.isMobile && $target.parents(".fancybox-caption").length)) {
         return;
       }
     }
     self2.isScrollable = isScrollable($target) || isScrollable($target.parent());
-    if (!($2.fancybox.isMobile && self2.isScrollable)) {
+    if (!($3.fancybox.isMobile && self2.isScrollable)) {
       e.preventDefault();
     }
     if (self2.startPoints.length === 1 || current.hasError) {
       if (self2.canPan) {
-        $2.fancybox.stop(self2.$content);
+        $3.fancybox.stop(self2.$content);
         self2.isPanning = true;
       } else {
         self2.isSwiping = true;
@@ -19855,9 +20472,9 @@ window.$ = import_jquery.default;
       self2.isSwiping = false;
       self2.isPanning = false;
       self2.isZooming = true;
-      $2.fancybox.stop(self2.$content);
-      self2.centerPointStartX = (self2.startPoints[0].x + self2.startPoints[1].x) * 0.5 - $2(window2).scrollLeft();
-      self2.centerPointStartY = (self2.startPoints[0].y + self2.startPoints[1].y) * 0.5 - $2(window2).scrollTop();
+      $3.fancybox.stop(self2.$content);
+      self2.centerPointStartX = (self2.startPoints[0].x + self2.startPoints[1].x) * 0.5 - $3(window2).scrollLeft();
+      self2.centerPointStartY = (self2.startPoints[0].y + self2.startPoints[1].y) * 0.5 - $3(window2).scrollTop();
       self2.percentageOfImageAtPinchPointX = (self2.centerPointStartX - self2.contentStartPos.left) / self2.contentStartPos.width;
       self2.percentageOfImageAtPinchPointY = (self2.centerPointStartY - self2.contentStartPos.top) / self2.contentStartPos.height;
       self2.startDistanceBetweenFingers = distance(self2.startPoints[0], self2.startPoints[1]);
@@ -19905,23 +20522,23 @@ window.$ = import_jquery.default;
         self2.canTap = false;
         if (instance.group.length < 2 && self2.opts.vertical) {
           self2.isSwiping = "y";
-        } else if (instance.isDragging || self2.opts.vertical === false || self2.opts.vertical === "auto" && $2(window2).width() > 800) {
+        } else if (instance.isDragging || self2.opts.vertical === false || self2.opts.vertical === "auto" && $3(window2).width() > 800) {
           self2.isSwiping = "x";
         } else {
           angle = Math.abs(Math.atan2(self2.distanceY, self2.distanceX) * 180 / Math.PI);
           self2.isSwiping = angle > 45 && angle < 135 ? "y" : "x";
         }
-        if (self2.isSwiping === "y" && $2.fancybox.isMobile && self2.isScrollable) {
+        if (self2.isSwiping === "y" && $3.fancybox.isMobile && self2.isScrollable) {
           self2.isScrolling = true;
           return;
         }
         instance.isDragging = self2.isSwiping;
         self2.startPoints = self2.newPoints;
-        $2.each(instance.slides, function(index, slide) {
+        $3.each(instance.slides, function(index, slide) {
           var slidePos, stagePos;
-          $2.fancybox.stop(slide.$slide);
-          slidePos = $2.fancybox.getTranslate(slide.$slide);
-          stagePos = $2.fancybox.getTranslate(instance.$refs.stage);
+          $3.fancybox.stop(slide.$slide);
+          slidePos = $3.fancybox.getTranslate(slide.$slide);
+          stagePos = $3.fancybox.getTranslate(instance.$refs.stage);
           slide.$slide.css({
             transform: "",
             opacity: "",
@@ -19933,7 +20550,7 @@ window.$ = import_jquery.default;
             self2.sliderStartPos.top = slidePos.top - stagePos.top;
             self2.sliderStartPos.left = slidePos.left - stagePos.left;
           }
-          $2.fancybox.setTranslate(slide.$slide, {
+          $3.fancybox.setTranslate(slide.$slide, {
             top: slidePos.top - stagePos.top,
             left: slidePos.left - stagePos.left
           });
@@ -19963,9 +20580,9 @@ window.$ = import_jquery.default;
     }
     self2.requestId = requestAFrame(function() {
       if (self2.sliderLastPos) {
-        $2.each(self2.instance.slides, function(index, slide) {
+        $3.each(self2.instance.slides, function(index, slide) {
           var pos = slide.pos - self2.instance.currPos;
-          $2.fancybox.setTranslate(slide.$slide, {
+          $3.fancybox.setTranslate(slide.$slide, {
             top: self2.sliderLastPos.top,
             left: self2.sliderLastPos.left + pos * self2.canvasWidth + pos * slide.opts.gutter
           });
@@ -19976,7 +20593,7 @@ window.$ = import_jquery.default;
   };
   Guestures.prototype.onPan = function() {
     var self2 = this;
-    if (distance(self2.newPoints[0], self2.realPoints[0]) < ($2.fancybox.isMobile ? 10 : 5)) {
+    if (distance(self2.newPoints[0], self2.realPoints[0]) < ($3.fancybox.isMobile ? 10 : 5)) {
       self2.startPoints = self2.newPoints;
       return;
     }
@@ -19986,7 +20603,7 @@ window.$ = import_jquery.default;
       cancelAFrame(self2.requestId);
     }
     self2.requestId = requestAFrame(function() {
-      $2.fancybox.setTranslate(self2.$content, self2.contentLastPos);
+      $3.fancybox.setTranslate(self2.$content, self2.contentLastPos);
     });
   };
   Guestures.prototype.limitMovement = function() {
@@ -20062,8 +20679,8 @@ window.$ = import_jquery.default;
     var newHeight = Math.floor(currentHeight * pinchRatio);
     var translateFromZoomingX = (currentWidth - newWidth) * self2.percentageOfImageAtPinchPointX;
     var translateFromZoomingY = (currentHeight - newHeight) * self2.percentageOfImageAtPinchPointY;
-    var centerPointEndX = (self2.newPoints[0].x + self2.newPoints[1].x) / 2 - $2(window2).scrollLeft();
-    var centerPointEndY = (self2.newPoints[0].y + self2.newPoints[1].y) / 2 - $2(window2).scrollTop();
+    var centerPointEndX = (self2.newPoints[0].x + self2.newPoints[1].x) / 2 - $3(window2).scrollLeft();
+    var centerPointEndY = (self2.newPoints[0].y + self2.newPoints[1].y) / 2 - $3(window2).scrollTop();
     var translateFromTranslatingX = centerPointEndX - self2.centerPointStartX;
     var translateFromTranslatingY = centerPointEndY - self2.centerPointStartY;
     var newOffsetX = currentOffsetX + (translateFromZoomingX + translateFromTranslatingX);
@@ -20082,7 +20699,7 @@ window.$ = import_jquery.default;
       cancelAFrame(self2.requestId);
     }
     self2.requestId = requestAFrame(function() {
-      $2.fancybox.setTranslate(self2.$content, self2.contentLastPos);
+      $3.fancybox.setTranslate(self2.$content, self2.contentLastPos);
     });
   };
   Guestures.prototype.ontouchend = function(e) {
@@ -20094,7 +20711,7 @@ window.$ = import_jquery.default;
     self2.endPoints = getPointerXY(e);
     self2.dMs = Math.max((/* @__PURE__ */ new Date()).getTime() - self2.startTime, 1);
     self2.$container.removeClass("fancybox-is-grabbing");
-    $2(document2).off(".fb.touch");
+    $3(document2).off(".fb.touch");
     document2.removeEventListener("scroll", self2.onscroll, true);
     if (self2.requestId) {
       cancelAFrame(self2.requestId);
@@ -20124,7 +20741,7 @@ window.$ = import_jquery.default;
     var self2 = this, ret = false, len = self2.instance.group.length, distanceX = Math.abs(self2.distanceX), canAdvance = swiping == "x" && len > 1 && (self2.dMs > 130 && distanceX > 10 || distanceX > 50), speedX = 300;
     self2.sliderLastPos = null;
     if (swiping == "y" && !scrolling && Math.abs(self2.distanceY) > 50) {
-      $2.fancybox.animate(
+      $3.fancybox.animate(
         self2.instance.current.$slide,
         {
           top: self2.sliderStartPos.top + self2.distanceY + self2.velocityY * 150,
@@ -20158,7 +20775,7 @@ window.$ = import_jquery.default;
     newPos = self2.limitPosition(newOffsetX, newOffsetY, self2.contentStartPos.width, self2.contentStartPos.height);
     newPos.width = self2.contentStartPos.width;
     newPos.height = self2.contentStartPos.height;
-    $2.fancybox.animate(self2.$content, newPos, 366);
+    $3.fancybox.animate(self2.$content, newPos, 366);
   };
   Guestures.prototype.endZooming = function() {
     var self2 = this;
@@ -20179,28 +20796,28 @@ window.$ = import_jquery.default;
       scaleX: 1,
       scaleY: 1
     };
-    $2.fancybox.setTranslate(self2.$content, reset);
+    $3.fancybox.setTranslate(self2.$content, reset);
     if (newWidth < self2.canvasWidth && newHeight < self2.canvasHeight) {
       self2.instance.scaleToFit(150);
     } else if (newWidth > current.width || newHeight > current.height) {
       self2.instance.scaleToActual(self2.centerPointStartX, self2.centerPointStartY, 150);
     } else {
       newPos = self2.limitPosition(newOffsetX, newOffsetY, newWidth, newHeight);
-      $2.fancybox.animate(self2.$content, newPos, 150);
+      $3.fancybox.animate(self2.$content, newPos, 150);
     }
   };
   Guestures.prototype.onTap = function(e) {
     var self2 = this;
-    var $target = $2(e.target);
+    var $target = $3(e.target);
     var instance = self2.instance;
     var current = instance.current;
     var endPoints = e && getPointerXY(e) || self2.startPoints;
-    var tapX = endPoints[0] ? endPoints[0].x - $2(window2).scrollLeft() - self2.stagePos.left : 0;
-    var tapY = endPoints[0] ? endPoints[0].y - $2(window2).scrollTop() - self2.stagePos.top : 0;
+    var tapX = endPoints[0] ? endPoints[0].x - $3(window2).scrollLeft() - self2.stagePos.left : 0;
+    var tapY = endPoints[0] ? endPoints[0].y - $3(window2).scrollTop() - self2.stagePos.top : 0;
     var where;
     var process = function(prefix) {
       var action = current.opts[prefix];
-      if ($2.isFunction(action)) {
+      if ($3.isFunction(action)) {
         action = action.apply(instance, [current, e]);
       }
       if (!action) {
@@ -20274,7 +20891,7 @@ window.$ = import_jquery.default;
     }
     return this;
   };
-  $2(document2).on("onActivate.fb", function(e, instance) {
+  $3(document2).on("onActivate.fb", function(e, instance) {
     if (instance && !instance.Guestures) {
       instance.Guestures = new Guestures(instance);
     }
@@ -20284,9 +20901,9 @@ window.$ = import_jquery.default;
     }
   });
 })(window, document, jQuery);
-(function(document2, $2) {
+(function(document2, $3) {
   "use strict";
-  $2.extend(true, $2.fancybox.defaults, {
+  $3.extend(true, $3.fancybox.defaults, {
     btnTpl: {
       slideShow: '<button data-fancybox-play class="fancybox-button fancybox-button--play" title="{{PLAY_START}}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 5.4v13.2l11-6.6z"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.33 5.75h2.2v12.5h-2.2V5.75zm5.15 0h2.2v12.5h-2.2V5.75z"/></svg></button>'
     },
@@ -20300,7 +20917,7 @@ window.$ = import_jquery.default;
     this.instance = instance;
     this.init();
   };
-  $2.extend(SlideShow.prototype, {
+  $3.extend(SlideShow.prototype, {
     timer: null,
     isActive: false,
     $button: null,
@@ -20312,7 +20929,7 @@ window.$ = import_jquery.default;
       if (instance.group.length < 2 || !opts) {
         self2.$button.hide();
       } else if (opts.progress) {
-        self2.$progress = $2('<div class="fancybox-progress"></div>').appendTo(instance.$refs.inner);
+        self2.$progress = $3('<div class="fancybox-progress"></div>').appendTo(instance.$refs.inner);
       }
     },
     set: function(force) {
@@ -20320,7 +20937,7 @@ window.$ = import_jquery.default;
       if (current && (force === true || current.opts.loop || instance.currIndex < instance.group.length - 1)) {
         if (self2.isActive && current.contentType !== "video") {
           if (self2.$progress) {
-            $2.fancybox.animate(self2.$progress.show(), {
+            $3.fancybox.animate(self2.$progress.show(), {
               scaleX: 1
             }, current.opts.slideShow.speed);
           }
@@ -20376,7 +20993,7 @@ window.$ = import_jquery.default;
       }
     }
   });
-  $2(document2).on({
+  $3(document2).on({
     "onInit.fb": function(e, instance) {
       if (instance && !instance.SlideShow) {
         instance.SlideShow = new SlideShow(instance);
@@ -20400,7 +21017,7 @@ window.$ = import_jquery.default;
     },
     "afterKeydown.fb": function(e, instance, current, keypress, keycode) {
       var SlideShow2 = instance && instance.SlideShow;
-      if (SlideShow2 && current.opts.slideShow && (keycode === 80 || keycode === 32) && !$2(document2.activeElement).is("button,a,input")) {
+      if (SlideShow2 && current.opts.slideShow && (keycode === 80 || keycode === 32) && !$3(document2.activeElement).is("button,a,input")) {
         keypress.preventDefault();
         SlideShow2.toggle();
       }
@@ -20412,8 +21029,8 @@ window.$ = import_jquery.default;
       }
     }
   });
-  $2(document2).on("visibilitychange", function() {
-    var instance = $2.fancybox.getInstance(), SlideShow2 = instance && instance.SlideShow;
+  $3(document2).on("visibilitychange", function() {
+    var instance = $3.fancybox.getInstance(), SlideShow2 = instance && instance.SlideShow;
     if (SlideShow2 && SlideShow2.isActive) {
       if (document2.hidden) {
         SlideShow2.clear();
@@ -20423,7 +21040,7 @@ window.$ = import_jquery.default;
     }
   });
 })(document, jQuery);
-(function(document2, $2) {
+(function(document2, $3) {
   "use strict";
   var fn2 = function() {
     var fnMap = [
@@ -20492,7 +21109,7 @@ window.$ = import_jquery.default;
         return Boolean(document2[fn2.fullscreenEnabled]);
       }
     };
-    $2.extend(true, $2.fancybox.defaults, {
+    $3.extend(true, $3.fancybox.defaults, {
       btnTpl: {
         fullScreen: '<button data-fancybox-fullscreen class="fancybox-button fancybox-button--fsenter" title="{{FULL_SCREEN}}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 16h3v3h2v-5H5zm3-8H5v2h5V5H8zm6 11h2v-3h3v-2h-5zm2-11V5h-2v5h5V8z"/></svg></button>'
       },
@@ -20500,8 +21117,8 @@ window.$ = import_jquery.default;
         autoStart: false
       }
     });
-    $2(document2).on(fn2.fullscreenchange, function() {
-      var isFullscreen = FullScreen.isFullscreen(), instance = $2.fancybox.getInstance();
+    $3(document2).on(fn2.fullscreenchange, function() {
+      var isFullscreen = FullScreen.isFullscreen(), instance = $3.fancybox.getInstance();
       if (instance) {
         if (instance.current && instance.current.type === "image" && instance.isAnimating) {
           instance.isAnimating = false;
@@ -20516,7 +21133,7 @@ window.$ = import_jquery.default;
       }
     });
   }
-  $2(document2).on({
+  $3(document2).on({
     "onInit.fb": function(e, instance) {
       var $container;
       if (!fn2) {
@@ -20551,10 +21168,10 @@ window.$ = import_jquery.default;
     }
   });
 })(document, jQuery);
-(function(document2, $2) {
+(function(document2, $3) {
   "use strict";
   var CLASS = "fancybox-thumbs", CLASS_ACTIVE = CLASS + "-active";
-  $2.fancybox.defaults = $2.extend(
+  $3.fancybox.defaults = $3.extend(
     true,
     {
       btnTpl: {
@@ -20571,12 +21188,12 @@ window.$ = import_jquery.default;
         // Vertical (y) or horizontal (x) scrolling
       }
     },
-    $2.fancybox.defaults
+    $3.fancybox.defaults
   );
   var FancyThumbs = function(instance) {
     this.init(instance);
   };
-  $2.extend(FancyThumbs.prototype, {
+  $3.extend(FancyThumbs.prototype, {
     $button: null,
     $grid: null,
     $list: null,
@@ -20608,17 +21225,17 @@ window.$ = import_jquery.default;
     create: function() {
       var self2 = this, instance = self2.instance, parentEl = self2.opts.parentEl, list = [], src;
       if (!self2.$grid) {
-        self2.$grid = $2('<div class="' + CLASS + " " + CLASS + "-" + self2.opts.axis + '"></div>').appendTo(
+        self2.$grid = $3('<div class="' + CLASS + " " + CLASS + "-" + self2.opts.axis + '"></div>').appendTo(
           instance.$refs.container.find(parentEl).addBack().filter(parentEl)
         );
         self2.$grid.on("click", "a", function() {
-          instance.jumpTo($2(this).attr("data-index"));
+          instance.jumpTo($3(this).attr("data-index"));
         });
       }
       if (!self2.$list) {
-        self2.$list = $2('<div class="' + CLASS + '__list">').appendTo(self2.$grid);
+        self2.$list = $3('<div class="' + CLASS + '__list">').appendTo(self2.$grid);
       }
-      $2.each(instance.group, function(i, item) {
+      $3.each(instance.group, function(i, item) {
         src = item.thumb;
         if (!src && item.type === "image") {
           src = item.src;
@@ -20684,7 +21301,7 @@ window.$ = import_jquery.default;
       this.update();
     }
   });
-  $2(document2).on({
+  $3(document2).on({
     "onInit.fb": function(e, instance) {
       var Thumbs;
       if (instance && !instance.Thumbs) {
@@ -20715,9 +21332,9 @@ window.$ = import_jquery.default;
     }
   });
 })(document, jQuery);
-(function(document2, $2) {
+(function(document2, $3) {
   "use strict";
-  $2.extend(true, $2.fancybox.defaults, {
+  $3.extend(true, $3.fancybox.defaults, {
     btnTpl: {
       share: '<button data-fancybox-share class="fancybox-button fancybox-button--share" title="{{SHARE}}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2.55 19c1.4-8.4 9.1-9.8 11.9-9.8V5l7 7-7 6.3v-3.5c-2.8 0-10.5 2.1-11.9 4.2z"/></svg></button>'
     },
@@ -20743,16 +21360,16 @@ window.$ = import_jquery.default;
       return entityMap[s];
     });
   }
-  $2(document2).on("click", "[data-fancybox-share]", function() {
-    var instance = $2.fancybox.getInstance(), current = instance.current || null, url, tpl;
+  $3(document2).on("click", "[data-fancybox-share]", function() {
+    var instance = $3.fancybox.getInstance(), current = instance.current || null, url, tpl;
     if (!current) {
       return;
     }
-    if ($2.type(current.opts.share.url) === "function") {
+    if ($3.type(current.opts.share.url) === "function") {
       url = current.opts.share.url.apply(current, [instance, current]);
     }
     tpl = current.opts.share.tpl.replace(/\{\{media\}\}/g, current.type === "image" ? encodeURIComponent(current.src) : "").replace(/\{\{url\}\}/g, encodeURIComponent(url)).replace(/\{\{url_raw\}\}/g, escapeHtml(url)).replace(/\{\{descr\}\}/g, instance.$caption ? encodeURIComponent(instance.$caption.text()) : "");
-    $2.fancybox.open({
+    $3.fancybox.open({
       src: instance.translate(instance, tpl),
       type: "html",
       opts: {
@@ -20774,10 +21391,10 @@ window.$ = import_jquery.default;
     });
   });
 })(document, jQuery);
-(function(window2, document2, $2) {
+(function(window2, document2, $3) {
   "use strict";
-  if (!$2.escapeSelector) {
-    $2.escapeSelector = function(sel) {
+  if (!$3.escapeSelector) {
+    $3.escapeSelector = function(sel) {
       var rcssescape = /([\0-\x1f\x7f]|^-?\d)|^-$|[^\x80-\uFFFF\w-]/g;
       var fcssescape = function(ch, asCodePoint) {
         if (asCodePoint) {
@@ -20802,7 +21419,7 @@ window.$ = import_jquery.default;
   }
   function triggerFromUrl(url) {
     if (url.gallery !== "") {
-      $2("[data-fancybox='" + $2.escapeSelector(url.gallery) + "']").eq(url.index - 1).focus().trigger("click.fb-start");
+      $3("[data-fancybox='" + $3.escapeSelector(url.gallery) + "']").eq(url.index - 1).focus().trigger("click.fb-start");
     }
   }
   function getGalleryID(instance) {
@@ -20814,11 +21431,11 @@ window.$ = import_jquery.default;
     ret = opts.hash || (opts.$orig ? opts.$orig.data("fancybox") || opts.$orig.data("fancybox-trigger") : "");
     return ret === "" ? false : ret;
   }
-  $2(function() {
-    if ($2.fancybox.defaults.hash === false) {
+  $3(function() {
+    if ($3.fancybox.defaults.hash === false) {
       return;
     }
-    $2(document2).on({
+    $3(document2).on({
       "onInit.fb": function(e, instance) {
         var url, gallery;
         if (instance.group[instance.currIndex].opts.hash === false) {
@@ -20882,12 +21499,12 @@ window.$ = import_jquery.default;
         instance.currentHash = null;
       }
     });
-    $2(window2).on("hashchange.fb", function() {
+    $3(window2).on("hashchange.fb", function() {
       var url = parseUrl(), fb = null;
-      $2.each(
-        $2(".fancybox-container").get().reverse(),
+      $3.each(
+        $3(".fancybox-container").get().reverse(),
         function(index, value) {
-          var tmp = $2(value).data("FancyBox");
+          var tmp = $3(value).data("FancyBox");
           if (tmp && tmp.currentHash) {
             fb = tmp;
             return false;
@@ -20904,16 +21521,16 @@ window.$ = import_jquery.default;
       }
     });
     setTimeout(function() {
-      if (!$2.fancybox.getInstance()) {
+      if (!$3.fancybox.getInstance()) {
         triggerFromUrl(parseUrl());
       }
     }, 50);
   });
 })(window, document, jQuery);
-(function(document2, $2) {
+(function(document2, $3) {
   "use strict";
   var prevTime = (/* @__PURE__ */ new Date()).getTime();
-  $2(document2).on({
+  $3(document2).on({
     "onInit.fb": function(e, instance, current) {
       instance.$refs.stage.on("mousewheel DOMMouseScroll wheel MozMousePixelScroll", function(e2) {
         var current2 = instance.current, currTime = (/* @__PURE__ */ new Date()).getTime();
@@ -20938,7 +21555,7 @@ window.$ = import_jquery.default;
 
 // node_modules/jquery-tagcanvas/jquery.tagcanvas.min.js
 (function(ap) {
-  var M, K, L = Math.abs, ah = Math.sin, w = Math.cos, s = Math.max, aE = Math.min, aq = Math.ceil, F = Math.sqrt, au = Math.pow, h = {}, l = {}, m = { 0: "0,", 1: "17,", 2: "34,", 3: "51,", 4: "68,", 5: "85,", 6: "102,", 7: "119,", 8: "136,", 9: "153,", a: "170,", A: "170,", b: "187,", B: "187,", c: "204,", C: "204,", d: "221,", D: "221,", e: "238,", E: "238,", f: "255,", F: "255," }, x, c, Q, aG, H, aH, aa, C = document, p, b = {};
+  var M, K, L = Math.abs, ah = Math.sin, w = Math.cos, s = Math.max, aE = Math.min, aq = Math.ceil, F = Math.sqrt, au = Math.pow, h = {}, l = {}, m2 = { 0: "0,", 1: "17,", 2: "34,", 3: "51,", 4: "68,", 5: "85,", 6: "102,", 7: "119,", 8: "136,", 9: "153,", a: "170,", A: "170,", b: "187,", B: "187,", c: "204,", C: "204,", d: "221,", D: "221,", e: "238,", E: "238,", f: "255,", F: "255," }, x, c, Q, aG, H, aH, aa, C = document, p, b = {};
   for (M = 0; M < 256; ++M) {
     K = M.toString(16);
     if (M < 16) {
@@ -21116,7 +21733,7 @@ window.$ = import_jquery.default;
     if (aL[0] === "#") {
       if (!h[aL]) {
         if (aL.length === 4) {
-          h[aL] = "rgba(" + m[aL[1]] + m[aL[2]] + m[aL[3]];
+          h[aL] = "rgba(" + m2[aL[1]] + m2[aL[2]] + m2[aL[3]];
         } else {
           h[aL] = "rgba(" + l[aL.substr(1, 2)] + l[aL.substr(3, 2)] + l[aL.substr(5, 2)];
         }
@@ -23326,8 +23943,14 @@ function nl2br(str, is_xhtml) {
   var breakTag = is_xhtml || typeof is_xhtml === "undefined" ? "<br />" : "<br>";
   return (str + "").replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, "$1" + breakTag + "$2");
 }
-$(document).ready(ready);
 document.addEventListener("turbo:load", ready);
+document.addEventListener("DOMContentLoaded", (event) => {
+  Rails.start();
+});
+
+// app/javascript/application.js
+window.Rails = Rails2;
+window.Modal = Modal2;
 /*! Bundled license information:
 
 jquery/dist/jquery.js:
