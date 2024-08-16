@@ -26,7 +26,7 @@ module AntiKb
     config.i18n.fallbacks = [:ko]
 
     config.i18n.enforce_available_locales = true
-
+    config.active_record.default_column_serializer = JSON
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
