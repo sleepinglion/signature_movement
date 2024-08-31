@@ -19,7 +19,7 @@ set :deploy_to, "/home/deploy/anti-kb"
 # Default value for :pty is false
 set :pty, true
 set :rbenv_type, :user
-set :rbenv_ruby, "3.2.2"
+set :rbenv_ruby, "3.3.4"
 set :ssh_options, verify_host_key: :never
 set :default_env, {'NODE_OPTIONS'=>'--openssl-legacy-provider'}
 
