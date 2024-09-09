@@ -18,7 +18,7 @@ ko:
   email_webmaster: 'admin@anti-kb.site'
 
   home : '홈'
-  home_title : '망해라! KB(살인은행)!'
+  home_title : 'KB(국민은행) 반대운동'
   search : '검색'
   ad : '광고'
   login : '로그인'
@@ -48,8 +48,8 @@ ko:
   login_p_password : '비밀번호를 입력하세요'
   login_remember : '기억해줘'
 
-  home_main_title : 'KB(살인은행)이 망하는 그날까지!!'
-  home_main_description : '서명에 참여해주세요.<br class="d-block d-sm-none" /> 작은움직임이 살인은행이 망하게하는 힘이됩니다.'
+  home_main_title : 'KB(국민은행) 반대서명'
+  home_main_description : '서명에 참여해주세요.<br class="d-block d-sm-none" /> 작은움직임이 큰 힘이됩니다.'
   remember_email : '이메일 기억하기'
 
   menu_propose : '제안하기'
@@ -382,7 +382,7 @@ ko:
       model : '광고모델 제안'
       intro : '사이트 소개'
       improve : '개선사항 제안'
-      user : 'KB가 망하게하기 서명'
+      user : 'KB 반대서명'
       sitemap : '사이트맵'
     attributes :
       admin :

@@ -16,13 +16,13 @@ User.create!(:name=>'좋네요',:email => 'user3@jedaeroweb.co.kr',:password => 
 #,:created_at=>'2016-11-01 07:22:32'
 User.create!(:name=>'나두 가입',:email => 'user4@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'서민한테는 대출 안해주는 은행')
 #,:created_at=>'2016-11-01 23:22:32'
-User.create!(:name=>'정윤길',:email => 'user5@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'18!! 개같은 새끼들')
+User.create!(:name=>'정윤길',:email => 'user5@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'10+8!! 멍멍멍')
 #,:created_at=>'2016-11-01 22:22:32'
-User.create!(:name=>'나도하',:email => 'user6@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'국민?? 개새끼들')
+User.create!(:name=>'나도하',:email => 'user6@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'국민?? 멍멍이')
 #,:created_at=>'2016-11-01 22:22:32'
-User.create!(:name=>'개새끼들',:email => 'user7@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'저도 국민은행이라면 치가 떨립니다. 이런 좋은 사이트가 있었네요.')
+User.create!(:name=>'개새끼들',:email => 'user7@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'저도 국민은행이라면 싫습니다. 이런 좋은 사이트가 있었네요.')
 #,:created_at=>'2016-11-01 11:22:32'
-User.create!(:name=>'김영식',:email => 'user8@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'할말없는 개새끼들')
+User.create!(:name=>'김영식',:email => 'user8@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'할말없는 멍멍이들')
 #,:created_at=>'2016-12-01 15:22:32'
 User.create!(:name=>'닭잡자',:email => 'user9@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'닭같은 국민은행')
 #,:created_at=>'2016-12-01 16:22:32'
@@ -30,7 +30,7 @@ User.create!(:name=>'KB망해라',:email => 'user10@jedaeroweb.co.kr',:password 
 #,:created_at=>'2017-02-04 22:01:12'
 User.create!(:name=>'폭탄테러',:email => 'user11@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'폭파하고 싶다!!')
 #,:created_at=>'2016-12-09 15:22:36'
-User.create!(:name=>'욕나옴',:email => 'user12@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'18진 짜 욕밖에 안옴')
+User.create!(:name=>'욕나옴',:email => 'user12@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'10+8 욕욕욕')
 #,:created_at=>'2016-12-10 22:22:56'
 User.create!(:name=>'김진',:email => 'user13@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'저도 힘을 보태고 싶어요')
 #,:created_at=>'2016-12-14 21:22:23'
@@ -38,7 +38,7 @@ User.create!(:name=>'나영수',:email => 'user14@jedaeroweb.co.kr',:password =>
 #,:created_at=>'2016-12-14 00:22:44'
 User.create!(:name=>'예은',:email => 'user15@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'불친절의 대명사')
 #,:created_at=>'2016-12-15 20:22:25'
-User.create!(:name=>'홍이',:email => 'user16@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'18,망해라')
+User.create!(:name=>'홍이',:email => 'user16@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'10+8 망해라')
 #,:created_at=>'2016-12-20 16:32:12'
 User.create!(:name=>'오영민',:email => 'user17@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'서민한테는 대출 안해주네요')
 #,:created_at=>'2016-12-21 00:01:03'
@@ -52,23 +52,23 @@ User.create!(:name=>'정유한',:email => 'user21@jedaeroweb.co.kr',:password =>
 # ,:created_at=>'2017-01-04 20:11:51'
 User.create!(:name=>'현이',:email => 'user22@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'진짜 불친절 하더라고요')
 #,:created_at=>'2017-06-01 19:23:41'
-User.create!(:name=>'저도 동참',:email => 'user23@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'망해라')
+User.create!(:name=>'저도 동참',:email => 'user23@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'망망망')
 #,:created_at=>'2017-01-08 16:55:29'
 User.create!(:name=>'몰라요',:email => 'user24@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'서민한테는 대출 안해주는 은행')
 #,:created_at=>'2017-01-15 11:53:21'
 User.create!(:name=>'정길수',:email => 'user25@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'내 개인정보 털린곳')
 #,:created_at=>'2017-01-18 16:40:12'
-User.create!(:name=>'정나리',:email => 'user26@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'정말 욕도 지치는 곳입니다.')
+User.create!(:name=>'정나리',:email => 'user26@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'정말 싫은 곳입니다.')
 #,:created_at=>'2017-22-01 00:22:32'
-User.create!(:name=>'이하윤',:email => 'user27@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'국민은행 거래안한지 오래 됐지만 지금도 꼴보기도 싫네요')
+User.create!(:name=>'이하윤',:email => 'user27@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'국민은행 거래안한지 오래 됐지만 지금도 거래안함')
 #,:created_at=>'2017-01-23 20:55:45'
-User.create!(:name=>'김이현',:email => 'user28@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'개새끼들')
+User.create!(:name=>'김이현',:email => 'user28@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'멍멍멍')
 #,:created_at=>'2017-01-26 23:11:15'
-User.create!(:name=>'조성운',:email => 'user29@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'짜증, 욕밖에 안나오는 곳')
+User.create!(:name=>'조성운',:email => 'user29@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'짜증나는 곳')
 #,:created_at=>'2017-01-28 15:31:42'
-User.create!(:name=>'정윤성',:email => 'user30@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'진짜 고객을 뭘로 보는곳인지 모르겠네요')
+User.create!(:name=>'정윤성',:email => 'user30@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'고객을 뭐라고 생각하는지')
 #,:created_at=>'2017-02-01 00:22:32'3
-User.create!(:name=>'죽일놈들',:email => 'user31@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'서민들에게 대출해주긴 하는건지 모를 개같은 은행')
+User.create!(:name=>'죽일놈들',:email => 'user31@jedaeroweb.co.kr',:password => 'a12345', :password_confirmation => 'a12345',:description=>'서민들에게 대출 안 해주는 은행')
 
 
 Article.create!(:title=>'국부유출의 최고가 되겠습니다.',:url=>'http://media.daum.net/economic/finance/newsview?newsid=20131127034103604',:description=>'국민의 돈을 모아서

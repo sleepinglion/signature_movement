@@ -15,7 +15,6 @@
 %>
   <section class="row">
     <div id="main_main" class="col-12">
-      <%= render :partial => 'layouts/aside' %>
       <% unless user_signed_in? %>
         <div class="row">
           <div class="col-12">
@@ -32,8 +31,8 @@
       <div class="row">
         <nav class="col-12">
           <ul class="nav nav-tabs">
-            <li class="nav-item"><%= link_to('KB망하게 하기 서명', { :controller => 'home', :tab => 'default' }, :class => default_menu_class) %></li>
-            <li class="nav-item"><%= link_to('KB관련 기사', { :controller => 'home', :tab => 'article' }, :class => article_menu_class) %></li>
+            <li class="nav-item"><%= link_to('KB 반대서명', { :controller => 'home', :tab => 'default' }, :class => default_menu_class) %></li>
+            <li class="nav-item"><%= link_to('KB 관련기사', { :controller => 'home', :tab => 'article' }, :class => article_menu_class) %></li>
             <li class="nav-item"><%= link_to('공지사항', { :controller => 'home', :tab => 'notice' }, :class => notice_menu_class) %></li>
           </ul>
         </nav>
