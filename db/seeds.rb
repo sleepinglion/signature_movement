@@ -74,13 +74,13 @@ User.create!(:name=>'죽일놈들',:email => 'user31@jedaeroweb.co.kr',:password
 Article.create!(:title=>'국부유출의 최고가 되겠습니다.',:url=>'http://media.daum.net/economic/finance/newsview?newsid=20131127034103604',:description=>'국민의 돈을 모아서
 국부유출의 최고의 은행이 되겠습니다.~~
 뭐 망해도 다시 세금으로 살려줄꺼지요?',:created_at=>10.year.ago)
-Article.create!(:title=>'횡령 직원은 우리의 자랑입니다.',:url=>'http://media.daum.net/economic/finance/newsview?newsid=20131128033706474',:description=>'횡령의 최고의 직원들을 키우는것으 우리의 목표입니다,
+Article.create!(:title=>'횡령 직원은 KB의 일상.',:url=>'http://media.daum.net/economic/finance/newsview?newsid=20131128033706474',:description=>'횡령의 최고의 직원들을 키우는것으 우리의 목표입니다,
 세금은 먼저 먹는게 임자~ 망하면 세금 투입해줘요~~',:created_at=>10.year.ago)
-Article.create!(:title=>'이새끼들 또 돈풀었나?, 듣보잡 언론에도 돈 많이 푸나보네요',:url=>'http://media.daum.net/economic/finance/newsview?newsid=20131202062504190',:description=>'머니 투데이? 개세들 살인자-은행에 돈 받았나보네',:created_at=>10.year.ago)
+Article.create!(:title=>'돈풀었나?, 이런게 언론 조작인가 보네요',:url=>'http://media.daum.net/economic/finance/newsview?newsid=20131202062504190',:description=>'머니 투데이? 개세들 살인자-은행에 돈 받았나보네',:created_at=>10.year.ago)
 Article.create!(:title=>'횡령과 비리는 KB전문분야',:url=>'http://media.daum.net/economic/others/newsview?newsid=20131202150206737',:description=>'ㅋㅋㅋ 이번엔 걸렸네?',:created_at=>10.year.ago)
-Article.create!(:title=>'ㅋㅋㅋ 미친놈들 이게 사과로 될일이냐?',:url=>'https://omoney.kbstar.com/quics?page=C018592&bbsMode=view&articleId=8580',:description=>'니들이 그렇지 뭐',:created_at=>10.year.ago)
+Article.create!(:title=>'이게 사과로 될일인가?',:url=>'https://omoney.kbstar.com/quics?page=C018592&bbsMode=view&articleId=8580',:description=>'니들이 그렇지 뭐',:created_at=>10.year.ago)
 Article.create!(:title=>'앱을 몇개 깔아야 되는건가요? 뫼비우스의띠 앱 KB',:url=> 'https://weekly.cnbnews.com/news/article.html?no=139122',:description=>'이놈들은 이정도면 사용자들 일부러 골탕먹는거 즐기는거지??',:created_at=>2.year.ago)
-Article.create!(:title=>'이새끼들 하는짓은 언제나 이런짓',:url=>'https://www.youtube.com/watch?v=h42e5Er2uMc',:description=>'어휴..... 욕도 안나온다',:created_at=>10.day.ago)
+Article.create!(:title=>'KB가 하는 일은 언제나 이런일',:url=>'https://www.youtube.com/watch?v=h42e5Er2uMc',:description=>'어휴..... 욕도 안나온다',:created_at=>10.day.ago)
 Article.create!(:title=>'KB쓰다가는 대규모 손실날수도 있어요',:url=>'https://www.youtube.com/watch?v=tKmB__zHJPg',:description=>'언제나 망하는 시스템 만드는 KB로 증권거래한다고요??!!',:created_at=>5.day.ago)
 
 ReportCategory.create!(:id=>1,:title=>'불친절')
@@ -95,7 +95,7 @@ content: '짜증 가득한 표정보면 정말 주먹이 우네요
 그냥 얼굴 때리고 싶은거 참느냐고 혼났어요
 인내심을 길러주는 우리의 살인은행')
 
-Report.create!(:id=>2,:user_id=>1,:report_category_id=>6,:title=>'미친놈들 지랄하네 ㅋㅋㅋㅋㅋ',:default_view_count=>158,:created_at=>'2016-08-04 18:51:23',:updated_at=>'2016-08-04 18:51:23',
+Report.create!(:id=>2,:user_id=>1,:report_category_id=>6,:title=>'언제까지 사과만 할건지??',:default_view_count=>158,:created_at=>'2016-08-04 18:51:23',:updated_at=>'2016-08-04 18:51:23',
 content: '연거푸 사고치더니 살인은행 홈페이지에 사과문 또 떳네요
 사과문으로 공지사항 게시판 도배할 기세!! ㅋㅋㅋ
 니들은 개과천선 할 수없어
@@ -103,12 +103,12 @@ content: '연거푸 사고치더니 살인은행 홈페이지에 사과문 또 �
 
 Report.create!(:id=>3,:user_id=>1,:report_category_id=>6,:title=>'농협도 살인은행 못지않네요',:default_view_count=>159,:created_at=>'2016-10-04 18:51:23',:updated_at=>'2016-10-04 18:51:23',
 content: '이전 회사에서 월급통장 농협에서 만들라고 해서 만들러 갔는데
-이 미친놈들이 고객은 무슨 보이스 피싱 하수인(대포통장 만들러온 사람) 취급하네요?
+고객은 무슨 보이스 피싱 하수인(대포통장 만들러온 사람) 취급하네요?
 보안 개떡같아서 털린것은 지네면서 보안 강화한다고 하는 짓이 이런거... 참 답안나오네
 막상 대포통장 만들러온 놈들 가리지도 못할 개떡같은 질문들과 태도
 고객 기분 더럽게 하는게 보안강화냐??  역시 살인은행처럼 배때지 부른놈들이라 하는짓도 비슷하네요
 그자리에서 폭발시켰어야되는데 참고 통장 만들고 나온 나에게도 화가 나네요, 내가 왜 그랬지??
-그래 고객 기분 더럽게 해서 보안 강화 되었습니까? 이 개같은 NH놈들아!!!!
+그래 고객 기분 더럽게 해서 보안 강화 되었습니까? 이 멍멍같은 NH놈들아!!!!
 국민은행 망하면 안티NH 운동을 시작해야 겠다고 마음먹게 되었습니다.')
 
 Report.create!(:id=>4,:user_id=>30,:report_category_id=>6,:title=>'대출 거부,참 화나네요 ',:default_view_count=>159,:created_at=>'2016-12-04 18:51:23',:updated_at=>'2016-12-04 18:51:23',
@@ -214,9 +214,9 @@ ComplimentCategory.create!(:id=>6,:title=>'기타')
 
 
 Compliment.create!(:id=>1,:user_id=>1,:bank_id=>1,:compliment_category_id=>1,:title=>'우리은행 좋네요',:default_view_count=>137,:created_at=>'2015-08-02 18:49:49',:updated_at=>'2015-08-02 18:49:49',
-content: '역시 망할 살인자-은행에 대적할 은행은 우리은행이지요~
+content: '역시 국민은행에 대적할 은행은 우리은행이지요~
 홈페이지 진짜 잘만들었네
-ㅂㅅ같은 살인자 은행놈들은 언제 플래시 버릴려나?')
+국민은행놈들은 언제 플래시 버릴려나?')
 
 Compliment.create!(:id=>2,:user_id=>1,:bank_id=>17,:compliment_category_id=>1,:title=>'신한은행도 좋음',:default_view_count=>131,:created_at=>'2015-09-11 14:33:10',:updated_at=>'2015-09-11 14:33:10',
 content: '신한은행에 계좌 만들러 갔을때의 친절함은 감동으로 다가왔습니다.
@@ -251,14 +251,14 @@ Faq.create!(:id=>8,:faq_category_id=>3,:title=>'왜 강매를 시키나요?',:co
 Model.create!(id: 1,:user_id=>1,:title=>'미친개',:description=>'역시 살인자-은행하면 미친개가 떠오르지 않나요??
 살인자-은행의 상징이되면 좋을 미친개 입니다',:photo=>File.open(Rails.root.join("app", "assets", "images", "lovely_dog.jpg")),
 content: '으르릉 컹컹~~
-내가 아무리 미친개라도 저런 개같은 은행의 모델은 억만금을 줘도 안해!!!
+내가 아무리 미친개라도 저런 은행의 모델은 억만금을 줘도 안해!!!
 돈에 미치면 개만도 못한다더니 이승기,김연아는 바로 모델하더구만
 에이 퉤퉤~~!!!')
 
 Model.create!(id: 2,:user_id=>1,:title=>'前 대통령님',:description=>'사대강 살리기로 대한민국의 역사를 다시 쓴 샐러리맨의 신화인 前 대통령님
 하여간 왠지 KB와 너무나 잘 어울리는 얼굴과 행동들이 KB의 CEO같은 이명박 前 대통령님',:photo=>File.open(Rails.root.join("app", "assets", "images", "mrpre.jpg")),
 content: '네 제가 모델이라고요? 제가 모델 해봐서 아는데 이거 영광입니다.
-  KB모델 하면 뭐 떨어지는거 있나요? 저의 <code>혐오스럽지</code> 않은 얼굴로 KB를 알리는데 노력하겠습니다.')
+  KB모델 하면 뭐 떨어지는거 있나요? 저의 <code>사랑스러운</code> 얼굴로 KB를 알리는데 노력하겠습니다.')
 
 Model.create!(id: 3,:user_id=>1,:title=>'순실이',:description=>'국민은행하면 횡령,횡포 횡령,횡포하면 바로 순시리지요?
 우리가 찾던 완벽히 어울리는 모델입니다!!!',:photo=>File.open(Rails.root.join("app", "assets", "images", "sunsiry.jpg")),
