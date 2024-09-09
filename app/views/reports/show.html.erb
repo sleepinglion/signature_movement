@@ -13,7 +13,7 @@
       </p>
     </div>
     <div class="sl_content_main">
-      <div class="sl_content_text" itemprop="text"><%= simple_format(@report.report_content.content) %></div>
+      <div class="sl_content_text" itemprop="text"><%= simple_format(@report.content) %></div>
       <div class="vote">
         <% if user_signed_in? %>
           <%= link_to like_report_path(@report), method: :put do %>

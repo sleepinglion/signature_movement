@@ -24,7 +24,7 @@ class ReportsController < BoardController
   # GET /reports/1.json
   def show
     @title=@report.title
-    @meta_description=@report.report_content.content
+    @meta_description=@report.content.to_s
     @comment  = Comment.build_from(@report, current_user, "")
   end
 

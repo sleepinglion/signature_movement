@@ -4,10 +4,9 @@
 		faq_all_class+=' active'
 	end
 %>
-<main id="faq_main">
+<section id="faq_main">
 	<div class="row">
 	<nav class="col-12">
-		<%= render :partial => 'layouts/ad' %>
 		<ul id="faqCategoryList" class="nav nav-pills">
 			<% unless @faq_categories.empty? %>
 				<li class="nav-item"><%=link_to t(:all),faqs_path,class: faq_all_class %></li>
@@ -34,14 +33,14 @@
 		<dl id="faqList">
 			<% unless @faq_count.zero? %>
 			<% @faqs.each do |faq| %>
-			<dt <% if @faq %><% if @faq.id==faq.id %>class="on"<% end %><% end %>>
-				<%= link_to faq_path(faq),{:class=>'title'} do %>
+			<dt <% if @faq %><% if @faq.id==faq.id %>class="on"<% end %><% end %> itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+				<%= link_to faq_path(faq),{:class=>'title',:itemprop=>'name'} do %>
 					<%=truncate(faq.title,:length => 80) %><span><i class="material-icons">add</i></span>
 					<% end %>
 			</dt>
 			<% if(@faq)%>
 			<% if(faq.id==@faq.id) %>
-					<dd><%=simple_format(@faq.faq_content.content) %></dd>
+					<dd itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><%=simple_format(@faq.content.to_s) %></dd>
 			<% end %>
 			<% end %>
 
@@ -55,4 +54,4 @@
 		<%= paginate @faqs %>
 	</div>
 	</div>
-</main>
+</section>

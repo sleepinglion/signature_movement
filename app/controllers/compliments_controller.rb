@@ -19,7 +19,7 @@ class ComplimentsController < BoardController
   # GET /notices/1.json
   def show
     @title=@compliment.title
-    @meta_description=@compliment.compliment_content.content
+    @meta_description=@compliment.content.to_s
     @comment  = Comment.build_from(@compliment, current_user, "")
   end
 

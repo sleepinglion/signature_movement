@@ -22,7 +22,7 @@
                 <h4 class="media-heading" itemprop="name"><%= link_to m_model.title, model_path(m_model) %></h4>
                 <div itemprop="description">
                   <%= link_to model_path(m_model) do %>
-                    <%= simple_format(m_model.recommend_description) %>
+                    <%= simple_format(m_model.description) %>
                   <% end %>
                 </div>
               </div>

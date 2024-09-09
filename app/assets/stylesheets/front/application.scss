@@ -718,9 +718,9 @@ footer address {
 }
 
 #sl_model_show article div {
-  background: $secondary-bg;
+  background-color: var(--bs-secondary-bg);
   margin: 0 0 7px;
-  padding: 5px 10px;
+  padding: 15px 10px;
   border-radius: 5px
 }
 

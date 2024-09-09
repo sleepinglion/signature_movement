@@ -11,7 +11,7 @@
           <div class="media-body">
             <h4 class="media-heading" itemprop="name"><%= link_to model.title, model_path(model) %></h4>
             <%= link_to model_path(model) do %>
-              <p itemprop="description"><%= simple_format(model.models_comment) %></p>
+              <p itemprop="description"><%= simple_format(model.content) %></p>
             <% end %>
             <div class="vote">
               <% if user_signed_in? %>
