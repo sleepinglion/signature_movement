@@ -1,4 +1,4 @@
-AntiKb::Application.routes.draw do
+SignatureMovement::Application.routes.draw do
   root 'home#index'
 
   if Rails.env.production?

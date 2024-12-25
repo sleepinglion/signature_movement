@@ -1,14 +1,4 @@
 var ready=function(){
-    $("a.simple_image").fancybox({
-        'opacity'   : true,
-        'overlayShow'        : true,
-        'overlayColor': '#000000',
-        'overlayOpacity'     : 0.9,
-        'titleShow':true,
-        'openEffect'  : 'elastic',
-        'closeEffect' : 'elastic'
-    });
-
     $('.btn-modal').click(btn_modal_click);
 
     function btn_modal_click(event) {
@@ -238,7 +228,3 @@ function nl2br (str, is_xhtml) {
 }
 
 document.addEventListener("turbo:load", ready);
-
-document.addEventListener("DOMContentLoaded", (event) => {
-    Rails.start();
-});

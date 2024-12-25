@@ -37,6 +37,6 @@
 <%= render :partial => 'layouts/footer' %>
 <%= render :partial => 'layouts/aside_mobile' %>
 <div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"></div>
-<%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+<%= javascript_importmap_tags %>
 </body>
 </html>
