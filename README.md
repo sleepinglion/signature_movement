@@ -1,24 +1,19 @@
-# README
+# What is signature movement
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[www.anti-kb.site](https://www.anti-kb.site) source
 
-Things you may want to cover:
+[www.anti-kb.site](https://www.anti-kb.site) is a site anti-kb signature movement
 
-* Ruby version
+This Application is composed of [Rails](http://rubyonrails.org/) + UI [Boostrap](http://getbootstrap.com)
 
-* System dependencies
+## Server Requirements
 
-* Configuration
+[Rails](http://rubyonrails.org/) version 7 or newer is recommended.
 
-* Database creation
+## License
 
-* Database initialization
+MIT, All Fre
 
-* How to run the test suite
+## Author
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[SleepingLion](https://www.sleepinglion.pe.kr)
