@@ -201,28 +201,7 @@ var ready=function(){
             mobile_menu=1;
         }
     });
-
-    new PartnersCoupang.G({"id":714009,"template":"carousel","trackingCode":"AF6308864","width":"300","height":"700","tsource":""});
 };
-
-
-jQuery.fn.highlight = function() {
-    $(this).each(function() {
-        var el = $(this);
-        el.before("<div/>")
-        el.prev()
-            .width(el.width())
-            .height(el.height())
-            .css({
-                "position": "absolute",
-                "background-color": "#ffff99",
-                "opacity": ".9"
-            })
-            .fadeOut(1000);
-    });
-
-    return $(this);
-}
 
 function nl2br (str, is_xhtml) {
     var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br ' + '/>' : '<br>';
