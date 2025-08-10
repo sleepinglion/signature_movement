@@ -13,6 +13,11 @@ ko:
   chineses : '중국어'
   english : '영어'
 
+  theme: '모양'
+  light: '밝은'
+  dark: '어두운'
+  auto: '자동'
+
   site_url: 'www.anti-kb.site'
   site_full_url: 'https://www.anti-kb.site'
   email_webmaster: 'admin@anti-kb.site'

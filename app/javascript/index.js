@@ -201,7 +201,10 @@ var ready=function(){
             mobile_menu=1;
         }
     });
+
+    new PartnersCoupang.G({"id":714009,"template":"carousel","trackingCode":"AF6308864","width":"300","height":"700","tsource":""});
 };
+
 
 jQuery.fn.highlight = function() {
     $(this).each(function() {
@@ -220,7 +223,6 @@ jQuery.fn.highlight = function() {
 
     return $(this);
 }
-
 
 function nl2br (str, is_xhtml) {
     var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br ' + '/>' : '<br>';

@@ -5,23 +5,30 @@
       <li class="col-6 col-lg-3">E-mail : <%= mail_to t(:email_webmaster) %></li>
       <li class="col-6 col-lg-3"><%= link_to t(:sitemap, scope: [:activerecord, :models]), sitemap_index_path %></li>
       <li class="col-6 col-lg-3 dropdown">
-        <%= link_to '#', { class: 'dropdown-toggle',role:"button",'data-bs-toggle': "dropdown",'aria-expanded':"false"} do %>
-          테마설정
+        <%= link_to '#', { class: 'dropdown-toggle d-flex align-items-center gap-2',
+                           role: "button",
+                           'data-bs-toggle': "dropdown",
+                           'aria-expanded': "false" } do %>
+          <span><%=t(:theme) %></span>
+          <span class="current-theme-icon"></span>
         <% end %>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+        <ul class="dropdown-menu">
           <li>
-            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-              밝은
+            <button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="light">
+              <span class="icon">☀️</span>
+              <%=t(:light) %>
             </button>
           </li>
           <li>
-            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-              어두운
+            <button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="dark">
+              <span class="icon">🌙</span>
+              <%=t(:dark) %>
             </button>
           </li>
           <li>
-            <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-              자동
+            <button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="auto">
+              <span class="icon">🌓</span>
+              <%=t(:auto) %>
             </button>
           </li>
         </ul>
