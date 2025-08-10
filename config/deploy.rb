@@ -7,12 +7,11 @@ set :deploy_to, '/home/deploy/anti-kb'
 # set :format, :pretty
 # set :log_level, :debug
 #set :pty, true
-set :linked_files, %w{config/database.yml config/master.key .env}
+set :linked_files, %w{config/database.yml config/master.key .env .ruby-version}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/assets public/uploads}
 
 set :rbenv_type, :user
 set :rbenv_ruby, "3.3.4"
-set :rbenv_prefix, "$HOME/.rbenv/bin/rbenv exec"
 set :ssh_options, verify_host_key: :never
 set :default_env, {'NODE_OPTIONS'=>'--openssl-legacy-provider'}
 set :bundle_path, '/usr/local/bundle'
