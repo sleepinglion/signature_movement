@@ -4,15 +4,11 @@ var ready=function(){
     function btn_modal_click(event) {
         event.preventDefault();
 
-        $('#myModal').removeData("modal");
-        if ($(this).attr('href').indexOf('?') == '-1') {
-            var url = $(this).attr('href') + '?popup=true';
-        } else {
-            var url = $(this).attr('href') + '&popup=true';
-        }
+        var url = $(this).attr('href');
+        url += (url.indexOf('?') === -1 ? '?popup=true' : '&popup=true');
 
         $('#myModal').load(url, function () {
-            let myModal = new Modal(document.getElementById('myModal'));
+            let myModal = new bootstrap.Modal(document.getElementById('myModal'));
             myModal.show();
         });
 
