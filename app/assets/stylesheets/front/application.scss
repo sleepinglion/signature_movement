@@ -291,6 +291,19 @@ header nav a {
   text-decoration: none
 }
 
+header ul.dropdown-menu li {
+  float:none;
+  display:block;
+  padding: 0;
+}
+
+header ul.dropdown-menu li a {
+  float: none;
+  padding: 0.3rem 1.5rem;
+  display:block;
+  white-space: nowrap;
+}
+
 #mobile_menu {cursor:pointer;display:none;z-index:999}
 
 #top_menu {
@@ -993,15 +1006,16 @@ table td.sl_registered_date {
     padding: 10px;
     border-radius: 0;
   }
+
   header nav ul li a:hover {
     text-decoration: none;
   }
   header nav ul li a:active {
     color: red
   }
-  .nav-pills > li + li {
-    margin: 0
-  }
+
+
+
   #mom {
     float: left;
     clear: both;
