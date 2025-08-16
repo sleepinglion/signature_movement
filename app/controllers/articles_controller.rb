@@ -55,7 +55,7 @@ class ArticlesController < ApplicationController
         format.json { render json: @article, status: :created, location: @article }
       else
         format.html { render action: "new" }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+        format.json { render json: @article.errors, status: :unprocessable_content }
       end
     end
   end
@@ -69,7 +69,7 @@ class ArticlesController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+        format.json { render json: @article.errors, status: :unprocessable_content }
       end
     end
   end

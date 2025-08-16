@@ -47,7 +47,7 @@ class ComplimentsController < BoardController
         format.json { render json: @compliment, status: :created, location: @compliment }
       else
         format.html { render action: "new" }
-        format.json { render json: @compliment.errors, status: :unprocessable_entity }
+        format.json { render json: @compliment.errors, status: :unprocessable_content }
       end
     end
   end
@@ -61,7 +61,7 @@ class ComplimentsController < BoardController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @compliment.errors, status: :unprocessable_entity }
+        format.json { render json: @compliment.errors, status: :unprocessable_content }
       end
     end
   end
@@ -83,7 +83,7 @@ class ComplimentsController < BoardController
         format.json { render :json => {'vote_up'=>@compliment.cached_votes_up}}
       else
         format.html { render :action => "index" }
-        format.json { render :json => @compliment.errors, :status => :unprocessable_entity }
+        format.json { render :json => @compliment.errors, :status => :unprocessable_content }
       end
     end
   end
@@ -95,7 +95,7 @@ class ComplimentsController < BoardController
         format.json { render :json => {'vote_up'=>@compliment.cached_votes_down}}
       else
         format.html { render :action => "index" }
-        format.json { render :json => @compliment.errors, :status => :unprocessable_entity }
+        format.json { render :json => @compliment.errors, :status => :unprocessable_content }
       end
     end
   end

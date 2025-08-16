@@ -56,7 +56,7 @@ class Admin::ReportCategoriesController < Admin::AdminController
         format.json { render :json => @admin_report_category, :status => :created, :location => @admin_report_category }
       else
         format.html { render :action => "new" }
-        format.json { render :json => @admin_report_category.errors, :status => :unprocessable_entity }
+        format.json { render :json => @admin_report_category.errors, :status => :unprocessable_content }
       end
     end
   end
@@ -70,7 +70,7 @@ class Admin::ReportCategoriesController < Admin::AdminController
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
-        format.json { render :json => @admin_report_category.errors, :status => :unprocessable_entity }
+        format.json { render :json => @admin_report_category.errors, :status => :unprocessable_content }
       end
     end
   end

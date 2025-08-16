@@ -58,7 +58,7 @@ class ReportsController < BoardController
         format.json { render json: @report, status: :created, location: @report }
       else
         format.html { render action: "new" }
-        format.json { render json: @report.errors, status: :unprocessable_entity }
+        format.json { render json: @report.errors, status: :unprocessable_content }
       end
     end
   end
@@ -72,7 +72,7 @@ class ReportsController < BoardController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @report.errors, status: :unprocessable_entity }
+        format.json { render json: @report.errors, status: :unprocessable_content }
       end
     end
   end
@@ -94,7 +94,7 @@ class ReportsController < BoardController
         format.json { render :json => {vote_up: @report.cached_votes_up}}
       else
         format.html { render :action => "index" }
-        format.json { render :json => @report.errors, :status => :unprocessable_entity }
+        format.json { render :json => @report.errors, :status => :unprocessable_content }
       end
     end
   end
@@ -106,7 +106,7 @@ class ReportsController < BoardController
         format.json { render :json => {vote_up: @report.cached_votes_down}}
       else
         format.html { render :action => "index" }
-        format.json { render :json => @report.errors, :status => :unprocessable_entity }
+        format.json { render :json => @report.errors, :status => :unprocessable_content }
       end
     end
   end

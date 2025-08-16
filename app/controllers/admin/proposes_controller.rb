@@ -58,7 +58,7 @@ class Admin::ProposesController < Admin::AdminController
         format.json { render json: @admin_propose, status: :created, location: @admin_propose }
       else
         format.html { render action: "new" }
-        format.json { render json: @admin_propose.errors, status: :unprocessable_entity }
+        format.json { render json: @admin_propose.errors, status: :unprocessable_content }
       end
     end
   end
@@ -72,7 +72,7 @@ class Admin::ProposesController < Admin::AdminController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @admin_propose.errors, status: :unprocessable_entity }
+        format.json { render json: @admin_propose.errors, status: :unprocessable_content }
       end
     end
   end

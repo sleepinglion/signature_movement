@@ -40,7 +40,7 @@ class NoticesController < ApplicationController
         format.json { render action: 'show', status: :created, location: @notice }
       else
         format.html { render action: 'new' }
-        format.json { render json: @notice.errors, status: :unprocessable_entity }
+        format.json { render json: @notice.errors, status: :unprocessable_content }
       end
     end
   end
@@ -54,7 +54,7 @@ class NoticesController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @notice.errors, status: :unprocessable_entity }
+        format.json { render json: @notice.errors, status: :unprocessable_content }
       end
     end
   end

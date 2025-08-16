@@ -56,7 +56,7 @@ class Admin::ImproveController < Admin::AdminController
         format.json { render json: @admin_improve, status: :created, location: @admin_improve }
       else
         format.html { render action: "new" }
-        format.json { render json: @admin_improve.errors, status: :unprocessable_entity }
+        format.json { render json: @admin_improve.errors, status: :unprocessable_content }
       end
     end
   end
@@ -70,7 +70,7 @@ class Admin::ImproveController < Admin::AdminController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @admin_improve.errors, status: :unprocessable_entity }
+        format.json { render json: @admin_improve.errors, status: :unprocessable_content }
       end
     end
   end

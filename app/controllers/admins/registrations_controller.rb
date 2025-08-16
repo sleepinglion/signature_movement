@@ -31,7 +31,7 @@ class Admins::RegistrationsController < Devise::RegistrationsController
                 format.json { render json: @admin, status: :created, location: @user }
             else
                 format.html { render :new }
-                format.json { render json: @admin.errors, status: :unprocessable_entity }
+                format.json { render json: @admin.errors, status: :unprocessable_content }
             end
         end
     end

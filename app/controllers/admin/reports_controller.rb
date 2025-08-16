@@ -55,7 +55,7 @@ class Admin::ReportsController < Admin::AdminController
         format.json { render json: @admin_report, status: :created, location: @admin_report }
       else
         format.html { render action: "new" }
-        format.json { render json: @admin_report.errors, status: :unprocessable_entity }
+        format.json { render json: @admin_report.errors, status: :unprocessable_content }
       end
     end
   end
@@ -69,7 +69,7 @@ class Admin::ReportsController < Admin::AdminController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @admin_report.errors, status: :unprocessable_entity }
+        format.json { render json: @admin_report.errors, status: :unprocessable_content }
       end
     end
   end

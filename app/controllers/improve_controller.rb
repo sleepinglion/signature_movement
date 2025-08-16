@@ -58,7 +58,7 @@ class ImproveController < ApplicationController
         format.json { render :json => @improve, :status => :created, :location => @guest_book }
       else
         format.html { render :action => "new" }
-        format.json { render :json => @improve.errors, :status => :unprocessable_entity }
+        format.json { render :json => @improve.errors, :status => :unprocessable_content }
       end
     end
   end
@@ -72,7 +72,7 @@ class ImproveController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @improve.errors, status: :unprocessable_entity }
+        format.json { render json: @improve.errors, status: :unprocessable_content }
       end
     end
   end

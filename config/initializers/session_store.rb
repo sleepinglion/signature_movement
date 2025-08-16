@@ -3,7 +3,6 @@ if Rails.env.production?
   secure = true
   key ='signiture_movement_app_session'
   domain = 'www.anti-kb.site'
-  #domain = :all
 
   Rails.application.config.session_store :redis_store,
                                          url: session_url,

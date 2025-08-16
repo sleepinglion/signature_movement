@@ -70,7 +70,7 @@ class Admin::FaqsController < Admin::AdminController
         format.json { render json: @admin_faq, status: :created, location: @admin_faq }
       else
         format.html { render action: "new" }
-        format.json { render json: @admin_faq.errors, status: :unprocessable_entity }
+        format.json { render json: @admin_faq.errors, status: :unprocessable_content }
       end
     end
   end
@@ -86,7 +86,7 @@ class Admin::FaqsController < Admin::AdminController
         format.json { head :ok }
       else
         format.html { render action: "edit" }
-        format.json { render json: @admin_faq.errors, status: :unprocessable_entity }
+        format.json { render json: @admin_faq.errors, status: :unprocessable_content }
       end
     end
   end
